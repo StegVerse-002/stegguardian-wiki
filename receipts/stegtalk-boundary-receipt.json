@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "receipt_type": "wiki_receipt",
+  "target_repo": "StegVerse-002/stegguardian-wiki",
+  "origin_repo": "StegVerse-Labs/StegTalk",
+  "production_ready": false,
+  "installed_files": [
+    "STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md",
+    "pages/stegtalk-guardian-account-boundary.md"
+  ],
+  "remaining_targets": []
+}
