@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "index_type": "stegguardian_wiki_page_index",
+  "repo": "StegVerse-002/stegguardian-wiki",
+  "publicly_viewable": false,
+  "visibility_note": "repository visibility is private unless changed outside this artifact",
+  "pages": [
+    {
+      "title": "StegTalk Guardian and Account Boundary",
+      "path": "pages/stegtalk-guardian-account-boundary.md",
+      "status": "installed"
+    },
+    {
+      "title": "Guardian Account Boundary Vocabulary",
+      "path": "pages/guardian-account-boundary-vocabulary.md",
+      "status": "installed"
+    },
+    {
+      "title": "Recovery Authority",
+      "path": "pages/recovery-authority.md",
+      "status": "installed"
+    },
+    {
+      "title": "Account Federation",
+      "path": "pages/account-federation.md",
+      "status": "installed"
+    },
+    {
+      "title": "Device Bound Guardian Enforcement",
+      "path": "pages/device-bound-guardian-enforcement.md",
+      "status": "installed"
+    }
+  ],
+  "receipts": [
+    "receipts/stegtalk-boundary-receipt.json"
+  ],
+  "handoff": "STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md",
+  "production_ready": false
+}
