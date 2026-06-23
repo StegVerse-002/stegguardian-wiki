@@ -8,6 +8,9 @@ This repository is the StegGuardian wiki target for guardian, account, boundary,
 
 - [StegTalk Guardian and Account Boundary](pages/stegtalk-guardian-account-boundary.md)
 - [Guardian Account Boundary Vocabulary](pages/guardian-account-boundary-vocabulary.md)
+- [Recovery Authority](pages/recovery-authority.md)
+- [Account Federation](pages/account-federation.md)
+- [Device Bound Guardian Enforcement](pages/device-bound-guardian-enforcement.md)
 
 ## Current Receipts
 
@@ -23,4 +26,4 @@ Documents in this wiki may describe prototype, candidate, or boundary states. A 
 
 ## Next Integration Candidate
 
-Extend the guardian/account vocabulary into dedicated pages for recovery authority, account federation, and device-bound guardian enforcement.
+Create a machine-readable page index and wiki completion receipt for future updates.
