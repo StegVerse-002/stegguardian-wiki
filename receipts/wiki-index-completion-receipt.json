@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "receipt_type": "stegguardian_wiki_index_completion",
+  "repo": "StegVerse-002/stegguardian-wiki",
+  "production_ready": false,
+  "publicly_viewable": false,
+  "installed_files": [
+    "README.md",
+    "data/page-index.json",
+    "pages/stegtalk-guardian-account-boundary.md",
+    "pages/guardian-account-boundary-vocabulary.md",
+    "pages/recovery-authority.md",
+    "pages/account-federation.md",
+    "pages/device-bound-guardian-enforcement.md",
+    "receipts/stegtalk-boundary-receipt.json"
+  ],
+  "manual_tasks_remaining": [],
+  "next_candidate": "public_mirror_or_visibility_decision"
+}
