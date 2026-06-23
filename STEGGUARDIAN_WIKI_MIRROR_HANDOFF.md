@@ -6,7 +6,7 @@ This file is the current handoff and task source of truth for `StegVerse-002/ste
 
 ## Current Priority
 
-Mirror StegTalk guardian and account boundary notes from the completed propagation chain.
+StegTalk guardian and account boundary notes have been mirrored from the completed propagation chain.
 
 ## Source Artifacts
 
@@ -29,12 +29,12 @@ Origin source: `StegVerse-Labs/StegTalk`
 - `STEGTALK_LOCAL_CANDIDATE.json`
 - `STEGTALK_RELEASE_HANDOFF.json`
 
-## Required Install
+## Install Complete
 
 Destination: `StegVerse-002/stegguardian-wiki`
 
-- StegTalk guardian/account boundary page
-- Mirror receipt preserving non-production boundary
+- `pages/stegtalk-guardian-account-boundary.md`
+- `receipts/stegtalk-boundary-receipt.json`
 
 ## Build Rule
 
@@ -43,3 +43,7 @@ Before continuing any StegGuardian wiki task, check this file first and treat it
 ## Boundary
 
 StegTalk remains a non-production local prototype candidate. Do not describe it as production ready.
+
+## Next Integration Candidate
+
+No additional StegTalk propagation target is currently known from this handoff.
