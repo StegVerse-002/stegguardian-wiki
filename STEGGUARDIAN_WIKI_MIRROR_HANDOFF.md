@@ -6,7 +6,11 @@ This file is the current handoff and task source of truth for `StegVerse-002/ste
 
 ## Current Priority
 
-StegTalk guardian and account boundary notes have been mirrored from the completed propagation chain.
+StegGuardian wiki boundary notes have been installed, indexed, receipted, and wired for autonomous GitHub Pages publishing.
+
+## Public URL
+
+- `https://stegverse-002.github.io/stegguardian-wiki/`
 
 ## Source Artifacts
 
@@ -33,8 +37,25 @@ Origin source: `StegVerse-Labs/StegTalk`
 
 Destination: `StegVerse-002/stegguardian-wiki`
 
+- `README.md`
 - `pages/stegtalk-guardian-account-boundary.md`
+- `pages/guardian-account-boundary-vocabulary.md`
+- `pages/recovery-authority.md`
+- `pages/account-federation.md`
+- `pages/device-bound-guardian-enforcement.md`
+- `data/page-index.json`
 - `receipts/stegtalk-boundary-receipt.json`
+- `receipts/wiki-index-completion-receipt.json`
+
+## Publishing Automation Complete
+
+- `.github/workflows/pages.yml`
+
+## Linked Wikis
+
+- `https://stegverse-labs.github.io/stegtalk-wiki/`
+- `https://stegverse-labs.github.io/admissibility-wiki/`
+- `https://stegverse-labs.github.io/Site/`
 
 ## Build Rule
 
@@ -44,6 +65,6 @@ Before continuing any StegGuardian wiki task, check this file first and treat it
 
 StegTalk remains a non-production local prototype candidate. Do not describe it as production ready.
 
-## Next Integration Candidate
+## Remaining Open Check
 
-No additional StegTalk propagation target is currently known from this handoff.
+None.
