@@ -1,0 +1,66 @@
+name: Publish StegGuardian Wiki
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Prepare static site
+        run: |
+          mkdir -p _site/pages _site/data _site/receipts
+          cp README.md _site/README.md
+          cp data/page-index.json _site/data/page-index.json
+          cp receipts/*.json _site/receipts/
+          cp pages/*.md _site/pages/
+          cat > _site/index.html <<'HTML'
+          <!doctype html>
+          <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>StegGuardian Wiki</title>
+            <style>body{font-family:system-ui,-apple-system,sans-serif;max-width:900px;margin:40px auto;padding:0 20px;line-height:1.55}a{display:block;margin:.35rem 0}code{background:#f4f4f4;padding:.1rem .25rem}</style>
+          </head>
+          <body>
+            <h1>StegGuardian Wiki</h1>
+            <p>Guardian, account, recovery, and boundary documentation.</p>
+            <h2>Pages</h2>
+            <a href="pages/stegtalk-guardian-account-boundary.md">StegTalk Guardian and Account Boundary</a>
+            <a href="pages/guardian-account-boundary-vocabulary.md">Guardian Account Boundary Vocabulary</a>
+            <a href="pages/recovery-authority.md">Recovery Authority</a>
+            <a href="pages/account-federation.md">Account Federation</a>
+            <a href="pages/device-bound-guardian-enforcement.md">Device Bound Guardian Enforcement</a>
+            <h2>Machine-readable records</h2>
+            <a href="data/page-index.json">Page Index</a>
+            <h2>Linked Wikis</h2>
+            <a href="https://stegverse-labs.github.io/stegtalk-wiki/">StegTalk Wiki</a>
+            <a href="https://stegverse-labs.github.io/admissibility-wiki/">Admissibility Wiki</a>
+            <a href="https://stegverse-labs.github.io/Site/">StegVerse Site</a>
+          </body>
+          </html>
+          HTML
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
