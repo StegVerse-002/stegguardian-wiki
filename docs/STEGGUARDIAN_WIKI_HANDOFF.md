@@ -27,13 +27,23 @@ This wiki must not claim final validated release status unless source validation
 ## Installed Files
 
 - docs/STEGGUARDIAN_WIKI_HANDOFF.md
+- docs/ORG_AI_ENTITY_CAPABILITY_STANDARDS.md
+- docs/ORG_AI_ENTITY_CAPABILITY_STATUS.md
+- docs/ORG_AI_ENTITY_CAPABILITY_CHECK.md
+
+## Current State
+
+Org AI Entity capability standards summary is installed for the repo-standards release-candidate surface.
 
 ## Remaining Work
 
-- Add Org AI Entity capability standards summary.
-- Add capability status document.
-- Add capability check surface.
+- Add executable checker when needed and connector-safe.
+- Await source validation evidence before any final release language.
 
 ## Completion Target
 
-Goal activation is reached when this wiki contains the capability summary, status artifact, check surface, and updated handoff.
+Goal activation is reached. This wiki contains the capability summary, status artifact, check surface, and updated handoff.
+
+## Next Integration Goal Candidate
+
+Return to StegVerse-Labs/repo-standards to execute validation, inspect workflow behavior, and decide whether a tag/release is admissible.
