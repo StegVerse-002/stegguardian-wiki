@@ -6,7 +6,7 @@ This file is the current handoff and task source of truth for `StegVerse-002/ste
 
 ## Current Priority
 
-StegGuardian wiki boundary notes have been installed, indexed, receipted, and wired for autonomous GitHub Pages publishing.
+Standing-Proof-Engine v0.5.0 guardian-boundary propagation has been recorded.
 
 ## Public URL
 
@@ -17,43 +17,40 @@ StegGuardian wiki boundary notes have been installed, indexed, receipted, and wi
 Admissibility source: `StegVerse-Labs/admissibility-wiki`
 
 - `ADMISSIBILITY_MIRROR_HANDOFF.md`
-- `pages/stegtalk-admissibility-boundary.md`
-- `receipts/stegtalk-admissibility-boundary-receipt.json`
+- `pages/spe-v0-5-0-standing-boundary.md`
 
 Publisher source: `GCAT-BCAT-Engine/Publisher`
 
 - `PUBLISHER_MIRROR_HANDOFF.md`
-- `data/stegtalk-local-candidate.json`
-- `data/stegtalk-local-candidate-publisher-receipt.json`
+- `data/spe-v0-5-0-status.json`
 
-Origin source: `StegVerse-Labs/StegTalk`
+Site source: `StegVerse-Labs/Site`
 
-- `STEGTALK_MIRROR_HANDOFF.md`
-- `STEGTALK_CANDIDATE_STATUS.json`
-- `STEGTALK_LOCAL_CANDIDATE.json`
-- `STEGTALK_RELEASE_HANDOFF.json`
+- `SITE_MIRROR_HANDOFF.md`
+- `data/spe-v0-5-0-status.json`
+
+Origin source: `StegVerse-Labs/Standing-Proof-Engine`
+
+- `SPE_MIRROR_HANDOFF.md`
+- `docs/release_snapshot_v0_5_0.md`
+- `samples/destination_receipt_chain_001.json`
+
+Master-records source: `master-records/core-lite`
+
+- `records/spe_destination_receipt_chain_001.json`
 
 ## Install Complete
 
 Destination: `StegVerse-002/stegguardian-wiki`
 
-- `README.md`
-- `pages/stegtalk-guardian-account-boundary.md`
-- `pages/guardian-account-boundary-vocabulary.md`
-- `pages/recovery-authority.md`
-- `pages/account-federation.md`
-- `pages/device-bound-guardian-enforcement.md`
-- `data/page-index.json`
-- `receipts/stegtalk-boundary-receipt.json`
-- `receipts/wiki-index-completion-receipt.json`
+- `pages/spe-v0-5-0-guardian-boundary.md`
 
-## Publishing Automation Complete
+## Publishing Automation
 
-- `.github/workflows/pages.yml`
+- `github/workflows/pages.yml` displayed without the leading dot; actual repository path includes the leading dot.
 
 ## Linked Wikis
 
-- `https://stegverse-labs.github.io/stegtalk-wiki/`
 - `https://stegverse-labs.github.io/admissibility-wiki/`
 - `https://stegverse-labs.github.io/Site/`
 
@@ -63,8 +60,8 @@ Before continuing any StegGuardian wiki task, check this file first and treat it
 
 ## Boundary
 
-StegTalk remains a non-production local prototype candidate. Do not describe it as production ready.
+SPE v0.5.0 records receipt-chain reconstructability and master-records emission. It does not itself authorize enforcement; commit-time standing remains required.
 
 ## Remaining Open Check
 
-None.
+Workflow/tag verification remains outside this local propagation pass.
