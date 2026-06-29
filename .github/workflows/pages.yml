@@ -50,6 +50,7 @@ jobs:
             <a href="pages/recovery-authority.md">Recovery Authority</a>
             <a href="pages/account-federation.md">Account Federation</a>
             <a href="pages/device-bound-guardian-enforcement.md">Device Bound Guardian Enforcement</a>
+            <a href="pages/entity-sandbox-runner-repair-reentry-flow.md">Entity Sandbox Runner Repair Reentry Flow</a>
             <h2>Machine-readable records</h2>
             <a href="data/page-index.json">Page Index</a>
             <h2>Linked Wikis</h2>
