@@ -29,6 +29,13 @@
       "title": "Device Bound Guardian Enforcement",
       "path": "pages/device-bound-guardian-enforcement.md",
       "status": "installed"
+    },
+    {
+      "title": "Entity Sandbox Runner Repair Reentry Flow",
+      "path": "pages/entity-sandbox-runner-repair-reentry-flow.md",
+      "status": "installed",
+      "source_repo": "StegGhost/entity-sandbox-runner",
+      "activation_state": "pending_external_evidence"
     }
   ],
   "receipts": [
