@@ -1,0 +1,19 @@
+{
+  "status_id": "repo-standards-guardian-summary",
+  "repository": "StegVerse-002/stegguardian-wiki",
+  "status": "READY_FOR_UPSTREAM_GATE_EVENTS",
+  "sources": [
+    "StegVerse-Labs/repo-standards",
+    "StegVerse-Labs/admissibility-wiki",
+    "StegVerse-Labs/Site",
+    "GCAT-BCAT-Engine/Publisher"
+  ],
+  "required_inputs": [
+    "repo-standards release/tag reference",
+    "admissibility-wiki validation receipt",
+    "Site upstream gate completion",
+    "Publisher import awareness"
+  ],
+  "wiki_role": "public_guardian_summary_surface",
+  "next_action": "WAIT_FOR_UPSTREAM_GATE_EVENTS"
+}
