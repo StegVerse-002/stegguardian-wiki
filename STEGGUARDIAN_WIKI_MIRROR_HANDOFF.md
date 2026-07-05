@@ -20,9 +20,11 @@ Workflow verification status can be checked locally with `python scripts/check_w
 
 The blocked aggregate workflow rewrite is recorded in `docs/GUARDIAN_AGGREGATE_WORKFLOW_DELTA.md` and checked by `python scripts/check_aggregate_workflow_delta.py`.
 
+User-observed workflow success is recorded in `USER_OBSERVED_WORKFLOW_EVIDENCE.md` and checked by `python scripts/check_user_observed_workflow_evidence.py`.
+
 All local Guardian propagation checks can be run with `python scripts/check_guardian_local_state.py`.
 
-Workflow execution evidence is still pending; `WORKFLOW_VERIFICATION_STATUS.md` and `docs/GUARDIAN_WORKFLOW_VERIFICATION_RUNBOOK.md` record the checked commits and re-check process.
+Workflow execution evidence has user-observed success but remains connector-unconfirmed; `WORKFLOW_VERIFICATION_STATUS.md`, `USER_OBSERVED_WORKFLOW_EVIDENCE.md`, and `docs/GUARDIAN_WORKFLOW_VERIFICATION_RUNBOOK.md` record the split evidence state.
 
 ## Public URL
 
@@ -84,6 +86,8 @@ Destination: `StegVerse-002/stegguardian-wiki`
 - `scripts/check_workflow_verification_status.py`
 - `docs/GUARDIAN_AGGREGATE_WORKFLOW_DELTA.md`
 - `scripts/check_aggregate_workflow_delta.py`
+- `USER_OBSERVED_WORKFLOW_EVIDENCE.md`
+- `scripts/check_user_observed_workflow_evidence.py`
 - `scripts/check_guardian_local_state.py`
 - `.github/workflows/pages.yml` validates both checkers and links the page in the static index
 - `WORKFLOW_VERIFICATION_STATUS.md`
@@ -103,6 +107,7 @@ python scripts/check_page_index.py
 python scripts/check_pages_workflow_validation.py
 python scripts/check_workflow_verification_status.py
 python scripts/check_aggregate_workflow_delta.py
+python scripts/check_user_observed_workflow_evidence.py
 ```
 
 ## Publishing Automation
@@ -126,4 +131,4 @@ The LLM free-tier trust-chain page is downstream propagation awareness only. It 
 
 ## Remaining Open Check
 
-Workflow/tag verification remains pending because no workflow runs or combined statuses were found for the checked commits at check time. README linking remains optional because the propagation page, status file, checker, index entry, workflow validation, workflow configuration checker, workflow verification status checker, aggregate workflow delta checker, aggregate local checker, runbook, and handoff now record the installed state.
+Workflow/tag verification remains connector-unconfirmed because commit-specific connector workflow/status queries did not return the user-observed successful runs. README linking remains optional because the propagation page, status file, checker, index entry, workflow validation, workflow configuration checker, workflow verification status checker, aggregate workflow delta checker, user-observed workflow evidence checker, aggregate local checker, runbook, and handoff now record the installed state.
