@@ -18,6 +18,8 @@ Workflow configuration can be checked locally with `python scripts/check_pages_w
 
 Workflow verification status can be checked locally with `python scripts/check_workflow_verification_status.py`.
 
+All local Guardian propagation checks can be run with `python scripts/check_guardian_local_state.py`.
+
 Workflow execution evidence is still pending; `WORKFLOW_VERIFICATION_STATUS.md` and `docs/GUARDIAN_WORKFLOW_VERIFICATION_RUNBOOK.md` record the checked commits and re-check process.
 
 ## Public URL
@@ -78,11 +80,18 @@ Destination: `StegVerse-002/stegguardian-wiki`
 - `scripts/check_page_index.py`
 - `scripts/check_pages_workflow_validation.py`
 - `scripts/check_workflow_verification_status.py`
+- `scripts/check_guardian_local_state.py`
 - `.github/workflows/pages.yml` validates both checkers and links the page in the static index
 - `WORKFLOW_VERIFICATION_STATUS.md`
 - `docs/GUARDIAN_WORKFLOW_VERIFICATION_RUNBOOK.md`
 
 ## Verification
+
+```text
+python scripts/check_guardian_local_state.py
+```
+
+Expanded checks:
 
 ```text
 python scripts/check_llm_free_tier_trust_chain_page.py
@@ -112,4 +121,4 @@ The LLM free-tier trust-chain page is downstream propagation awareness only. It 
 
 ## Remaining Open Check
 
-Workflow/tag verification remains pending because no workflow runs or combined statuses were found for the checked commits at check time. README linking remains optional because the propagation page, status file, checker, index entry, workflow validation, workflow configuration checker, workflow verification status checker, runbook, and handoff now record the installed state.
+Workflow/tag verification remains pending because no workflow runs or combined statuses were found for the checked commits at check time. README linking remains optional because the propagation page, status file, checker, index entry, workflow validation, workflow configuration checker, workflow verification status checker, aggregate local checker, runbook, and handoff now record the installed state.
