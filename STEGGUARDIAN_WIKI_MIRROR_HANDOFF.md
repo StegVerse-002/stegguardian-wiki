@@ -10,6 +10,8 @@ Standing-Proof-Engine v0.5.0 guardian-boundary propagation has been recorded.
 
 LLM free-tier trust-chain downstream propagation has also been recorded as awareness-only documentation.
 
+Machine-readable page index metadata has been updated for the LLM free-tier trust-chain page.
+
 ## Public URL
 
 - `https://stegverse-002.github.io/stegguardian-wiki/`
@@ -64,11 +66,14 @@ Destination: `StegVerse-002/stegguardian-wiki`
 - `pages/llm-free-tier-trust-chain.md`
 - `LLM_FREE_TIER_TRUST_CHAIN_STATUS.md`
 - `scripts/check_llm_free_tier_trust_chain_page.py`
+- `data/page-index.json` updated with LLM free-tier trust-chain entry
+- `scripts/check_page_index.py`
 
 ## Verification
 
 ```text
 python scripts/check_llm_free_tier_trust_chain_page.py
+python scripts/check_page_index.py
 ```
 
 ## Publishing Automation
@@ -92,4 +97,4 @@ The LLM free-tier trust-chain page is downstream propagation awareness only. It 
 
 ## Remaining Open Check
 
-Workflow/tag verification remains outside this local propagation pass. README linking remains optional because the propagation page, status file, checker, and handoff now record the installed state.
+Workflow/tag verification remains outside this local propagation pass. README linking remains optional because the propagation page, status file, checker, index entry, and handoff now record the installed state.
