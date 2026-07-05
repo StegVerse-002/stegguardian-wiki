@@ -8,6 +8,8 @@ This file is the current handoff and task source of truth for `StegVerse-002/ste
 
 Standing-Proof-Engine v0.5.0 guardian-boundary propagation has been recorded.
 
+LLM free-tier trust-chain downstream propagation has also been recorded as awareness-only documentation.
+
 ## Public URL
 
 - `https://stegverse-002.github.io/stegguardian-wiki/`
@@ -18,16 +20,31 @@ Admissibility source: `StegVerse-Labs/admissibility-wiki`
 
 - `ADMISSIBILITY_MIRROR_HANDOFF.md`
 - `pages/spe-v0-5-0-standing-boundary.md`
+- `docs/governance/llm-free-tier-trust-chain.md`
 
 Publisher source: `GCAT-BCAT-Engine/Publisher`
 
 - `PUBLISHER_MIRROR_HANDOFF.md`
 - `data/spe-v0-5-0-status.json`
+- `docs/LLM_FREE_TIER_TRUST_CHAIN_STATUS.md`
 
 Site source: `StegVerse-Labs/Site`
 
 - `SITE_MIRROR_HANDOFF.md`
 - `data/spe-v0-5-0-status.json`
+- `ecosystem-chat.html`
+- `docs/LLM_FREE_TIER_TRUST_STATUS.md`
+
+LLM adapter source: `StegVerse-org/LLM-adapter`
+
+- `adapter.capabilities.json`
+- `docs/FREE_TIER_TRUST_POLICY.md`
+- `examples/free_tier_trust_policy.json`
+
+SDK source: `StegVerse-org/StegVerse-SDK`
+
+- `docs/FREE_TIER_METADATA_INGESTION.md`
+- `sdk.capabilities.json`
 
 Origin source: `StegVerse-Labs/Standing-Proof-Engine`
 
@@ -44,6 +61,15 @@ Master-records source: `master-records/core-lite`
 Destination: `StegVerse-002/stegguardian-wiki`
 
 - `pages/spe-v0-5-0-guardian-boundary.md`
+- `pages/llm-free-tier-trust-chain.md`
+- `LLM_FREE_TIER_TRUST_CHAIN_STATUS.md`
+- `scripts/check_llm_free_tier_trust_chain_page.py`
+
+## Verification
+
+```text
+python scripts/check_llm_free_tier_trust_chain_page.py
+```
 
 ## Publishing Automation
 
@@ -62,6 +88,8 @@ Before continuing any StegGuardian wiki task, check this file first and treat it
 
 SPE v0.5.0 records receipt-chain reconstructability and master-records emission. It does not itself authorize enforcement; commit-time standing remains required.
 
+The LLM free-tier trust-chain page is downstream propagation awareness only. It does not create guardian enforcement authority, provider authority, execution authority, permanent retention, replay standing, reconstruction standing, or upgrade-based admissibility.
+
 ## Remaining Open Check
 
-Workflow/tag verification remains outside this local propagation pass.
+Workflow/tag verification remains outside this local propagation pass. README linking remains optional because the propagation page, status file, checker, and handoff now record the installed state.
