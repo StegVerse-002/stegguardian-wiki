@@ -10,7 +10,7 @@ Standing-Proof-Engine v0.5.0 guardian-boundary propagation has been recorded.
 
 LLM free-tier trust-chain downstream propagation has also been recorded as awareness-only documentation.
 
-Machine-readable page index metadata has been updated for the LLM free-tier trust-chain page.
+Machine-readable page index metadata has been updated for the LLM free-tier trust-chain page and the StegGuardian verification status page.
 
 Pages workflow validation now checks the LLM free-tier trust-chain page and page index before deployment.
 
@@ -21,6 +21,10 @@ Workflow verification status can be checked locally with `python scripts/check_w
 The blocked aggregate workflow rewrite is recorded in `docs/GUARDIAN_AGGREGATE_WORKFLOW_DELTA.md` and checked by `python scripts/check_aggregate_workflow_delta.py`.
 
 User-observed workflow success is recorded in `USER_OBSERVED_WORKFLOW_EVIDENCE.md` and checked by `python scripts/check_user_observed_workflow_evidence.py`.
+
+Public URL verification state is recorded in `PUBLIC_URL_VERIFICATION_STATUS.md` and checked by `python scripts/check_public_url_verification_status.py`.
+
+StegGuardian verification status is recorded in `docs/STEGGUARDIAN_VERIFICATION_STATUS.md`, indexed in `data/page-index.json`, and checked by `python scripts/check_stegguardian_verification_status.py`.
 
 All local Guardian propagation checks can be run with `python scripts/check_guardian_local_state.py`.
 
@@ -78,9 +82,11 @@ Destination: `StegVerse-002/stegguardian-wiki`
 
 - `pages/spe-v0-5-0-guardian-boundary.md`
 - `pages/llm-free-tier-trust-chain.md`
+- `docs/STEGGUARDIAN_VERIFICATION_STATUS.md`
 - `LLM_FREE_TIER_TRUST_CHAIN_STATUS.md`
+- `PUBLIC_URL_VERIFICATION_STATUS.md`
 - `scripts/check_llm_free_tier_trust_chain_page.py`
-- `data/page-index.json` updated with LLM free-tier trust-chain entry
+- `data/page-index.json` updated with LLM free-tier trust-chain and verification status entries
 - `scripts/check_page_index.py`
 - `scripts/check_pages_workflow_validation.py`
 - `scripts/check_workflow_verification_status.py`
@@ -88,6 +94,8 @@ Destination: `StegVerse-002/stegguardian-wiki`
 - `scripts/check_aggregate_workflow_delta.py`
 - `USER_OBSERVED_WORKFLOW_EVIDENCE.md`
 - `scripts/check_user_observed_workflow_evidence.py`
+- `scripts/check_public_url_verification_status.py`
+- `scripts/check_stegguardian_verification_status.py`
 - `scripts/check_guardian_local_state.py`
 - `.github/workflows/pages.yml` validates both checkers and links the page in the static index
 - `WORKFLOW_VERIFICATION_STATUS.md`
@@ -108,6 +116,8 @@ python scripts/check_pages_workflow_validation.py
 python scripts/check_workflow_verification_status.py
 python scripts/check_aggregate_workflow_delta.py
 python scripts/check_user_observed_workflow_evidence.py
+python scripts/check_public_url_verification_status.py
+python scripts/check_stegguardian_verification_status.py
 ```
 
 ## Publishing Automation
@@ -127,8 +137,8 @@ Before continuing any StegGuardian wiki task, check this file first and treat it
 
 SPE v0.5.0 records receipt-chain reconstructability and master-records emission. It does not itself authorize enforcement; commit-time standing remains required.
 
-The LLM free-tier trust-chain page is downstream propagation awareness only. It does not create guardian enforcement authority, provider authority, execution authority, permanent retention, replay standing, reconstruction standing, or upgrade-based admissibility.
+The LLM free-tier trust-chain page and verification status page are downstream propagation and evidence-awareness records only. They do not create guardian enforcement authority, provider authority, execution authority, connector-confirmed workflow metadata, public deployment verification, permanent retention, replay standing, reconstruction standing, or upgrade-based admissibility.
 
 ## Remaining Open Check
 
-Workflow/tag verification remains connector-unconfirmed because commit-specific connector workflow/status queries did not return the user-observed successful runs. README linking remains optional because the propagation page, status file, checker, index entry, workflow validation, workflow configuration checker, workflow verification status checker, aggregate workflow delta checker, user-observed workflow evidence checker, aggregate local checker, runbook, and handoff now record the installed state.
+Workflow/tag verification remains connector-unconfirmed because commit-specific connector workflow/status queries did not return the user-observed successful runs. Public URL verification remains pending. README linking remains optional because the propagation page, verification status page, status files, checkers, index entries, workflow validation, workflow configuration checker, workflow verification status checker, aggregate workflow delta checker, user-observed workflow evidence checker, aggregate local checker, runbook, and handoff now record the installed state.
