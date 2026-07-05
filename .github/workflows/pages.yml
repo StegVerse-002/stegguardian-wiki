@@ -23,6 +23,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Validate LLM free-tier trust page
+        run: python scripts/check_llm_free_tier_trust_chain_page.py
+      - name: Validate page index
+        run: python scripts/check_page_index.py
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Prepare static site
@@ -51,6 +55,7 @@ jobs:
             <a href="pages/account-federation.md">Account Federation</a>
             <a href="pages/device-bound-guardian-enforcement.md">Device Bound Guardian Enforcement</a>
             <a href="pages/entity-sandbox-runner-repair-reentry-flow.md">Entity Sandbox Runner Repair Reentry Flow</a>
+            <a href="pages/llm-free-tier-trust-chain.md">LLM Free Tier Trust Chain</a>
             <h2>Machine-readable records</h2>
             <a href="data/page-index.json">Page Index</a>
             <h2>Linked Wikis</h2>
