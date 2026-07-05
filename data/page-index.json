@@ -59,6 +59,23 @@
         "reconstruction_standing": false,
         "upgrade_based_admissibility": false
       }
+    },
+    {
+      "title": "StegGuardian Verification Status",
+      "path": "docs/STEGGUARDIAN_VERIFICATION_STATUS.md",
+      "status": "installed",
+      "activation_state": "local_validation_pass_user_observed_workflow_success_connector_unconfirmed",
+      "checks": [
+        "python scripts/check_guardian_local_state.py",
+        "python scripts/check_stegguardian_verification_status.py"
+      ],
+      "non_claims": {
+        "connector_confirmed_workflow_metadata": false,
+        "public_deployment_verification": false,
+        "tag_verification": false,
+        "guardian_enforcement_authority": false,
+        "execution_authority": false
+      }
     }
   ],
   "receipts": [
