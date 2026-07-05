@@ -36,6 +36,29 @@
       "status": "installed",
       "source_repo": "StegGhost/entity-sandbox-runner",
       "activation_state": "pending_external_evidence"
+    },
+    {
+      "title": "LLM Free Tier Trust Chain",
+      "path": "pages/llm-free-tier-trust-chain.md",
+      "status": "installed",
+      "source_repo": "StegVerse-Labs/admissibility-wiki",
+      "source_chain": [
+        "StegVerse-org/LLM-adapter",
+        "StegVerse-Labs/Site",
+        "StegVerse-org/StegVerse-SDK",
+        "StegVerse-Labs/admissibility-wiki",
+        "GCAT-BCAT-Engine/Publisher"
+      ],
+      "activation_state": "downstream_propagation_awareness_only",
+      "non_claims": {
+        "guardian_enforcement_authority": false,
+        "provider_authority": false,
+        "execution_authority": false,
+        "permanent_retention": false,
+        "replay_standing": false,
+        "reconstruction_standing": false,
+        "upgrade_based_admissibility": false
+      }
     }
   ],
   "receipts": [
