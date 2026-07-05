@@ -1,0 +1,40 @@
+import subprocess
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+
+COMMANDS = [
+    [sys.executable, "scripts/check_llm_free_tier_trust_chain_page.py"],
+    [sys.executable, "scripts/check_page_index.py"],
+    [sys.executable, "scripts/check_pages_workflow_validation.py"],
+    [sys.executable, "scripts/check_workflow_verification_status.py"],
+]
+
+
+def main() -> int:
+    failures = []
+    for command in COMMANDS:
+        result = subprocess.run(
+            command,
+            cwd=ROOT,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            check=False,
+        )
+        print("$ " + " ".join(command))
+        print(result.stdout.rstrip())
+        if result.returncode != 0:
+            failures.append(" ".join(command))
+
+    if failures:
+        print("STEGGUARDIAN LOCAL STATE: FAIL - " + "; ".join(failures))
+        return 1
+
+    print("STEGGUARDIAN LOCAL STATE: PASS")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
