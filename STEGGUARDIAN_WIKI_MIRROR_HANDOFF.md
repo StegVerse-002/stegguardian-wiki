@@ -14,6 +14,8 @@ Machine-readable page index metadata has been updated for the LLM free-tier trus
 
 Pages workflow validation now checks the LLM free-tier trust-chain page and page index before deployment.
 
+Workflow configuration can be checked locally with `python scripts/check_pages_workflow_validation.py`.
+
 Workflow execution evidence is still pending; `WORKFLOW_VERIFICATION_STATUS.md` and `docs/GUARDIAN_WORKFLOW_VERIFICATION_RUNBOOK.md` record the checked commits and re-check process.
 
 ## Public URL
@@ -72,6 +74,7 @@ Destination: `StegVerse-002/stegguardian-wiki`
 - `scripts/check_llm_free_tier_trust_chain_page.py`
 - `data/page-index.json` updated with LLM free-tier trust-chain entry
 - `scripts/check_page_index.py`
+- `scripts/check_pages_workflow_validation.py`
 - `.github/workflows/pages.yml` validates both checkers and links the page in the static index
 - `WORKFLOW_VERIFICATION_STATUS.md`
 - `docs/GUARDIAN_WORKFLOW_VERIFICATION_RUNBOOK.md`
@@ -81,6 +84,7 @@ Destination: `StegVerse-002/stegguardian-wiki`
 ```text
 python scripts/check_llm_free_tier_trust_chain_page.py
 python scripts/check_page_index.py
+python scripts/check_pages_workflow_validation.py
 ```
 
 ## Publishing Automation
@@ -104,4 +108,4 @@ The LLM free-tier trust-chain page is downstream propagation awareness only. It 
 
 ## Remaining Open Check
 
-Workflow/tag verification remains pending because no workflow runs were found for the checked commits at check time. README linking remains optional because the propagation page, status file, checker, index entry, workflow validation, workflow verification status, runbook, and handoff now record the installed state.
+Workflow/tag verification remains pending because no workflow runs were found for the checked commits at check time. README linking remains optional because the propagation page, status file, checker, index entry, workflow validation, workflow configuration checker, workflow verification status, runbook, and handoff now record the installed state.
