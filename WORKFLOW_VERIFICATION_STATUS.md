@@ -1,15 +1,16 @@
 # Workflow Verification Status
 
-## Current commit checked
+## Current commits checked
 
 ```text
 3e933dd638444d6972369fb5ad9431c481711b38
+8c42831aad9bc95fd5f1ec6abfe3250bba9a45a5
 ```
 
 ## Result
 
 ```text
-workflow_runs_for_commit: none found at check time
+workflow_runs_for_checked_commits: none found at check time
 status: pending workflow execution evidence
 ```
 
@@ -19,6 +20,17 @@ status: pending workflow execution evidence
 .github/workflows/pages.yml
   -> python scripts/check_llm_free_tier_trust_chain_page.py
   -> python scripts/check_page_index.py
+```
+
+## Local evidence state
+
+```text
+page: pages/llm-free-tier-trust-chain.md installed
+status: LLM_FREE_TIER_TRUST_CHAIN_STATUS.md installed
+index: data/page-index.json includes LLM Free Tier Trust Chain entry
+checker: scripts/check_llm_free_tier_trust_chain_page.py installed
+checker: scripts/check_page_index.py installed
+handoff: STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md records installed state
 ```
 
 ## Boundary
