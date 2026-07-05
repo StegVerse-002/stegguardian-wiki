@@ -9,6 +9,7 @@ COMMANDS = [
     [sys.executable, "scripts/check_page_index.py"],
     [sys.executable, "scripts/check_pages_workflow_validation.py"],
     [sys.executable, "scripts/check_workflow_verification_status.py"],
+    [sys.executable, "scripts/check_aggregate_workflow_delta.py"],
 ]
 
 
