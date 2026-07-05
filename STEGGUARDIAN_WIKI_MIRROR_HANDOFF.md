@@ -12,6 +12,8 @@ LLM free-tier trust-chain downstream propagation has also been recorded as aware
 
 Machine-readable page index metadata has been updated for the LLM free-tier trust-chain page.
 
+Pages workflow validation now checks the LLM free-tier trust-chain page and page index before deployment.
+
 ## Public URL
 
 - `https://stegverse-002.github.io/stegguardian-wiki/`
@@ -68,6 +70,7 @@ Destination: `StegVerse-002/stegguardian-wiki`
 - `scripts/check_llm_free_tier_trust_chain_page.py`
 - `data/page-index.json` updated with LLM free-tier trust-chain entry
 - `scripts/check_page_index.py`
+- `.github/workflows/pages.yml` validates both checkers and links the page in the static index
 
 ## Verification
 
@@ -97,4 +100,4 @@ The LLM free-tier trust-chain page is downstream propagation awareness only. It 
 
 ## Remaining Open Check
 
-Workflow/tag verification remains outside this local propagation pass. README linking remains optional because the propagation page, status file, checker, index entry, and handoff now record the installed state.
+Workflow/tag verification remains outside this local propagation pass. README linking remains optional because the propagation page, status file, checker, index entry, workflow validation, and handoff now record the installed state.
