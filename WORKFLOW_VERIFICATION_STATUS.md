@@ -7,6 +7,7 @@
 8c42831aad9bc95fd5f1ec6abfe3250bba9a45a5
 0cb1f41d784bf62e5238e1909d6b8b5449a2fa4e
 340f4c29fe9c86c37c48a8832727ead88b7ebadb
+28acb477dbc06dbd8cca4dd2951727ba2094fba3
 ```
 
 ## Result
@@ -22,6 +23,9 @@ status: pending workflow execution evidence
 .github/workflows/pages.yml
   -> python scripts/check_llm_free_tier_trust_chain_page.py
   -> python scripts/check_page_index.py
+
+local workflow configuration checker
+  -> python scripts/check_pages_workflow_validation.py
 ```
 
 ## Local evidence state
@@ -32,6 +36,7 @@ status: LLM_FREE_TIER_TRUST_CHAIN_STATUS.md installed
 index: data/page-index.json includes LLM Free Tier Trust Chain entry
 checker: scripts/check_llm_free_tier_trust_chain_page.py installed
 checker: scripts/check_page_index.py installed
+checker: scripts/check_pages_workflow_validation.py installed
 runbook: docs/GUARDIAN_WORKFLOW_VERIFICATION_RUNBOOK.md installed
 handoff: STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md records installed state
 ```
