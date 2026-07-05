@@ -8,12 +8,14 @@
 0cb1f41d784bf62e5238e1909d6b8b5449a2fa4e
 340f4c29fe9c86c37c48a8832727ead88b7ebadb
 28acb477dbc06dbd8cca4dd2951727ba2094fba3
+981784b7faa964d68fc4c0411356379f422d9ee7
 ```
 
 ## Result
 
 ```text
 workflow_runs_for_checked_commits: none found at check time
+combined_statuses_for_latest_commit: none found at check time
 status: pending workflow execution evidence
 ```
 
@@ -47,4 +49,4 @@ This status file does not claim workflow success, public deployment success, tag
 
 ## Next verification action
 
-Re-check workflow runs for the latest commit after GitHub Actions has executed, then record the run id and conclusion if available.
+Re-check workflow runs and combined status for the latest commit after GitHub Actions has executed, then record the run id and conclusion if available.
