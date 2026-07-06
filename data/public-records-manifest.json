@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_type": "stegguardian_public_records_manifest",
+  "repo": "StegVerse-002/stegguardian-wiki",
+  "base_url": "https://stegverse-002.github.io/stegguardian-wiki/",
+  "records": [
+    {
+      "path": "data/page-index.json",
+      "url": "https://stegverse-002.github.io/stegguardian-wiki/data/page-index.json",
+      "installed": true,
+      "public_exposure_state": "published_by_current_static_path"
+    },
+    {
+      "path": "data/page-metadata.schema.json",
+      "url": "https://stegverse-002.github.io/stegguardian-wiki/data/page-metadata.schema.json",
+      "installed": true,
+      "public_exposure_state": "pending_static_path_publication"
+    },
+    {
+      "path": "data/page-relationship-graph.json",
+      "url": "https://stegverse-002.github.io/stegguardian-wiki/data/page-relationship-graph.json",
+      "installed": true,
+      "public_exposure_state": "pending_static_path_publication"
+    }
+  ],
+  "non_claims": {
+    "public_url_verified": false,
+    "connector_confirmed_workflow_metadata": false,
+    "guardian_enforcement_authority": false,
+    "execution_authority": false,
+    "commit_time_standing": false
+  }
+}
