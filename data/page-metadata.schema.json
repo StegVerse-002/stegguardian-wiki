@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://stegverse-002.github.io/stegguardian-wiki/data/page-metadata.schema.json",
+  "title": "StegGuardian Page Metadata",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "path",
+    "status",
+    "authority",
+    "source_repo",
+    "verification",
+    "non_claims",
+    "related_pages"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+    "title": {"type": "string", "minLength": 1},
+    "path": {"type": "string", "minLength": 1},
+    "status": {"type": "string", "enum": ["installed", "candidate", "pending", "superseded"]},
+    "authority": {"type": "string", "enum": ["awareness_only", "boundary_note", "vocabulary_note", "verification_status", "prototype_note"]},
+    "source_repo": {"type": "string", "minLength": 1},
+    "source_chain": {"type": "array", "items": {"type": "string"}},
+    "transition_table_cells": {"type": "array", "items": {"type": "string"}},
+    "evidence_required": {"type": "array", "items": {"type": "string"}},
+    "verification": {
+      "type": "object",
+      "required": ["local", "workflow", "public_url"],
+      "properties": {
+        "local": {"type": "string"},
+        "workflow": {"type": "string"},
+        "public_url": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "non_claims": {
+      "type": "object",
+      "additionalProperties": {"type": "boolean"}
+    },
+    "related_pages": {"type": "array", "items": {"type": "string"}},
+    "supersedes": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}
