@@ -8,19 +8,25 @@
       "path": "data/page-index.json",
       "url": "https://stegverse-002.github.io/stegguardian-wiki/data/page-index.json",
       "installed": true,
-      "public_exposure_state": "published_by_current_static_path"
+      "public_exposure_state": "published_by_current_workflow"
     },
     {
       "path": "data/page-metadata.schema.json",
       "url": "https://stegverse-002.github.io/stegguardian-wiki/data/page-metadata.schema.json",
       "installed": true,
-      "public_exposure_state": "pending_static_path_publication"
+      "public_exposure_state": "published_by_current_workflow"
     },
     {
       "path": "data/page-relationship-graph.json",
       "url": "https://stegverse-002.github.io/stegguardian-wiki/data/page-relationship-graph.json",
       "installed": true,
-      "public_exposure_state": "pending_static_path_publication"
+      "public_exposure_state": "published_by_current_workflow"
+    },
+    {
+      "path": "data/public-records-manifest.json",
+      "url": "https://stegverse-002.github.io/stegguardian-wiki/data/public-records-manifest.json",
+      "installed": true,
+      "public_exposure_state": "published_by_current_workflow"
     }
   ],
   "non_claims": {
