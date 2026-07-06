@@ -23,19 +23,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Validate LLM free-tier trust page
-        run: python scripts/check_llm_free_tier_trust_chain_page.py
-      - name: Validate page index
-        run: python scripts/check_page_index.py
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate Guardian local state
+        run: python scripts/check_guardian_local_state.py
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Prepare static site
         run: |
-          mkdir -p _site/pages _site/data _site/receipts
+          mkdir -p _site/pages _site/data _site/receipts _site/docs
           cp README.md _site/README.md
-          cp data/page-index.json _site/data/page-index.json
+          cp data/*.json _site/data/
           cp receipts/*.json _site/receipts/
           cp pages/*.md _site/pages/
+          cp docs/*.md _site/docs/
           cat > _site/index.html <<'HTML'
           <!doctype html>
           <html lang="en">
@@ -58,6 +61,11 @@ jobs:
             <a href="pages/llm-free-tier-trust-chain.md">LLM Free Tier Trust Chain</a>
             <h2>Machine-readable records</h2>
             <a href="data/page-index.json">Page Index</a>
+            <a href="data/page-metadata.schema.json">Page Metadata Schema</a>
+            <a href="data/page-relationship-graph.json">Page Relationship Graph</a>
+            <a href="data/public-records-manifest.json">Public Records Manifest</a>
+            <h2>Verification</h2>
+            <a href="docs/STEGGUARDIAN_VERIFICATION_STATUS.md">StegGuardian Verification Status</a>
             <h2>Linked Wikis</h2>
             <a href="https://stegverse-labs.github.io/stegtalk-wiki/">StegTalk Wiki</a>
             <a href="https://stegverse-labs.github.io/admissibility-wiki/">Admissibility Wiki</a>
