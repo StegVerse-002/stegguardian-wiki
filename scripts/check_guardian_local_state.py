@@ -10,6 +10,7 @@ COMMANDS = [
     [sys.executable, "scripts/check_page_relationship_graph.py"],
     [sys.executable, "scripts/check_machine_record_publication_status.py"],
     [sys.executable, "scripts/check_public_records_manifest.py"],
+    [sys.executable, "scripts/check_observed_machine_record_publication_evidence.py"],
     [sys.executable, "scripts/check_pages_workflow_validation.py"],
     [sys.executable, "scripts/check_workflow_verification_status.py"],
     [sys.executable, "scripts/check_aggregate_workflow_delta.py"],
