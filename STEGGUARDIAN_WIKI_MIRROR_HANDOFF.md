@@ -16,7 +16,7 @@ Shared page metadata schema and the first StegGuardian relationship graph are in
 
 Machine-readable record exposure is tracked by `docs/MACHINE_RECORD_PUBLICATION_STATUS.md` and `data/public-records-manifest.json`.
 
-Pages workflow validation now checks the LLM free-tier trust-chain page and page index before deployment.
+Pages workflow now publishes the page index, metadata schema, relationship graph, public-records manifest, and verification status document.
 
 Workflow configuration can be checked locally with `python scripts/check_pages_workflow_validation.py`.
 
@@ -28,15 +28,15 @@ User-observed workflow success is recorded in `USER_OBSERVED_WORKFLOW_EVIDENCE.m
 
 Public URL verification state is recorded in `PUBLIC_URL_VERIFICATION_STATUS.md` and checked by `python scripts/check_public_url_verification_status.py`.
 
-StegGuardian verification status is recorded in `docs/STEGGUARDIAN_VERIFICATION_STATUS.md`, indexed in `data/page-index.json`, and checked by `python scripts/check_stegguardian_verification_status.py`.
+StegGuardian verification status is recorded in `docs/STEGGUARDIAN_VERIFICATION_STATUS.md`, indexed in `data/page-index.json`, published by the Pages workflow, and checked by `python scripts/check_stegguardian_verification_status.py`.
 
-The page relationship graph is recorded in `data/page-relationship-graph.json` and checked by `python scripts/check_page_relationship_graph.py`.
+The page relationship graph is recorded in `data/page-relationship-graph.json`, published by the Pages workflow, and checked by `python scripts/check_page_relationship_graph.py`.
 
-The public records manifest is recorded in `data/public-records-manifest.json` and checked by `python scripts/check_public_records_manifest.py`.
+The public records manifest is recorded in `data/public-records-manifest.json`, published by the Pages workflow, and checked by `python scripts/check_public_records_manifest.py`.
 
 All local Guardian propagation and graph checks can be run with `python scripts/check_guardian_local_state.py`.
 
-Workflow execution evidence has user-observed success but remains connector-unconfirmed; `WORKFLOW_VERIFICATION_STATUS.md`, `USER_OBSERVED_WORKFLOW_EVIDENCE.md`, and `docs/GUARDIAN_WORKFLOW_VERIFICATION_RUNBOOK.md` record the split evidence state.
+Workflow execution evidence for the newest machine-record publication commit is still connector-unconfirmed; earlier user-observed success remains recorded in `WORKFLOW_VERIFICATION_STATUS.md`, `USER_OBSERVED_WORKFLOW_EVIDENCE.md`, and `docs/GUARDIAN_WORKFLOW_VERIFICATION_RUNBOOK.md`.
 
 ## Public URL
 
@@ -112,7 +112,7 @@ Destination: `StegVerse-002/stegguardian-wiki`
 - `scripts/check_public_url_verification_status.py`
 - `scripts/check_stegguardian_verification_status.py`
 - `scripts/check_guardian_local_state.py`
-- `.github/workflows/pages.yml` validates both checkers and links the page in the static index
+- `.github/workflows/pages.yml` validates and publishes machine-readable records and verification status
 - `WORKFLOW_VERIFICATION_STATUS.md`
 - `docs/GUARDIAN_WORKFLOW_VERIFICATION_RUNBOOK.md`
 
@@ -141,6 +141,7 @@ python scripts/check_stegguardian_verification_status.py
 ## Publishing Automation
 
 - `github/workflows/pages.yml` displayed without the leading dot; actual repository path includes the leading dot.
+- The workflow publishes `data/page-index.json`, `data/page-metadata.schema.json`, `data/page-relationship-graph.json`, `data/public-records-manifest.json`, and `docs/STEGGUARDIAN_VERIFICATION_STATUS.md` into the static site output.
 
 ## Linked Wikis
 
@@ -159,4 +160,4 @@ The LLM free-tier trust-chain page, verification status page, metadata schema, r
 
 ## Remaining Open Check
 
-Workflow/tag verification remains connector-unconfirmed because commit-specific connector workflow/status queries did not return the user-observed successful runs. Public URL verification remains pending. Static exposure of `docs/STEGGUARDIAN_VERIFICATION_STATUS.md`, `data/page-metadata.schema.json`, `data/page-relationship-graph.json`, and `data/public-records-manifest.json` remains a publication-path follow-up unless the Pages workflow publishes those paths. README linking remains optional because the propagation page, verification status page, metadata schema, relationship graph, public-records manifest, status files, checkers, index entries, workflow validation, workflow configuration checker, workflow verification status checker, aggregate workflow delta checker, user-observed workflow evidence checker, aggregate local checker, runbook, and handoff now record the installed state.
+Workflow/tag verification remains connector-unconfirmed for the newest machine-record publication commit because commit-specific connector workflow queries did not return a run yet. Public URL verification remains pending. README linking remains optional because the propagation page, verification status page, metadata schema, relationship graph, public-records manifest, status files, checkers, index entries, workflow publication wiring, workflow validation, workflow configuration checker, workflow verification status checker, aggregate workflow delta checker, user-observed workflow evidence checker, aggregate local checker, runbook, and handoff now record the installed state.
