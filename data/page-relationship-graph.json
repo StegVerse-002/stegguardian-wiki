@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.0.0",
+  "graph_type": "stegguardian_page_relationship_graph",
+  "repo": "StegVerse-002/stegguardian-wiki",
+  "nodes": [
+    {
+      "id": "stegtalk-guardian-account-boundary",
+      "title": "StegTalk Guardian and Account Boundary",
+      "path": "pages/stegtalk-guardian-account-boundary.md",
+      "authority": "boundary_note"
+    },
+    {
+      "id": "guardian-account-boundary-vocabulary",
+      "title": "Guardian Account Boundary Vocabulary",
+      "path": "pages/guardian-account-boundary-vocabulary.md",
+      "authority": "vocabulary_note"
+    },
+    {
+      "id": "recovery-authority",
+      "title": "Recovery Authority",
+      "path": "pages/recovery-authority.md",
+      "authority": "boundary_note"
+    },
+    {
+      "id": "account-federation",
+      "title": "Account Federation",
+      "path": "pages/account-federation.md",
+      "authority": "boundary_note"
+    },
+    {
+      "id": "device-bound-guardian-enforcement",
+      "title": "Device Bound Guardian Enforcement",
+      "path": "pages/device-bound-guardian-enforcement.md",
+      "authority": "boundary_note"
+    },
+    {
+      "id": "entity-sandbox-runner-repair-reentry-flow",
+      "title": "Entity Sandbox Runner Repair Reentry Flow",
+      "path": "pages/entity-sandbox-runner-repair-reentry-flow.md",
+      "authority": "prototype_note"
+    },
+    {
+      "id": "llm-free-tier-trust-chain",
+      "title": "LLM Free Tier Trust Chain",
+      "path": "pages/llm-free-tier-trust-chain.md",
+      "authority": "awareness_only"
+    },
+    {
+      "id": "stegguardian-verification-status",
+      "title": "StegGuardian Verification Status",
+      "path": "docs/STEGGUARDIAN_VERIFICATION_STATUS.md",
+      "authority": "verification_status"
+    }
+  ],
+  "edges": [
+    {
+      "from": "stegtalk-guardian-account-boundary",
+      "to": "guardian-account-boundary-vocabulary",
+      "relationship": "uses_vocabulary"
+    },
+    {
+      "from": "stegtalk-guardian-account-boundary",
+      "to": "recovery-authority",
+      "relationship": "depends_on_boundary"
+    },
+    {
+      "from": "stegtalk-guardian-account-boundary",
+      "to": "account-federation",
+      "relationship": "depends_on_boundary"
+    },
+    {
+      "from": "stegtalk-guardian-account-boundary",
+      "to": "device-bound-guardian-enforcement",
+      "relationship": "depends_on_boundary"
+    },
+    {
+      "from": "entity-sandbox-runner-repair-reentry-flow",
+      "to": "stegtalk-guardian-account-boundary",
+      "relationship": "must_reenter_ingestion_before_authority"
+    },
+    {
+      "from": "llm-free-tier-trust-chain",
+      "to": "stegguardian-verification-status",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "stegguardian-verification-status",
+      "to": "llm-free-tier-trust-chain",
+      "relationship": "summarizes_verification_for"
+    },
+    {
+      "from": "stegguardian-verification-status",
+      "to": "entity-sandbox-runner-repair-reentry-flow",
+      "relationship": "includes_local_state_for"
+    }
+  ],
+  "non_claims": {
+    "graph_grants_authority": false,
+    "graph_confers_standing": false,
+    "graph_verifies_public_url": false,
+    "graph_replaces_commit_time_evaluation": false
+  }
+}
