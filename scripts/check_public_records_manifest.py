@@ -4,9 +4,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "data" / "public-records-manifest.json"
 REQUIRED_RECORDS = {
-    "data/page-index.json": "published_by_current_static_path",
-    "data/page-metadata.schema.json": "pending_static_path_publication",
-    "data/page-relationship-graph.json": "pending_static_path_publication",
+    "data/page-index.json": "published_by_current_workflow",
+    "data/page-metadata.schema.json": "published_by_current_workflow",
+    "data/page-relationship-graph.json": "published_by_current_workflow",
+    "data/public-records-manifest.json": "published_by_current_workflow",
 }
 REQUIRED_NON_CLAIMS = {
     "public_url_verified": False,
