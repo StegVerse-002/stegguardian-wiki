@@ -1,0 +1,69 @@
+{
+  "schema_version": "0.1.0",
+  "graph_type": "stegverse_cross_wiki_metadata_graph_seed",
+  "scope": "guardian_seed",
+  "origin_repo": "StegVerse-002/stegguardian-wiki",
+  "nodes": [
+    {
+      "id": "stegguardian-wiki",
+      "repo": "StegVerse-002/stegguardian-wiki",
+      "public_url": "https://stegverse-002.github.io/stegguardian-wiki/",
+      "role": "guardian_boundary_documentation",
+      "machine_records": [
+        "data/page-index.json",
+        "data/page-metadata.schema.json",
+        "data/page-relationship-graph.json",
+        "data/public-records-manifest.json"
+      ]
+    },
+    {
+      "id": "admissibility-wiki",
+      "repo": "StegVerse-Labs/admissibility-wiki",
+      "public_url": "https://stegverse-labs.github.io/admissibility-wiki/",
+      "role": "admissibility_and_standing_source",
+      "machine_records": []
+    },
+    {
+      "id": "stegverse-site",
+      "repo": "StegVerse-Labs/Site",
+      "public_url": "https://stegverse-labs.github.io/Site/",
+      "role": "public_ecosystem_surface",
+      "machine_records": []
+    },
+    {
+      "id": "stegtalk-wiki",
+      "repo": "StegVerse-Labs/stegtalk-wiki",
+      "public_url": "https://stegverse-labs.github.io/stegtalk-wiki/",
+      "role": "application_boundary_documentation",
+      "machine_records": []
+    }
+  ],
+  "edges": [
+    {
+      "from": "stegguardian-wiki",
+      "to": "admissibility-wiki",
+      "relationship": "derives_boundary_terms_from"
+    },
+    {
+      "from": "stegguardian-wiki",
+      "to": "stegverse-site",
+      "relationship": "publishing_mesh_peer"
+    },
+    {
+      "from": "stegguardian-wiki",
+      "to": "stegtalk-wiki",
+      "relationship": "documents_guardian_controls_for"
+    }
+  ],
+  "verification_state": {
+    "guardian_local_records": "installed",
+    "cross_wiki_public_url_confirmation": "pending",
+    "cross_wiki_machine_record_confirmation": "pending"
+  },
+  "non_claims": {
+    "cross_wiki_authority_granted": false,
+    "public_url_confirmed_by_connector": false,
+    "standing_conferred": false,
+    "execution_authority": false
+  }
+}
