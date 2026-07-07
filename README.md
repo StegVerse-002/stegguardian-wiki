@@ -4,6 +4,10 @@
 
 This repository is the StegGuardian wiki target for guardian, account, boundary, and propagation notes.
 
+## Org Boundary Note
+
+StegGuardian wiki is intentionally published from `StegVerse-002/stegguardian-wiki` because Guardian documentation belongs to the governed-entity org boundary. Linked StegVerse-Labs wikis remain part of the same ecosystem documentation mesh, but the different GitHub Pages origin is deliberate and should not be interpreted as an orphaned or drifted repo.
+
 ## Current Pages
 
 - [StegTalk Guardian and Account Boundary](pages/stegtalk-guardian-account-boundary.md)
