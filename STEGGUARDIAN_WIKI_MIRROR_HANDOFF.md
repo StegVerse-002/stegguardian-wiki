@@ -42,6 +42,10 @@ Workflow execution evidence for the newest machine-record publication commit is 
 
 - `https://stegverse-002.github.io/stegguardian-wiki/`
 
+## Org Boundary Rationale
+
+StegGuardian wiki is intentionally published from `StegVerse-002/stegguardian-wiki` because Guardian documentation belongs to the governed-entity org boundary. Linked StegVerse-Labs wikis remain part of the same ecosystem documentation mesh. The different GitHub Pages origin is deliberate and should not be interpreted as an orphaned or drifted repo.
+
 ## Source Artifacts
 
 Admissibility source: `StegVerse-Labs/admissibility-wiki`
