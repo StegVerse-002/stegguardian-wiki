@@ -7,9 +7,13 @@ REQUIRED_TEXT = [
     "name: Publish StegGuardian Wiki",
     "python scripts/check_llm_free_tier_trust_chain_page.py",
     "python scripts/check_page_index.py",
+    "python scripts/check_page_relationship_graph.py",
+    "python scripts/check_cross_wiki_metadata_graph.py",
     "pages/llm-free-tier-trust-chain.md",
     "LLM Free Tier Trust Chain",
     "data/page-index.json",
+    "data/cross-wiki-metadata-graph.json",
+    "Cross-Wiki Metadata Graph",
     "uses: actions/upload-pages-artifact@v3",
     "uses: actions/deploy-pages@v4",
 ]
