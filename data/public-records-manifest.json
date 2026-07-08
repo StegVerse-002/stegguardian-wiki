@@ -23,6 +23,12 @@
       "public_exposure_state": "published_by_current_workflow"
     },
     {
+      "path": "data/cross-wiki-metadata-graph.json",
+      "url": "https://stegverse-002.github.io/stegguardian-wiki/data/cross-wiki-metadata-graph.json",
+      "installed": true,
+      "public_exposure_state": "published_by_current_workflow"
+    },
+    {
       "path": "data/public-records-manifest.json",
       "url": "https://stegverse-002.github.io/stegguardian-wiki/data/public-records-manifest.json",
       "installed": true,
