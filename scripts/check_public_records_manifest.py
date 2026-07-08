@@ -7,6 +7,7 @@ REQUIRED_RECORDS = {
     "data/page-index.json": "published_by_current_workflow",
     "data/page-metadata.schema.json": "published_by_current_workflow",
     "data/page-relationship-graph.json": "published_by_current_workflow",
+    "data/cross-wiki-metadata-graph.json": "published_by_current_workflow",
     "data/public-records-manifest.json": "published_by_current_workflow",
 }
 REQUIRED_NON_CLAIMS = {
