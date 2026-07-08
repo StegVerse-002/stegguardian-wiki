@@ -33,18 +33,23 @@ jobs:
         run: python scripts/check_cross_wiki_metadata_graph.py
       - name: Validate public records manifest
         run: python scripts/check_public_records_manifest.py
+      - name: Validate Pages deployment trigger status
+        run: python scripts/check_pages_deployment_trigger_status.py
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Prepare static site
         run: |
           mkdir -p _site/pages _site/data _site/receipts _site/docs
+          touch _site/.nojekyll
           cp README.md _site/README.md
           cp data/page-index.json _site/data/page-index.json
           cp data/page-metadata.schema.json _site/data/page-metadata.schema.json
           cp data/page-relationship-graph.json _site/data/page-relationship-graph.json
           cp data/cross-wiki-metadata-graph.json _site/data/cross-wiki-metadata-graph.json
+          cp data/pages-deployment-trigger-status.json _site/data/pages-deployment-trigger-status.json
           cp data/public-records-manifest.json _site/data/public-records-manifest.json
           cp docs/STEGGUARDIAN_VERIFICATION_STATUS.md _site/docs/STEGGUARDIAN_VERIFICATION_STATUS.md
+          cp docs/PAGES_DEPLOYMENT_TRIGGER_DIAGNOSIS.md _site/docs/PAGES_DEPLOYMENT_TRIGGER_DIAGNOSIS.md
           cp receipts/*.json _site/receipts/
           cp pages/*.md _site/pages/
           cat > _site/index.html <<'HTML'
@@ -68,11 +73,13 @@ jobs:
             <a href="pages/entity-sandbox-runner-repair-reentry-flow.md">Entity Sandbox Runner Repair Reentry Flow</a>
             <a href="pages/llm-free-tier-trust-chain.md">LLM Free Tier Trust Chain</a>
             <a href="docs/STEGGUARDIAN_VERIFICATION_STATUS.md">StegGuardian Verification Status</a>
+            <a href="docs/PAGES_DEPLOYMENT_TRIGGER_DIAGNOSIS.md">Pages Deployment Trigger Diagnosis</a>
             <h2>Machine-readable records</h2>
             <a href="data/page-index.json">Page Index</a>
             <a href="data/page-metadata.schema.json">Page Metadata Schema</a>
             <a href="data/page-relationship-graph.json">Page Relationship Graph</a>
             <a href="data/cross-wiki-metadata-graph.json">Cross-Wiki Metadata Graph</a>
+            <a href="data/pages-deployment-trigger-status.json">Pages Deployment Trigger Status</a>
             <a href="data/public-records-manifest.json">Public Records Manifest</a>
             <h2>Linked Wikis</h2>
             <a href="https://stegverse-labs.github.io/stegtalk-wiki/">StegTalk Wiki</a>
