@@ -11,6 +11,7 @@ COMMANDS = [
     [sys.executable, "scripts/check_cross_wiki_metadata_graph.py"],
     [sys.executable, "scripts/check_machine_record_publication_status.py"],
     [sys.executable, "scripts/check_public_records_manifest.py"],
+    [sys.executable, "scripts/check_pages_deployment_trigger_status.py"],
     [sys.executable, "scripts/check_observed_machine_record_publication_evidence.py"],
     [sys.executable, "scripts/check_handoff_delta_observed_publication_success.py"],
     [sys.executable, "scripts/check_public_url_machine_records_delta.py"],
