@@ -16,11 +16,13 @@ Shared page metadata schema, the StegGuardian relationship graph, and the cross-
 
 Machine-readable record exposure is tracked by `docs/MACHINE_RECORD_PUBLICATION_STATUS.md` and `data/public-records-manifest.json`.
 
-Pages workflow now publishes the page index, metadata schema, relationship graph, cross-wiki metadata graph, public-records manifest, and verification status document.
+Pages workflow now publishes the page index, metadata schema, relationship graph, cross-wiki metadata graph, Pages deployment trigger status, public-records manifest, Pages deployment diagnosis document, and verification status document.
 
 Workflow configuration can be checked locally with `python scripts/check_pages_workflow_validation.py`.
 
 Workflow verification status can be checked locally with `python scripts/check_workflow_verification_status.py`.
+
+Pages deployment trigger diagnosis is recorded in `data/pages-deployment-trigger-status.json` and `docs/PAGES_DEPLOYMENT_TRIGGER_DIAGNOSIS.md`, and checked by `python scripts/check_pages_deployment_trigger_status.py`.
 
 The blocked aggregate workflow rewrite is recorded in `docs/GUARDIAN_AGGREGATE_WORKFLOW_DELTA.md` and checked by `python scripts/check_aggregate_workflow_delta.py`.
 
@@ -97,15 +99,18 @@ Destination: `StegVerse-002/stegguardian-wiki`
 - `pages/spe-v0-5-0-guardian-boundary.md`
 - `pages/llm-free-tier-trust-chain.md`
 - `docs/STEGGUARDIAN_VERIFICATION_STATUS.md`
+- `docs/PAGES_DEPLOYMENT_TRIGGER_DIAGNOSIS.md`
 - `LLM_FREE_TIER_TRUST_CHAIN_STATUS.md`
 - `PUBLIC_URL_VERIFICATION_STATUS.md`
 - `docs/MACHINE_RECORD_PUBLICATION_STATUS.md`
 - `data/page-metadata.schema.json`
 - `data/page-relationship-graph.json`
 - `data/cross-wiki-metadata-graph.json`
+- `data/pages-deployment-trigger-status.json`
 - `data/public-records-manifest.json`
 - `scripts/check_page_relationship_graph.py`
 - `scripts/check_cross_wiki_metadata_graph.py`
+- `scripts/check_pages_deployment_trigger_status.py`
 - `scripts/check_public_records_manifest.py`
 - `scripts/check_machine_record_publication_status.py`
 - `scripts/check_llm_free_tier_trust_chain_page.py`
@@ -120,7 +125,7 @@ Destination: `StegVerse-002/stegguardian-wiki`
 - `scripts/check_public_url_verification_status.py`
 - `scripts/check_stegguardian_verification_status.py`
 - `scripts/check_guardian_local_state.py`
-- `.github/workflows/pages.yml` validates and publishes machine-readable records, cross-wiki graph, and verification status
+- `.github/workflows/pages.yml` validates and publishes machine-readable records, cross-wiki graph, Pages trigger diagnosis records, and verification status
 - `WORKFLOW_VERIFICATION_STATUS.md`
 - `docs/GUARDIAN_WORKFLOW_VERIFICATION_RUNBOOK.md`
 
@@ -137,6 +142,7 @@ python scripts/check_llm_free_tier_trust_chain_page.py
 python scripts/check_page_index.py
 python scripts/check_page_relationship_graph.py
 python scripts/check_cross_wiki_metadata_graph.py
+python scripts/check_pages_deployment_trigger_status.py
 python scripts/check_machine_record_publication_status.py
 python scripts/check_public_records_manifest.py
 python scripts/check_pages_workflow_validation.py
@@ -150,7 +156,8 @@ python scripts/check_stegguardian_verification_status.py
 ## Publishing Automation
 
 - `github/workflows/pages.yml` displayed without the leading dot; actual repository path includes the leading dot.
-- The workflow publishes `data/page-index.json`, `data/page-metadata.schema.json`, `data/page-relationship-graph.json`, `data/cross-wiki-metadata-graph.json`, `data/public-records-manifest.json`, and `docs/STEGGUARDIAN_VERIFICATION_STATUS.md` into the static site output.
+- The workflow publishes `data/page-index.json`, `data/page-metadata.schema.json`, `data/page-relationship-graph.json`, `data/cross-wiki-metadata-graph.json`, `data/pages-deployment-trigger-status.json`, `data/public-records-manifest.json`, `docs/PAGES_DEPLOYMENT_TRIGGER_DIAGNOSIS.md`, and `docs/STEGGUARDIAN_VERIFICATION_STATUS.md` into the static site output.
+- The workflow writes `_site/.nojekyll` before upload to avoid Jekyll processing conflicts.
 
 ## Linked Wikis
 
@@ -166,8 +173,8 @@ Before continuing any StegGuardian wiki task, check this file first and treat it
 
 SPE v0.5.0 records receipt-chain reconstructability and master-records emission. It does not itself authorize enforcement; commit-time standing remains required.
 
-The LLM free-tier trust-chain page, verification status page, metadata schema, relationship graph, cross-wiki metadata graph, and public-records manifest are downstream propagation and evidence-awareness records only. They do not create guardian enforcement authority, provider authority, execution authority, connector-confirmed workflow metadata, public deployment verification, permanent retention, replay standing, reconstruction standing, or upgrade-based admissibility.
+The LLM free-tier trust-chain page, verification status page, metadata schema, relationship graph, cross-wiki metadata graph, Pages deployment trigger status, Pages deployment diagnosis document, and public-records manifest are downstream propagation and evidence-awareness records only. They do not create guardian enforcement authority, provider authority, execution authority, connector-confirmed workflow metadata, public deployment verification, permanent retention, replay standing, reconstruction standing, or upgrade-based admissibility.
 
 ## Remaining Open Check
 
-Workflow/tag verification remains connector-unconfirmed for the newest machine-record publication commit because commit-specific connector workflow queries did not return a run yet. Public URL verification remains pending until the deployed GitHub Pages URL and machine-readable public records are externally confirmed after the current Pages workflow run.
+Workflow/tag verification remains connector-unconfirmed for the newest machine-record publication commit because commit-specific connector workflow queries did not return a run yet. Public URL verification remains pending until the deployed GitHub Pages URL and machine-readable public records are externally confirmed after the current Pages workflow run. Current diagnosis class is `deployment_trigger_unconfirmed`, meaning repo-side workflow publication wiring is installed but GitHub Pages/Actions execution has not been confirmed by available connector evidence.
