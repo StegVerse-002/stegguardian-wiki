@@ -1,0 +1,31 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "stegguardian_pages_deployment_trigger_status",
+  "repo": "StegVerse-002/stegguardian-wiki",
+  "public_url": "https://stegverse-002.github.io/stegguardian-wiki/",
+  "observed_at": "2026-07-08",
+  "diagnosis": "workflow_runs_not_connector_visible_for_recent_main_commits",
+  "status": "deployment_trigger_unconfirmed",
+  "evidence": {
+    "latest_checked_commit": "aa01ff063a3f888817c02efadcc1dd4713b41015",
+    "workflow_runs_returned": 0,
+    "combined_status_entries_returned": 0,
+    "public_search_discovery": "not_found"
+  },
+  "repo_side_state": {
+    "pages_workflow_present": true,
+    "workflow_dispatch_present": true,
+    "push_main_trigger_present": true,
+    "static_site_output_path": "_site",
+    "deploy_action": "actions/deploy-pages@v4"
+  },
+  "non_claims": {
+    "public_url_verified": false,
+    "workflow_run_confirmed": false,
+    "github_pages_settings_confirmed": false,
+    "deployment_success_confirmed": false,
+    "guardian_enforcement_authority": false,
+    "execution_authority": false
+  },
+  "next_action": "Confirm repository Settings > Pages is set to GitHub Actions or manually dispatch the existing Publish StegGuardian Wiki workflow, then update public_url_verified and workflow_run_confirmed only after the deployed URL responds."
+}
