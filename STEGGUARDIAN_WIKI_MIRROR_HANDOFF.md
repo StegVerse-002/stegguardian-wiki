@@ -12,11 +12,11 @@ LLM free-tier trust-chain downstream propagation has also been recorded as aware
 
 Machine-readable page index metadata has been updated for the LLM free-tier trust-chain page and the StegGuardian verification status page.
 
-Shared page metadata schema and the first StegGuardian relationship graph are installed.
+Shared page metadata schema, the StegGuardian relationship graph, and the cross-wiki metadata graph are installed.
 
 Machine-readable record exposure is tracked by `docs/MACHINE_RECORD_PUBLICATION_STATUS.md` and `data/public-records-manifest.json`.
 
-Pages workflow now publishes the page index, metadata schema, relationship graph, public-records manifest, and verification status document.
+Pages workflow now publishes the page index, metadata schema, relationship graph, cross-wiki metadata graph, public-records manifest, and verification status document.
 
 Workflow configuration can be checked locally with `python scripts/check_pages_workflow_validation.py`.
 
@@ -31,6 +31,8 @@ Public URL verification state is recorded in `PUBLIC_URL_VERIFICATION_STATUS.md`
 StegGuardian verification status is recorded in `docs/STEGGUARDIAN_VERIFICATION_STATUS.md`, indexed in `data/page-index.json`, published by the Pages workflow, and checked by `python scripts/check_stegguardian_verification_status.py`.
 
 The page relationship graph is recorded in `data/page-relationship-graph.json`, published by the Pages workflow, and checked by `python scripts/check_page_relationship_graph.py`.
+
+The cross-wiki metadata graph is recorded in `data/cross-wiki-metadata-graph.json`, published by the Pages workflow, listed in the public records manifest, and checked by `python scripts/check_cross_wiki_metadata_graph.py`.
 
 The public records manifest is recorded in `data/public-records-manifest.json`, published by the Pages workflow, and checked by `python scripts/check_public_records_manifest.py`.
 
@@ -100,8 +102,10 @@ Destination: `StegVerse-002/stegguardian-wiki`
 - `docs/MACHINE_RECORD_PUBLICATION_STATUS.md`
 - `data/page-metadata.schema.json`
 - `data/page-relationship-graph.json`
+- `data/cross-wiki-metadata-graph.json`
 - `data/public-records-manifest.json`
 - `scripts/check_page_relationship_graph.py`
+- `scripts/check_cross_wiki_metadata_graph.py`
 - `scripts/check_public_records_manifest.py`
 - `scripts/check_machine_record_publication_status.py`
 - `scripts/check_llm_free_tier_trust_chain_page.py`
@@ -116,7 +120,7 @@ Destination: `StegVerse-002/stegguardian-wiki`
 - `scripts/check_public_url_verification_status.py`
 - `scripts/check_stegguardian_verification_status.py`
 - `scripts/check_guardian_local_state.py`
-- `.github/workflows/pages.yml` validates and publishes machine-readable records and verification status
+- `.github/workflows/pages.yml` validates and publishes machine-readable records, cross-wiki graph, and verification status
 - `WORKFLOW_VERIFICATION_STATUS.md`
 - `docs/GUARDIAN_WORKFLOW_VERIFICATION_RUNBOOK.md`
 
@@ -132,6 +136,7 @@ Expanded checks:
 python scripts/check_llm_free_tier_trust_chain_page.py
 python scripts/check_page_index.py
 python scripts/check_page_relationship_graph.py
+python scripts/check_cross_wiki_metadata_graph.py
 python scripts/check_machine_record_publication_status.py
 python scripts/check_public_records_manifest.py
 python scripts/check_pages_workflow_validation.py
@@ -145,12 +150,13 @@ python scripts/check_stegguardian_verification_status.py
 ## Publishing Automation
 
 - `github/workflows/pages.yml` displayed without the leading dot; actual repository path includes the leading dot.
-- The workflow publishes `data/page-index.json`, `data/page-metadata.schema.json`, `data/page-relationship-graph.json`, `data/public-records-manifest.json`, and `docs/STEGGUARDIAN_VERIFICATION_STATUS.md` into the static site output.
+- The workflow publishes `data/page-index.json`, `data/page-metadata.schema.json`, `data/page-relationship-graph.json`, `data/cross-wiki-metadata-graph.json`, `data/public-records-manifest.json`, and `docs/STEGGUARDIAN_VERIFICATION_STATUS.md` into the static site output.
 
 ## Linked Wikis
 
 - `https://stegverse-labs.github.io/admissibility-wiki/`
 - `https://stegverse-labs.github.io/Site/`
+- `https://stegverse-labs.github.io/stegtalk-wiki/`
 
 ## Build Rule
 
@@ -160,8 +166,8 @@ Before continuing any StegGuardian wiki task, check this file first and treat it
 
 SPE v0.5.0 records receipt-chain reconstructability and master-records emission. It does not itself authorize enforcement; commit-time standing remains required.
 
-The LLM free-tier trust-chain page, verification status page, metadata schema, relationship graph, and public-records manifest are downstream propagation and evidence-awareness records only. They do not create guardian enforcement authority, provider authority, execution authority, connector-confirmed workflow metadata, public deployment verification, permanent retention, replay standing, reconstruction standing, or upgrade-based admissibility.
+The LLM free-tier trust-chain page, verification status page, metadata schema, relationship graph, cross-wiki metadata graph, and public-records manifest are downstream propagation and evidence-awareness records only. They do not create guardian enforcement authority, provider authority, execution authority, connector-confirmed workflow metadata, public deployment verification, permanent retention, replay standing, reconstruction standing, or upgrade-based admissibility.
 
 ## Remaining Open Check
 
-Workflow/tag verification remains connector-unconfirmed for the newest machine-record publication commit because commit-specific connector workflow queries did not return a run yet. Public URL verification remains pending. README linking remains optional because the propagation page, verification status page, metadata schema, relationship graph, public-records manifest, status files, checkers, index entries, workflow publication wiring, workflow validation, workflow configuration checker, workflow verification status checker, aggregate workflow delta checker, user-observed workflow evidence checker, aggregate local checker, runbook, and handoff now record the installed state.
+Workflow/tag verification remains connector-unconfirmed for the newest machine-record publication commit because commit-specific connector workflow queries did not return a run yet. Public URL verification remains pending until the deployed GitHub Pages URL and machine-readable public records are externally confirmed after the current Pages workflow run.
