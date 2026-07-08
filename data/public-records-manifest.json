@@ -29,6 +29,18 @@
       "public_exposure_state": "published_by_current_workflow"
     },
     {
+      "path": "data/pages-deployment-trigger-status.json",
+      "url": "https://stegverse-002.github.io/stegguardian-wiki/data/pages-deployment-trigger-status.json",
+      "installed": true,
+      "public_exposure_state": "published_by_current_workflow"
+    },
+    {
+      "path": "docs/PAGES_DEPLOYMENT_TRIGGER_DIAGNOSIS.md",
+      "url": "https://stegverse-002.github.io/stegguardian-wiki/docs/PAGES_DEPLOYMENT_TRIGGER_DIAGNOSIS.md",
+      "installed": true,
+      "public_exposure_state": "published_by_current_workflow"
+    },
+    {
       "path": "data/public-records-manifest.json",
       "url": "https://stegverse-002.github.io/stegguardian-wiki/data/public-records-manifest.json",
       "installed": true,
