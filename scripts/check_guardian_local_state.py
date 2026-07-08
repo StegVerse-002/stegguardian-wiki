@@ -8,6 +8,7 @@ COMMANDS = [
     [sys.executable, "scripts/check_llm_free_tier_trust_chain_page.py"],
     [sys.executable, "scripts/check_page_index.py"],
     [sys.executable, "scripts/check_page_relationship_graph.py"],
+    [sys.executable, "scripts/check_cross_wiki_metadata_graph.py"],
     [sys.executable, "scripts/check_machine_record_publication_status.py"],
     [sys.executable, "scripts/check_public_records_manifest.py"],
     [sys.executable, "scripts/check_observed_machine_record_publication_evidence.py"],
