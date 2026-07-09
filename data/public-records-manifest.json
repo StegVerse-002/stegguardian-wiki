@@ -29,6 +29,12 @@
       "public_exposure_state": "published_by_current_workflow"
     },
     {
+      "path": "data/cross-wiki-health-status.json",
+      "url": "https://stegverse-002.github.io/stegguardian-wiki/data/cross-wiki-health-status.json",
+      "installed": true,
+      "public_exposure_state": "published_by_current_workflow"
+    },
+    {
       "path": "data/deployment-receipt.json",
       "url": "https://stegverse-002.github.io/stegguardian-wiki/data/deployment-receipt.json",
       "installed": true,
