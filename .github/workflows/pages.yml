@@ -33,6 +33,8 @@ jobs:
         run: python scripts/check_cross_wiki_metadata_graph.py
       - name: Validate deployment receipt
         run: python scripts/check_deployment_receipt.py
+      - name: Validate session coordination status
+        run: python scripts/check_session_coordination_status.py
       - name: Validate public records manifest
         run: python scripts/check_public_records_manifest.py
       - name: Validate Pages deployment trigger status
@@ -49,6 +51,7 @@ jobs:
           cp data/page-relationship-graph.json _site/data/page-relationship-graph.json
           cp data/cross-wiki-metadata-graph.json _site/data/cross-wiki-metadata-graph.json
           cp data/deployment-receipt.json _site/data/deployment-receipt.json
+          cp data/session-coordination-status.json _site/data/session-coordination-status.json
           cp data/pages-deployment-trigger-status.json _site/data/pages-deployment-trigger-status.json
           cp data/public-records-manifest.json _site/data/public-records-manifest.json
           cp docs/STEGGUARDIAN_VERIFICATION_STATUS.md _site/docs/STEGGUARDIAN_VERIFICATION_STATUS.md
@@ -83,6 +86,7 @@ jobs:
             <a href="data/page-relationship-graph.json">Page Relationship Graph</a>
             <a href="data/cross-wiki-metadata-graph.json">Cross-Wiki Metadata Graph</a>
             <a href="data/deployment-receipt.json">Deployment Receipt</a>
+            <a href="data/session-coordination-status.json">Session Coordination Status</a>
             <a href="data/pages-deployment-trigger-status.json">Pages Deployment Trigger Status</a>
             <a href="data/public-records-manifest.json">Public Records Manifest</a>
             <h2>Linked Wikis</h2>
