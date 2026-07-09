@@ -9,6 +9,7 @@ COMMANDS = [
     [sys.executable, "scripts/check_page_index.py"],
     [sys.executable, "scripts/check_page_relationship_graph.py"],
     [sys.executable, "scripts/check_cross_wiki_metadata_graph.py"],
+    [sys.executable, "scripts/check_cross_wiki_health_status.py"],
     [sys.executable, "scripts/check_deployment_receipt.py"],
     [sys.executable, "scripts/check_session_coordination_status.py"],
     [sys.executable, "scripts/check_machine_record_publication_status.py"],
