@@ -6,6 +6,10 @@ This file is the current handoff and task source of truth for `StegVerse-002/ste
 
 ## Current Priority
 
+StegGuardian Wiki is live at `https://stegverse-002.github.io/stegguardian-wiki/` and the Pages repair issue is resolved by user-observed live-site confirmation.
+
+Current integration goal: cross-wiki discovery and health verification.
+
 Standing-Proof-Engine v0.5.0 guardian-boundary propagation has been recorded.
 
 LLM free-tier trust-chain downstream propagation has also been recorded as awareness-only documentation.
@@ -16,7 +20,9 @@ Shared page metadata schema, the StegGuardian relationship graph, and the cross-
 
 Machine-readable record exposure is tracked by `docs/MACHINE_RECORD_PUBLICATION_STATUS.md` and `data/public-records-manifest.json`.
 
-Pages workflow now publishes the page index, metadata schema, relationship graph, cross-wiki metadata graph, deployment receipt, Pages deployment trigger status, public-records manifest, Pages deployment diagnosis document, and verification status document.
+Session coordination is recorded in `data/session-coordination-status.json`, checked by `python scripts/check_session_coordination_status.py`, and published by the Pages workflow.
+
+Pages workflow now publishes the page index, metadata schema, relationship graph, cross-wiki metadata graph, deployment receipt, session coordination status, Pages deployment trigger status, public-records manifest, Pages deployment diagnosis document, and verification status document.
 
 Workflow configuration can be checked locally with `python scripts/check_pages_workflow_validation.py`.
 
@@ -42,11 +48,17 @@ The public records manifest is recorded in `data/public-records-manifest.json`, 
 
 All local Guardian propagation and graph checks can be run with `python scripts/check_guardian_local_state.py`.
 
-Workflow execution evidence for the newest machine-record publication commit is still connector-unconfirmed; earlier user-observed success remains recorded in `WORKFLOW_VERIFICATION_STATUS.md`, `USER_OBSERVED_WORKFLOW_EVIDENCE.md`, and `docs/GUARDIAN_WORKFLOW_VERIFICATION_RUNBOOK.md`.
-
 ## Public URL
 
 - `https://stegverse-002.github.io/stegguardian-wiki/`
+
+## Session Coordination
+
+No open issue, open pull request, or existing repository coordination record was found indicating another active session is working the same StegGuardian Pages repair issue.
+
+Parallel sessions must not restart the Pages repair path. If another session is working on Pages repair, route it to public-record verification or cross-wiki health tasks.
+
+Active current-session task ownership: cross-wiki discovery and health verification.
 
 ## Org Boundary Rationale
 
@@ -109,11 +121,13 @@ Destination: `StegVerse-002/stegguardian-wiki`
 - `data/page-relationship-graph.json`
 - `data/cross-wiki-metadata-graph.json`
 - `data/deployment-receipt.json`
+- `data/session-coordination-status.json`
 - `data/pages-deployment-trigger-status.json`
 - `data/public-records-manifest.json`
 - `scripts/check_page_relationship_graph.py`
 - `scripts/check_cross_wiki_metadata_graph.py`
 - `scripts/check_deployment_receipt.py`
+- `scripts/check_session_coordination_status.py`
 - `scripts/check_pages_deployment_trigger_status.py`
 - `scripts/check_public_records_manifest.py`
 - `scripts/check_machine_record_publication_status.py`
@@ -129,7 +143,7 @@ Destination: `StegVerse-002/stegguardian-wiki`
 - `scripts/check_public_url_verification_status.py`
 - `scripts/check_stegguardian_verification_status.py`
 - `scripts/check_guardian_local_state.py`
-- `.github/workflows/pages.yml` validates and publishes machine-readable records, cross-wiki graph, deployment receipt, Pages trigger diagnosis records, and verification status
+- `.github/workflows/pages.yml` validates and publishes machine-readable records, cross-wiki graph, deployment receipt, session coordination status, Pages trigger diagnosis records, and verification status
 - `WORKFLOW_VERIFICATION_STATUS.md`
 - `docs/GUARDIAN_WORKFLOW_VERIFICATION_RUNBOOK.md`
 
@@ -147,6 +161,7 @@ python scripts/check_page_index.py
 python scripts/check_page_relationship_graph.py
 python scripts/check_cross_wiki_metadata_graph.py
 python scripts/check_deployment_receipt.py
+python scripts/check_session_coordination_status.py
 python scripts/check_pages_deployment_trigger_status.py
 python scripts/check_machine_record_publication_status.py
 python scripts/check_public_records_manifest.py
@@ -161,7 +176,7 @@ python scripts/check_stegguardian_verification_status.py
 ## Publishing Automation
 
 - `github/workflows/pages.yml` displayed without the leading dot; actual repository path includes the leading dot.
-- The workflow publishes `data/page-index.json`, `data/page-metadata.schema.json`, `data/page-relationship-graph.json`, `data/cross-wiki-metadata-graph.json`, `data/deployment-receipt.json`, `data/pages-deployment-trigger-status.json`, `data/public-records-manifest.json`, `docs/PAGES_DEPLOYMENT_TRIGGER_DIAGNOSIS.md`, and `docs/STEGGUARDIAN_VERIFICATION_STATUS.md` into the static site output.
+- The workflow publishes `data/page-index.json`, `data/page-metadata.schema.json`, `data/page-relationship-graph.json`, `data/cross-wiki-metadata-graph.json`, `data/deployment-receipt.json`, `data/session-coordination-status.json`, `data/pages-deployment-trigger-status.json`, `data/public-records-manifest.json`, `docs/PAGES_DEPLOYMENT_TRIGGER_DIAGNOSIS.md`, and `docs/STEGGUARDIAN_VERIFICATION_STATUS.md` into the static site output.
 - The workflow writes `_site/.nojekyll` before upload to avoid Jekyll processing conflicts.
 
 ## Linked Wikis
@@ -178,8 +193,8 @@ Before continuing any StegGuardian wiki task, check this file first and treat it
 
 SPE v0.5.0 records receipt-chain reconstructability and master-records emission. It does not itself authorize enforcement; commit-time standing remains required.
 
-The LLM free-tier trust-chain page, verification status page, metadata schema, relationship graph, cross-wiki metadata graph, deployment receipt, Pages deployment trigger status, Pages deployment diagnosis document, and public-records manifest are downstream propagation and evidence-awareness records only. They do not create guardian enforcement authority, provider authority, execution authority, connector-confirmed workflow metadata, public deployment verification, permanent retention, replay standing, reconstruction standing, or upgrade-based admissibility.
+The LLM free-tier trust-chain page, verification status page, metadata schema, relationship graph, cross-wiki metadata graph, deployment receipt, session coordination status, Pages deployment trigger status, Pages deployment diagnosis document, and public-records manifest are downstream propagation and evidence-awareness records only. They do not create guardian enforcement authority, provider authority, execution authority, connector-confirmed workflow metadata, public deployment verification, permanent retention, replay standing, reconstruction standing, or upgrade-based admissibility.
 
 ## Remaining Open Check
 
-Workflow/tag verification remains connector-unconfirmed for the newest machine-record publication commit because commit-specific connector workflow queries did not return a run yet. Public URL verification remains pending until the deployed GitHub Pages URL and machine-readable public records are externally confirmed after the current Pages workflow run. Current diagnosis class is `deployment_trigger_unconfirmed`, meaning repo-side workflow publication wiring is installed but GitHub Pages/Actions execution has not been confirmed by available connector evidence. Deployment receipt state remains `pending_external_confirmation` until a workflow run id, public URL response, public record URLs, and artifact hash are recorded.
+Next unassigned work: create reusable cross-wiki health checker, create cross-wiki discovery status record, verify live public record URLs, and mirror discovery status into this handoff.
