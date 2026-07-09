@@ -8,6 +8,7 @@ REQUIRED_RECORDS = {
     "data/page-metadata.schema.json": "published_by_current_workflow",
     "data/page-relationship-graph.json": "published_by_current_workflow",
     "data/cross-wiki-metadata-graph.json": "published_by_current_workflow",
+    "data/cross-wiki-health-status.json": "published_by_current_workflow",
     "data/deployment-receipt.json": "published_by_current_workflow",
     "data/session-coordination-status.json": "published_by_current_workflow",
     "data/pages-deployment-trigger-status.json": "published_by_current_workflow",
