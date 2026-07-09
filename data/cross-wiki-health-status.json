@@ -1,0 +1,54 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "stegguardian_cross_wiki_health_status",
+  "repo": "StegVerse-002/stegguardian-wiki",
+  "observed_at": "2026-07-09",
+  "status": "pending_live_peer_checks",
+  "origin_public_url": "https://stegverse-002.github.io/stegguardian-wiki/",
+  "peers": [
+    {
+      "id": "stegguardian-wiki",
+      "repo": "StegVerse-002/stegguardian-wiki",
+      "public_url": "https://stegverse-002.github.io/stegguardian-wiki/",
+      "relationship": "origin"
+    },
+    {
+      "id": "stegtalk-wiki",
+      "repo": "StegVerse-Labs/stegtalk-wiki",
+      "public_url": "https://stegverse-labs.github.io/stegtalk-wiki/",
+      "relationship": "documents_guardian_controls_for"
+    },
+    {
+      "id": "admissibility-wiki",
+      "repo": "StegVerse-Labs/admissibility-wiki",
+      "public_url": "https://stegverse-labs.github.io/admissibility-wiki/",
+      "relationship": "derives_boundary_terms_from"
+    },
+    {
+      "id": "stegverse-site",
+      "repo": "StegVerse-Labs/Site",
+      "public_url": "https://stegverse-labs.github.io/Site/",
+      "relationship": "publishing_mesh_peer"
+    }
+  ],
+  "checks": {
+    "peer_urls_declared": true,
+    "origin_records_declared": true,
+    "live_peer_http_confirmed": false,
+    "peer_machine_records_confirmed": false,
+    "cross_wiki_schema_consistency_confirmed": false
+  },
+  "next_actions": [
+    "confirm peer public URLs respond",
+    "confirm each peer exposes a public records manifest or declare missing",
+    "standardize cross-wiki health records across StegTalk Wiki, Admissibility Wiki, and Site",
+    "promote reusable checker to repo-standards after local proof"
+  ],
+  "non_claims": {
+    "all_peer_urls_verified": false,
+    "peer_machine_records_verified": false,
+    "cross_repo_authority_granted": false,
+    "standing_conferred": false,
+    "execution_authority": false
+  }
+}
