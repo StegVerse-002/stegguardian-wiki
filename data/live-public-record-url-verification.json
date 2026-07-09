@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "stegguardian_live_public_record_url_verification",
+  "repo": "StegVerse-002/stegguardian-wiki",
+  "observed_at": "2026-07-09",
+  "public_url": "https://stegverse-002.github.io/stegguardian-wiki/",
+  "homepage_user_observed_live": true,
+  "machine_public_records_expected": [
+    "data/public-records-manifest.json",
+    "data/cross-wiki-metadata-graph.json",
+    "data/cross-wiki-health-status.json",
+    "data/deployment-receipt.json",
+    "data/session-coordination-status.json",
+    "data/pages-deployment-trigger-status.json"
+  ],
+  "verification_state": {
+    "homepage_rendered": true,
+    "machine_records_listed_on_homepage": true,
+    "external_fetch_confirmed_by_current_session": false,
+    "all_machine_record_urls_confirmed": false
+  },
+  "next_actions": [
+    "open each listed public record URL from the live site",
+    "update external_fetch_confirmed_by_current_session after machine-readable URLs return expected content",
+    "then mark cross-wiki health peer checks ready for standardization"
+  ],
+  "non_claims": {
+    "all_machine_record_urls_confirmed": false,
+    "peer_machine_records_verified": false,
+    "cross_repo_authority_granted": false,
+    "standing_conferred": false,
+    "execution_authority": false
+  }
+}
