@@ -29,6 +29,12 @@
       "public_exposure_state": "published_by_current_workflow"
     },
     {
+      "path": "data/deployment-receipt.json",
+      "url": "https://stegverse-002.github.io/stegguardian-wiki/data/deployment-receipt.json",
+      "installed": true,
+      "public_exposure_state": "published_by_current_workflow"
+    },
+    {
       "path": "data/pages-deployment-trigger-status.json",
       "url": "https://stegverse-002.github.io/stegguardian-wiki/data/pages-deployment-trigger-status.json",
       "installed": true,
