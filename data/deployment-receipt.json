@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "stegguardian_pages_deployment_receipt",
+  "repo": "StegVerse-002/stegguardian-wiki",
+  "public_url": "https://stegverse-002.github.io/stegguardian-wiki/",
+  "publication_mode": "github_pages_actions",
+  "static_site_output_path": "_site",
+  "deployment_state": "pending_external_confirmation",
+  "expected_source_branch": "main",
+  "expected_workflow": ".github/workflows/pages.yml",
+  "expected_deploy_action": "actions/deploy-pages@v4",
+  "expected_public_records": [
+    "data/page-index.json",
+    "data/page-metadata.schema.json",
+    "data/page-relationship-graph.json",
+    "data/cross-wiki-metadata-graph.json",
+    "data/pages-deployment-trigger-status.json",
+    "data/public-records-manifest.json",
+    "docs/PAGES_DEPLOYMENT_TRIGGER_DIAGNOSIS.md",
+    "docs/STEGGUARDIAN_VERIFICATION_STATUS.md"
+  ],
+  "confirmation_inputs": {
+    "workflow_run_id": null,
+    "deployment_url_confirmed": false,
+    "public_record_urls_confirmed": false,
+    "artifact_hash": null,
+    "confirmed_at": null
+  },
+  "non_claims": {
+    "public_url_verified": false,
+    "workflow_run_confirmed": false,
+    "artifact_hash_confirmed": false,
+    "deployment_success_confirmed": false,
+    "guardian_enforcement_authority": false,
+    "execution_authority": false
+  }
+}
