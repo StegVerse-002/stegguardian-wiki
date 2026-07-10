@@ -10,6 +10,7 @@ COMMANDS = [
     [sys.executable, "scripts/check_page_relationship_graph.py"],
     [sys.executable, "scripts/check_cross_wiki_metadata_graph.py"],
     [sys.executable, "scripts/check_cross_wiki_health_status.py"],
+    [sys.executable, "scripts/check_ecosystem_documentation_endpoints.py"],
     [sys.executable, "scripts/check_live_public_record_url_verification.py"],
     [sys.executable, "scripts/check_live_public_record_fetch_tooling.py"],
     [sys.executable, "scripts/check_deployment_receipt.py"],
