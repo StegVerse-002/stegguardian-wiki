@@ -16,7 +16,7 @@ LLM free-tier trust-chain downstream propagation has also been recorded as aware
 
 Machine-readable page index metadata has been updated for the LLM free-tier trust-chain page and the StegGuardian verification status page.
 
-Shared page metadata schema, the StegGuardian relationship graph, the cross-wiki metadata graph, the cross-wiki health status record, and the live public record URL verification record are installed.
+Shared page metadata schema, the StegGuardian relationship graph, the cross-wiki metadata graph, the cross-wiki health status record, the live public record URL verification record, and the live public record URL fetch verifier are installed.
 
 Machine-readable record exposure is tracked by `docs/MACHINE_RECORD_PUBLICATION_STATUS.md` and `data/public-records-manifest.json`.
 
@@ -26,7 +26,9 @@ Cross-wiki health is recorded in `data/cross-wiki-health-status.json`, checked b
 
 Live public record URL verification is recorded in `data/live-public-record-url-verification.json`, checked by `python scripts/check_live_public_record_url_verification.py`, and published by the Pages workflow. It records user-observed homepage liveness while keeping individual machine-record URL fetch confirmation pending.
 
-Pages workflow now publishes the page index, metadata schema, relationship graph, cross-wiki metadata graph, cross-wiki health status, live public record URL verification, deployment receipt, session coordination status, Pages deployment trigger status, public-records manifest, Pages deployment diagnosis document, and verification status document.
+Live public record fetch tooling is installed in `scripts/fetch_live_public_record_urls.py`, documented in `docs/LIVE_PUBLIC_RECORD_URL_FETCH_RUNBOOK.md`, checked by `python scripts/check_live_public_record_fetch_tooling.py`, and published by the Pages workflow.
+
+Pages workflow now publishes the page index, metadata schema, relationship graph, cross-wiki metadata graph, cross-wiki health status, live public record URL verification, live public record fetch runbook, deployment receipt, session coordination status, Pages deployment trigger status, public-records manifest, Pages deployment diagnosis document, and verification status document.
 
 Workflow configuration can be checked locally with `python scripts/check_pages_workflow_validation.py`.
 
@@ -118,6 +120,7 @@ Destination: `StegVerse-002/stegguardian-wiki`
 - `pages/llm-free-tier-trust-chain.md`
 - `docs/STEGGUARDIAN_VERIFICATION_STATUS.md`
 - `docs/PAGES_DEPLOYMENT_TRIGGER_DIAGNOSIS.md`
+- `docs/LIVE_PUBLIC_RECORD_URL_FETCH_RUNBOOK.md`
 - `LLM_FREE_TIER_TRUST_CHAIN_STATUS.md`
 - `PUBLIC_URL_VERIFICATION_STATUS.md`
 - `docs/MACHINE_RECORD_PUBLICATION_STATUS.md`
@@ -134,6 +137,8 @@ Destination: `StegVerse-002/stegguardian-wiki`
 - `scripts/check_cross_wiki_metadata_graph.py`
 - `scripts/check_cross_wiki_health_status.py`
 - `scripts/check_live_public_record_url_verification.py`
+- `scripts/fetch_live_public_record_urls.py`
+- `scripts/check_live_public_record_fetch_tooling.py`
 - `scripts/check_deployment_receipt.py`
 - `scripts/check_session_coordination_status.py`
 - `scripts/check_pages_deployment_trigger_status.py`
@@ -151,7 +156,7 @@ Destination: `StegVerse-002/stegguardian-wiki`
 - `scripts/check_public_url_verification_status.py`
 - `scripts/check_stegguardian_verification_status.py`
 - `scripts/check_guardian_local_state.py`
-- `.github/workflows/pages.yml` validates and publishes machine-readable records, cross-wiki graph, cross-wiki health status, live public record URL verification, deployment receipt, session coordination status, Pages trigger diagnosis records, and verification status
+- `.github/workflows/pages.yml` validates and publishes machine-readable records, cross-wiki graph, cross-wiki health status, live public record URL verification, live public record fetch runbook, deployment receipt, session coordination status, Pages trigger diagnosis records, and verification status
 - `WORKFLOW_VERIFICATION_STATUS.md`
 - `docs/GUARDIAN_WORKFLOW_VERIFICATION_RUNBOOK.md`
 
@@ -170,6 +175,7 @@ python scripts/check_page_relationship_graph.py
 python scripts/check_cross_wiki_metadata_graph.py
 python scripts/check_cross_wiki_health_status.py
 python scripts/check_live_public_record_url_verification.py
+python scripts/check_live_public_record_fetch_tooling.py
 python scripts/check_deployment_receipt.py
 python scripts/check_session_coordination_status.py
 python scripts/check_pages_deployment_trigger_status.py
@@ -183,10 +189,16 @@ python scripts/check_public_url_verification_status.py
 python scripts/check_stegguardian_verification_status.py
 ```
 
+Live URL fetch command:
+
+```text
+python scripts/fetch_live_public_record_urls.py --write-report data/live-public-record-url-fetch-report.json
+```
+
 ## Publishing Automation
 
 - `github/workflows/pages.yml` displayed without the leading dot; actual repository path includes the leading dot.
-- The workflow publishes `data/page-index.json`, `data/page-metadata.schema.json`, `data/page-relationship-graph.json`, `data/cross-wiki-metadata-graph.json`, `data/cross-wiki-health-status.json`, `data/live-public-record-url-verification.json`, `data/deployment-receipt.json`, `data/session-coordination-status.json`, `data/pages-deployment-trigger-status.json`, `data/public-records-manifest.json`, `docs/PAGES_DEPLOYMENT_TRIGGER_DIAGNOSIS.md`, and `docs/STEGGUARDIAN_VERIFICATION_STATUS.md` into the static site output.
+- The workflow publishes `data/page-index.json`, `data/page-metadata.schema.json`, `data/page-relationship-graph.json`, `data/cross-wiki-metadata-graph.json`, `data/cross-wiki-health-status.json`, `data/live-public-record-url-verification.json`, `data/deployment-receipt.json`, `data/session-coordination-status.json`, `data/pages-deployment-trigger-status.json`, `data/public-records-manifest.json`, `docs/LIVE_PUBLIC_RECORD_URL_FETCH_RUNBOOK.md`, `docs/PAGES_DEPLOYMENT_TRIGGER_DIAGNOSIS.md`, and `docs/STEGGUARDIAN_VERIFICATION_STATUS.md` into the static site output.
 - The workflow writes `_site/.nojekyll` before upload to avoid Jekyll processing conflicts.
 
 ## Linked Wikis
@@ -203,8 +215,8 @@ Before continuing any StegGuardian wiki task, check this file first and treat it
 
 SPE v0.5.0 records receipt-chain reconstructability and master-records emission. It does not itself authorize enforcement; commit-time standing remains required.
 
-The LLM free-tier trust-chain page, verification status page, metadata schema, relationship graph, cross-wiki metadata graph, cross-wiki health status, live public record URL verification, deployment receipt, session coordination status, Pages deployment trigger status, Pages deployment diagnosis document, and public-records manifest are downstream propagation and evidence-awareness records only. They do not create guardian enforcement authority, provider authority, execution authority, connector-confirmed workflow metadata, all-machine-record URL verification, permanent retention, replay standing, reconstruction standing, or upgrade-based admissibility.
+The LLM free-tier trust-chain page, verification status page, metadata schema, relationship graph, cross-wiki metadata graph, cross-wiki health status, live public record URL verification, live public record fetch tooling, deployment receipt, session coordination status, Pages deployment trigger status, Pages deployment diagnosis document, and public-records manifest are downstream propagation and evidence-awareness records only. They do not create guardian enforcement authority, provider authority, execution authority, connector-confirmed workflow metadata, all-machine-record URL verification, permanent retention, replay standing, reconstruction standing, or upgrade-based admissibility.
 
 ## Remaining Open Check
 
-Next unassigned work: externally fetch each live public record URL, standardize cross-wiki health records across StegTalk Wiki, Admissibility Wiki, and Site, and promote the reusable checker to repo-standards after local proof.
+Next unassigned work: execute the live URL fetch command from a networked environment, commit `data/live-public-record-url-fetch-report.json` after success, standardize cross-wiki health records across StegTalk Wiki, Admissibility Wiki, and Site, and promote the reusable checker to repo-standards after local proof.
