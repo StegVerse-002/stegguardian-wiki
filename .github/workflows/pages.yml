@@ -35,6 +35,8 @@ jobs:
         run: python scripts/check_cross_wiki_health_status.py
       - name: Validate live public record URL verification
         run: python scripts/check_live_public_record_url_verification.py
+      - name: Validate live public record fetch tooling
+        run: python scripts/check_live_public_record_fetch_tooling.py
       - name: Validate deployment receipt
         run: python scripts/check_deployment_receipt.py
       - name: Validate session coordination status
@@ -62,6 +64,7 @@ jobs:
           cp data/public-records-manifest.json _site/data/public-records-manifest.json
           cp docs/STEGGUARDIAN_VERIFICATION_STATUS.md _site/docs/STEGGUARDIAN_VERIFICATION_STATUS.md
           cp docs/PAGES_DEPLOYMENT_TRIGGER_DIAGNOSIS.md _site/docs/PAGES_DEPLOYMENT_TRIGGER_DIAGNOSIS.md
+          cp docs/LIVE_PUBLIC_RECORD_URL_FETCH_RUNBOOK.md _site/docs/LIVE_PUBLIC_RECORD_URL_FETCH_RUNBOOK.md
           cp receipts/*.json _site/receipts/
           cp pages/*.md _site/pages/
           cat > _site/index.html <<'HTML'
@@ -86,6 +89,7 @@ jobs:
             <a href="pages/llm-free-tier-trust-chain.md">LLM Free Tier Trust Chain</a>
             <a href="docs/STEGGUARDIAN_VERIFICATION_STATUS.md">StegGuardian Verification Status</a>
             <a href="docs/PAGES_DEPLOYMENT_TRIGGER_DIAGNOSIS.md">Pages Deployment Trigger Diagnosis</a>
+            <a href="docs/LIVE_PUBLIC_RECORD_URL_FETCH_RUNBOOK.md">Live Public Record URL Fetch Runbook</a>
             <h2>Machine-readable records</h2>
             <a href="data/page-index.json">Page Index</a>
             <a href="data/page-metadata.schema.json">Page Metadata Schema</a>
