@@ -41,6 +41,12 @@
       "public_exposure_state": "published_by_current_workflow"
     },
     {
+      "path": "docs/LIVE_PUBLIC_RECORD_URL_FETCH_RUNBOOK.md",
+      "url": "https://stegverse-002.github.io/stegguardian-wiki/docs/LIVE_PUBLIC_RECORD_URL_FETCH_RUNBOOK.md",
+      "installed": true,
+      "public_exposure_state": "published_by_current_workflow"
+    },
+    {
       "path": "data/deployment-receipt.json",
       "url": "https://stegverse-002.github.io/stegguardian-wiki/data/deployment-receipt.json",
       "installed": true,
