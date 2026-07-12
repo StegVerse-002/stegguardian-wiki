@@ -6,6 +6,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 COMMANDS = [
     [sys.executable, "scripts/check_llm_free_tier_trust_chain_page.py"],
+    [sys.executable, "scripts/check_media_pipeline_guardian_boundary.py"],
     [sys.executable, "scripts/check_page_index.py"],
     [sys.executable, "scripts/check_page_relationship_graph.py"],
     [sys.executable, "scripts/check_cross_wiki_metadata_graph.py"],
