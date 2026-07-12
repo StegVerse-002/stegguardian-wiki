@@ -8,100 +8,82 @@ This file is the current handoff and task source of truth for `StegVerse-002/ste
 
 StegGuardian Wiki is live at `https://stegverse-002.github.io/stegguardian-wiki/` by user-observed confirmation.
 
-Current integration goal: complete post-deployment machine-record verification and then standardize cross-wiki health records without duplicating active Site or admissibility-wiki workstreams.
+Current integration goal: complete live machine-record verification and establish a reusable shared cross-wiki health contract without duplicating active Site or admissibility-wiki workstreams.
 
 ## Session Coordination
 
-No open issue or pull request claims the current Guardian live-record verification task.
-
-Recent repository commits are the current media-pipeline and discovery chain. No newer external commit displaced this handoff before continuation.
+No open issue or pull request claims the current Guardian live-record or shared-health-schema task.
 
 Parallel sessions must not restart the resolved Pages repair path.
 
-The Site repository has concurrent active work and must not be modified from this workstream unless its current handoff transfers ownership.
-
-The admissibility-wiki Goal 5 external-framework workstream is separately active. Media-pipeline propagation there remains deferred to that handoff owner.
+Site has concurrent active work and must not be modified from this workstream.
+Admissibility-wiki Goal 5 remains separately active and must not be modified from this workstream.
 
 ## Media-Pipeline Guardian Integration
 
-Installed:
+Installed and enforced:
 
 ```text
 pages/media-pipeline-guardian-boundary.md
 scripts/check_media_pipeline_guardian_boundary.py
-data/page-index.json entry: Media Pipeline Guardian Boundary
-data/page-relationship-graph.json node: media-pipeline-guardian-boundary
-.github/workflows/pages.yml validation and public index link
-scripts/check_guardian_local_state.py aggregate invocation
+data/page-index.json
+data/page-relationship-graph.json
+scripts/check_page_relationship_graph.py
+scripts/check_guardian_local_state.py
+.github/workflows/pages.yml
 ```
 
-Relationship graph bindings:
+The page and graph are awareness-only and create no live camera, microphone, broadcast, provider, Guardian-enforcement, or execution authority.
+
+## Shared Cross-Wiki Health Contract
+
+Installed:
 
 ```text
-media-pipeline-guardian-boundary
-  -> stegguardian-verification-status
-  relationship: verified_by
-
-stegguardian-verification-status
-  -> media-pipeline-guardian-boundary
-  relationship: summarizes_verification_for
+data/cross-wiki-health-status.schema.json
+data/cross-wiki-health-status.json schema_version: 1.0.0
+data/cross-wiki-health-status.json schema_ref: data/cross-wiki-health-status.schema.json
+data/cross-wiki-health-status.json peer_registry: data/ecosystem-documentation-endpoints.json
+scripts/check_cross_wiki_health_status.py schema enforcement
+data/public-records-manifest.json schema entry
+scripts/check_public_records_manifest.py schema requirement
+.github/workflows/pages.yml schema publication and public index link
+scripts/fetch_live_public_record_urls.py live schema verification
 ```
 
-The page and graph remain awareness-only. They do not create live camera authority, microphone authority, broadcast authority, provider authority, Guardian enforcement authority, or execution authority.
+StegGuardian and StegTalk now share the same schema identifier and required common fields. `cross_wiki_schema_consistency_confirmed` remains false until workflow artifacts prove both published schema and health-record URLs.
+
+Latest shared-schema commits:
+
+```text
+19c5ee4d6c3dad421c800bd5c36123e156b34b00
+9e1ec729513d39d21aa68e806a7bf9b28c939137
+5c34f50429484a28b51b013ec6cdea42c7fe516c
+375e1af8822c037bced490f4b535dcb8236b39cd
+ca5693f403c6b050d6596a17adff624004bc986f
+f814aa26e818690f393cf5bba2e2c1b577f25a4f
+df1cbcc8bbd930264cab2da7ceb50ef83aa3cb1c
+```
 
 ## Automated Live Public-Record Verification
 
-The existing Pages workflow now contains two ordered jobs:
+The existing Pages workflow contains:
 
 ```text
 deploy
-verify-live-public-records
+  -> verify-live-public-records
 ```
 
-The verification job:
+The dependent job:
 
-- runs only after Pages deployment;
-- uses GitHub's network rather than requiring a user-operated environment;
-- retries public machine-record fetches up to 12 times at 15-second intervals;
+- uses GitHub's network after deployment;
+- retries up to 12 times at 15-second intervals;
+- verifies public JSON record types, including the shared health schema title;
 - writes `reports/live-public-record-url-fetch-report.json`;
-- uploads `stegguardian-live-public-record-url-fetch-report` through `actions/upload-artifact@v4`;
-- retains the artifact for 30 days;
-- fails closed if URL and record-type verification does not converge.
+- uploads `stegguardian-live-public-record-url-fetch-report` for 30 days;
+- fails closed if verification does not converge.
 
-Installed automation commits:
-
-```text
-9526b4b0ed181e58cff0b6f00df58f687e109c29
-ac92f48c2007284bac35ac3432f3aa725dcd0c13
-9d24932cd5bd9455bf69384c90f94f5f9a559207
-```
-
-The workflow validator now requires the dependent job, bounded fetch command, report path, artifact upload, and enforcement step.
-
-The runbook now treats the workflow artifact as the primary evidence path. Manual execution remains diagnostic only.
-
-No successful live-verification result is claimed until the post-deployment job and its enforcement step succeed.
-
-## Existing Discovery and Health Infrastructure
-
-Machine-readable record exposure is tracked by:
-
-```text
-docs/MACHINE_RECORD_PUBLICATION_STATUS.md
-data/public-records-manifest.json
-```
-
-Cross-wiki health is recorded in `data/cross-wiki-health-status.json` and remains `pending_live_peer_checks` until peer URLs and peer machine-record manifests are verified.
-
-Live public record status is recorded in `data/live-public-record-url-verification.json`. It must not be changed to confirmed before successful workflow evidence exists.
-
-The relationship graph, cross-wiki metadata graph, health record, endpoint registry, deployment receipt, session coordination record, trigger-status record, public-records manifest, and verification documents are published through the existing Pages workflow.
-
-All local checks run through:
-
-```text
-python scripts/check_guardian_local_state.py
-```
+No successful live-verification result is claimed until the job and enforcement step succeed.
 
 ## Public URL
 
@@ -109,33 +91,7 @@ python scripts/check_guardian_local_state.py
 https://stegverse-002.github.io/stegguardian-wiki/
 ```
 
-## Source Artifacts
-
-Publisher source:
-
-```text
-GCAT-BCAT-Engine/Publisher/docs/PUBLISHER_MIRROR_HANDOFF.md
-GCAT-BCAT-Engine/Publisher/docs/media-pipeline-site-publication-awareness.md
-```
-
-Site source:
-
-```text
-StegVerse-Labs/Site/docs/SITE_MIRROR_HANDOFF.md
-StegVerse-Labs/Site/docs/media/media-pipeline-overview.md
-```
-
-Media origin source:
-
-```text
-StegVerse-Labs/collective-environment-engine
-```
-
-Additional governed sources remain documented in the installed page and existing relationship records.
-
 ## Verification Commands
-
-Local structural verification:
 
 ```text
 python scripts/check_media_pipeline_guardian_boundary.py
@@ -143,36 +99,23 @@ python scripts/check_page_index.py
 python scripts/check_page_relationship_graph.py
 python scripts/check_cross_wiki_metadata_graph.py
 python scripts/check_cross_wiki_health_status.py
+python scripts/check_public_records_manifest.py
 python scripts/check_pages_workflow_validation.py
 python scripts/check_guardian_local_state.py
 ```
 
-Manual network diagnostic only:
+Manual network execution remains diagnostic only:
 
 ```text
 python scripts/fetch_live_public_record_urls.py \
   --write-report data/live-public-record-url-fetch-report.json
 ```
 
-Primary network verification occurs automatically in the post-deployment Pages job.
-
-## Publishing Automation
-
-The active workflow is `.github/workflows/pages.yml`.
-
-It validates the media-pipeline boundary page, page index, relationship graph, cross-wiki records, deployment evidence, and existing Guardian documentation before publishing.
-
-It then verifies the deployed machine records through the dependent `verify-live-public-records` job and emits a traceable report artifact.
-
-No additional workflow was added.
-
 ## Boundary
 
-SPE and downstream documentation records do not themselves authorize enforcement; commit-time standing remains required.
+The media page, schemas, health records, endpoint registry, graphs, manifests, workflow artifacts, and fetch reports are propagation and evidence-awareness records only.
 
-The media-pipeline page, verification records, metadata, graphs, health records, URL-fetch tooling, workflow artifacts, receipts, and manifests are propagation and evidence-awareness records only.
-
-They do not create Guardian enforcement authority, provider authority, execution authority, live media authority, public broadcast capability, permanent retention, replay standing, reconstruction standing, or upgrade-based admissibility.
+They do not create Guardian enforcement authority, provider authority, execution authority, live-media authority, permanent retention, replay standing, reconstruction standing, or upgrade-based admissibility.
 
 ## Remaining Open Check
 
@@ -180,12 +123,12 @@ They do not create Guardian enforcement authority, provider authority, execution
 confirm the Pages deploy job succeeds
 confirm verify-live-public-records succeeds
 inspect the uploaded live fetch report artifact
-update data/live-public-record-url-verification.json only after successful evidence
-observe the public media-pipeline page after deployment
-standardize cross-wiki health records across unclaimed peer repositories
-promote the reusable checker to repo-standards after local and live proof
+update live verification state only after successful evidence
+confirm StegTalk and StegGuardian publicly expose the identical shared schema
+standardize Site and admissibility-wiki only through their active handoff owners
+promote the reusable schema and checker to repo-standards after multi-repo live proof
 ```
 
 ## Archive Readiness
 
-This handoff contains the current media-pipeline, discovery, relationship-graph, workflow, automated public-verification, authority-boundary, coordination, and continuation state. Earlier conversation context is not required.
+This handoff contains the current media-pipeline, shared-schema, workflow, public-verification, authority-boundary, coordination, and continuation state. Earlier conversation context is not required.
