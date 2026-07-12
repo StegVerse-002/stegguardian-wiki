@@ -61,6 +61,26 @@
       }
     },
     {
+      "title": "Media Pipeline Guardian Boundary",
+      "path": "pages/media-pipeline-guardian-boundary.md",
+      "status": "installed",
+      "source_repo": "StegVerse-Labs/collective-environment-engine",
+      "source_chain": [
+        "StegVerse-Labs/collective-environment-engine",
+        "GCAT-BCAT-Engine/Publisher",
+        "StegVerse-Labs/Site"
+      ],
+      "activation_state": "downstream_awareness_only",
+      "non_claims": {
+        "live_camera_use": false,
+        "live_microphone_use": false,
+        "public_broadcast_capability": false,
+        "guardian_enforcement_authority": false,
+        "execution_authority": false,
+        "provider_authority": false
+      }
+    },
+    {
       "title": "StegGuardian Verification Status",
       "path": "docs/STEGGUARDIAN_VERIFICATION_STATUS.md",
       "status": "installed",
