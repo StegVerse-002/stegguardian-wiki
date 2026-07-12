@@ -1,10 +1,12 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "1.0.0",
+  "schema_ref": "data/cross-wiki-health-status.schema.json",
   "record_type": "stegguardian_cross_wiki_health_status",
   "repo": "StegVerse-002/stegguardian-wiki",
-  "observed_at": "2026-07-09",
+  "observed_at": "2026-07-12",
   "status": "pending_live_peer_checks",
   "origin_public_url": "https://stegverse-002.github.io/stegguardian-wiki/",
+  "peer_registry": "data/ecosystem-documentation-endpoints.json",
   "peers": [
     {
       "id": "stegguardian-wiki",
@@ -41,8 +43,8 @@
   "next_actions": [
     "confirm peer public URLs respond",
     "confirm each peer exposes a public records manifest or declare missing",
-    "standardize cross-wiki health records across StegTalk Wiki, Admissibility Wiki, and Site",
-    "promote reusable checker to repo-standards after local proof"
+    "confirm each peer binds its health record to the shared schema",
+    "promote reusable checker to repo-standards after local and live proof"
   ],
   "non_claims": {
     "all_peer_urls_verified": false,
