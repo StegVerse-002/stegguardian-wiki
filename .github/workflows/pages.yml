@@ -61,6 +61,7 @@ jobs:
           cp data/page-relationship-graph.json _site/data/page-relationship-graph.json
           cp data/cross-wiki-metadata-graph.json _site/data/cross-wiki-metadata-graph.json
           cp data/cross-wiki-health-status.json _site/data/cross-wiki-health-status.json
+          cp data/cross-wiki-health-status.schema.json _site/data/cross-wiki-health-status.schema.json
           cp data/ecosystem-documentation-endpoints.json _site/data/ecosystem-documentation-endpoints.json
           cp data/live-public-record-url-verification.json _site/data/live-public-record-url-verification.json
           cp data/deployment-receipt.json _site/data/deployment-receipt.json
@@ -102,6 +103,7 @@ jobs:
             <a href="data/page-relationship-graph.json">Page Relationship Graph</a>
             <a href="data/cross-wiki-metadata-graph.json">Cross-Wiki Metadata Graph</a>
             <a href="data/cross-wiki-health-status.json">Cross-Wiki Health Status</a>
+            <a href="data/cross-wiki-health-status.schema.json">Cross-Wiki Health Status Schema</a>
             <a href="data/ecosystem-documentation-endpoints.json">Ecosystem Documentation Endpoints</a>
             <a href="data/live-public-record-url-verification.json">Live Public Record URL Verification</a>
             <a href="data/deployment-receipt.json">Deployment Receipt</a>
