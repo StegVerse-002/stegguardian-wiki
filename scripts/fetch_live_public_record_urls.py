@@ -23,6 +23,7 @@ EXPECTED_RECORDS = [
     "data/public-records-manifest.json",
     "data/cross-wiki-metadata-graph.json",
     "data/cross-wiki-health-status.json",
+    "data/cross-wiki-health-status.schema.json",
     "data/deployment-receipt.json",
     "data/session-coordination-status.json",
     "data/pages-deployment-trigger-status.json",
@@ -32,6 +33,7 @@ EXPECTED_RECORD_TYPES = {
     "data/public-records-manifest.json": "stegguardian_public_records_manifest",
     "data/cross-wiki-metadata-graph.json": "stegguardian_cross_wiki_metadata_graph",
     "data/cross-wiki-health-status.json": "stegguardian_cross_wiki_health_status",
+    "data/cross-wiki-health-status.schema.json": "StegVerse Cross-Wiki Health Status",
     "data/deployment-receipt.json": "stegguardian_pages_deployment_receipt",
     "data/session-coordination-status.json": "stegguardian_session_coordination_status",
     "data/pages-deployment-trigger-status.json": "stegguardian_pages_deployment_trigger_status",
@@ -40,14 +42,14 @@ EXPECTED_RECORD_TYPES = {
 
 
 def fetch_json(url: str, timeout: float) -> tuple[bool, dict[str, Any], str | None]:
-    request = urllib.request.Request(url, headers={"User-Agent": "stegguardian-live-record-verifier/0.1"})
+    request = urllib.request.Request(url, headers={"User-Agent": "stegguardian-live-record-verifier/0.2"})
     try:
         with urllib.request.urlopen(request, timeout=timeout) as response:
             status = getattr(response, "status", None)
             body = response.read().decode("utf-8")
     except urllib.error.HTTPError as exc:
         return False, {"http_status": exc.code}, f"http_error:{exc.code}"
-    except Exception as exc:  # network environment may vary
+    except Exception as exc:
         return False, {}, f"fetch_error:{type(exc).__name__}:{exc}"
 
     try:
@@ -55,10 +57,11 @@ def fetch_json(url: str, timeout: float) -> tuple[bool, dict[str, Any], str | No
     except json.JSONDecodeError as exc:
         return False, {"http_status": status, "bytes": len(body)}, f"json_decode_error:{exc}"
 
+    observed_type = payload.get("record_type") or payload.get("manifest_type") or payload.get("title")
     payload_meta = {
         "http_status": status,
         "bytes": len(body.encode("utf-8")),
-        "record_type": payload.get("record_type") or payload.get("manifest_type"),
+        "record_type": observed_type,
     }
     return status == 200, payload_meta, None
 
@@ -89,7 +92,7 @@ def build_report(base_url: str, timeout: float) -> dict[str, Any]:
         )
 
     return {
-        "schema_version": "0.1.0",
+        "schema_version": "0.2.0",
         "record_type": "stegguardian_live_public_record_url_fetch_report",
         "repo": "StegVerse-002/stegguardian-wiki",
         "observed_at": datetime.now(timezone.utc).isoformat(),
