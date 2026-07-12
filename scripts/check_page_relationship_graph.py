@@ -14,6 +14,7 @@ REQUIRED_NODES = {
     "device-bound-guardian-enforcement",
     "entity-sandbox-runner-repair-reentry-flow",
     "llm-free-tier-trust-chain",
+    "media-pipeline-guardian-boundary",
     "stegguardian-verification-status",
 }
 
@@ -24,7 +25,9 @@ REQUIRED_EDGES = {
     ("stegtalk-guardian-account-boundary", "device-bound-guardian-enforcement", "depends_on_boundary"),
     ("entity-sandbox-runner-repair-reentry-flow", "stegtalk-guardian-account-boundary", "must_reenter_ingestion_before_authority"),
     ("llm-free-tier-trust-chain", "stegguardian-verification-status", "verified_by"),
+    ("media-pipeline-guardian-boundary", "stegguardian-verification-status", "verified_by"),
     ("stegguardian-verification-status", "llm-free-tier-trust-chain", "summarizes_verification_for"),
+    ("stegguardian-verification-status", "media-pipeline-guardian-boundary", "summarizes_verification_for"),
 }
 
 REQUIRED_NON_CLAIMS = {
