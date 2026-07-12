@@ -46,6 +46,12 @@
       "authority": "awareness_only"
     },
     {
+      "id": "media-pipeline-guardian-boundary",
+      "title": "Media Pipeline Guardian Boundary",
+      "path": "pages/media-pipeline-guardian-boundary.md",
+      "authority": "awareness_only"
+    },
+    {
       "id": "stegguardian-verification-status",
       "title": "StegGuardian Verification Status",
       "path": "docs/STEGGUARDIAN_VERIFICATION_STATUS.md",
@@ -84,8 +90,18 @@
       "relationship": "verified_by"
     },
     {
+      "from": "media-pipeline-guardian-boundary",
+      "to": "stegguardian-verification-status",
+      "relationship": "verified_by"
+    },
+    {
       "from": "stegguardian-verification-status",
       "to": "llm-free-tier-trust-chain",
+      "relationship": "summarizes_verification_for"
+    },
+    {
+      "from": "stegguardian-verification-status",
+      "to": "media-pipeline-guardian-boundary",
       "relationship": "summarizes_verification_for"
     },
     {
