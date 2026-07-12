@@ -6,6 +6,7 @@ WORKFLOW = ROOT / ".github" / "workflows" / "pages.yml"
 REQUIRED_TEXT = [
     "name: Publish StegGuardian Wiki",
     "python scripts/check_llm_free_tier_trust_chain_page.py",
+    "python scripts/check_media_pipeline_guardian_boundary.py",
     "python scripts/check_page_index.py",
     "python scripts/check_page_relationship_graph.py",
     "python scripts/check_cross_wiki_metadata_graph.py",
@@ -18,7 +19,9 @@ REQUIRED_TEXT = [
     "python scripts/check_pages_deployment_trigger_status.py",
     "touch _site/.nojekyll",
     "pages/llm-free-tier-trust-chain.md",
+    "pages/media-pipeline-guardian-boundary.md",
     "LLM Free Tier Trust Chain",
+    "Media Pipeline Guardian Boundary",
     "data/page-index.json",
     "data/cross-wiki-metadata-graph.json",
     "data/cross-wiki-health-status.json",
@@ -39,6 +42,13 @@ REQUIRED_TEXT = [
     "Pages Deployment Trigger Status",
     "uses: actions/upload-pages-artifact@v3",
     "uses: actions/deploy-pages@v4",
+    "verify-live-public-records:",
+    "needs: deploy",
+    "python scripts/fetch_live_public_record_urls.py",
+    "reports/live-public-record-url-fetch-report.json",
+    "uses: actions/upload-artifact@v4",
+    "stegguardian-live-public-record-url-fetch-report",
+    "Enforce live record verification result",
 ]
 
 
