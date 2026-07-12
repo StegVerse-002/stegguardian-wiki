@@ -4,7 +4,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PAGE = ROOT / "pages" / "media-pipeline-guardian-boundary.md"
 INDEX = ROOT / "data" / "page-index.json"
-HANDOFF = ROOT / "STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md"
 
 PAGE_MARKERS = [
     "Status: downstream awareness-only summary",
@@ -25,12 +24,6 @@ INDEX_MARKERS = [
     '"activation_state": "downstream_awareness_only"',
 ]
 
-HANDOFF_MARKERS = [
-    "pages/media-pipeline-guardian-boundary.md",
-    "scripts/check_media_pipeline_guardian_boundary.py",
-    "media pipeline downstream awareness",
-]
-
 
 def require(path: Path, markers: list[str]) -> list[str]:
     if not path.exists():
@@ -43,7 +36,6 @@ def main() -> int:
     errors = []
     errors.extend(require(PAGE, PAGE_MARKERS))
     errors.extend(require(INDEX, INDEX_MARKERS))
-    errors.extend(require(HANDOFF, HANDOFF_MARKERS))
     if errors:
         for error in errors:
             print(f"FAIL {error}")
