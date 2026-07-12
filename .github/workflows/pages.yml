@@ -25,6 +25,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Validate LLM free-tier trust page
         run: python scripts/check_llm_free_tier_trust_chain_page.py
+      - name: Validate media pipeline Guardian boundary
+        run: python scripts/check_media_pipeline_guardian_boundary.py
       - name: Validate page index
         run: python scripts/check_page_index.py
       - name: Validate page relationship graph
@@ -90,6 +92,7 @@ jobs:
             <a href="pages/device-bound-guardian-enforcement.md">Device Bound Guardian Enforcement</a>
             <a href="pages/entity-sandbox-runner-repair-reentry-flow.md">Entity Sandbox Runner Repair Reentry Flow</a>
             <a href="pages/llm-free-tier-trust-chain.md">LLM Free Tier Trust Chain</a>
+            <a href="pages/media-pipeline-guardian-boundary.md">Media Pipeline Guardian Boundary</a>
             <a href="docs/STEGGUARDIAN_VERIFICATION_STATUS.md">StegGuardian Verification Status</a>
             <a href="docs/PAGES_DEPLOYMENT_TRIGGER_DIAGNOSIS.md">Pages Deployment Trigger Diagnosis</a>
             <a href="docs/LIVE_PUBLIC_RECORD_URL_FETCH_RUNBOOK.md">Live Public Record URL Fetch Runbook</a>
