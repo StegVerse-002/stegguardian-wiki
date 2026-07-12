@@ -9,6 +9,7 @@ REQUIRED_RECORDS = {
     "data/page-relationship-graph.json": "published_by_current_workflow",
     "data/cross-wiki-metadata-graph.json": "published_by_current_workflow",
     "data/cross-wiki-health-status.json": "published_by_current_workflow",
+    "data/cross-wiki-health-status.schema.json": "published_by_current_workflow",
     "data/ecosystem-documentation-endpoints.json": "published_by_current_workflow",
     "data/live-public-record-url-verification.json": "published_by_current_workflow",
     "docs/LIVE_PUBLIC_RECORD_URL_FETCH_RUNBOOK.md": "published_by_current_workflow",
