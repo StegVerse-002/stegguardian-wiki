@@ -26,19 +26,20 @@ After `deploy` completes, that job:
 2. runs `scripts/fetch_live_public_record_urls.py` from GitHub's network;
 3. retries up to 12 times at 15-second intervals to allow bounded Pages propagation;
 4. writes `reports/live-public-record-url-fetch-report.json`;
-5. uploads the report as the workflow artifact:
-
-```text
-stegguardian-live-public-record-url-fetch-report
-```
-
-6. fails the job if all expected machine-record URLs do not converge within the retry window.
+5. uploads `stegguardian-live-public-record-url-fetch-report`;
+6. fails if all expected machine-record URLs do not converge.
 
 The report artifact is retained for 30 days.
 
 ## Manual Diagnostic Path
 
-The same verifier may still be run manually for diagnosis:
+Canonical diagnostic command retained for deterministic tooling checks:
+
+```text
+python scripts/fetch_live_public_record_urls.py --write-report data/live-public-record-url-fetch-report.json
+```
+
+Equivalent multiline shell form:
 
 ```text
 python scripts/fetch_live_public_record_urls.py \
@@ -73,18 +74,7 @@ The existence of the artifact alone is insufficient when the enforcement step fa
 
 ## Follow-On State Update
 
-After successful workflow evidence is observed, a governed status update may change `data/live-public-record-url-verification.json` so:
-
-```json
-{
-  "verification_state": {
-    "external_fetch_confirmed_by_current_session": true,
-    "all_machine_record_urls_confirmed": true
-  }
-}
-```
-
-That update must preserve the workflow-run and commit references. It must not be made before successful evidence exists.
+After successful workflow evidence is observed, a governed status update may change `data/live-public-record-url-verification.json` only while preserving workflow-run and commit references.
 
 ## Boundary
 
