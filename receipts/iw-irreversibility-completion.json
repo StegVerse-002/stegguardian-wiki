@@ -1,0 +1,30 @@
+{
+  "schema": "admissible_existence.iw.destination-completion.v1",
+  "source": {
+    "repository": "Admissible-Existence/IW",
+    "commit_sha": "87fd24ea829b413373ea42381dd0b08d45b79239",
+    "canonical_markdown": "docs/irreversibility.md",
+    "publication_pdf": "docs/irreversibility.pdf"
+  },
+  "target": {
+    "repository": "StegVerse-002/stegguardian-wiki",
+    "role": "guardian_reference",
+    "commit_sha": "32b5bcdc62b0ade11a85ecb375c2935fe8371e7a"
+  },
+  "application": {
+    "files": [
+      {
+        "path": "pages/iw-irreversibility-guardian-boundary.md",
+        "sha256": "7090dfc394afccfa8264c20460ef43f85a9d01550e1ad4bb78d55d5ee76191a1"
+      }
+    ],
+    "required_updates_satisfied": true,
+    "claim_boundary_preserved": true
+  },
+  "authority": false,
+  "completion_state": "complete",
+  "evidence": [
+    "destination commit 32b5bcdc62b0ade11a85ecb375c2935fe8371e7a",
+    "added WARN, STOP, FAIL_CLOSED, recovery-path, and warrant Guardian boundary reference"
+  ]
+}
