@@ -19,6 +19,10 @@ Parallel sessions must not restart the resolved Pages repair path.
 Site has concurrent active work and must not be modified from this workstream.
 Admissibility-wiki Goal 5 remains separately active and must not be modified from this workstream.
 
+## Preserved Upstream Readiness Surface
+
+The active Guardian summary remains bound to `Standing-Proof-Engine v0.5.0` and status `READY_FOR_UPSTREAM_GATE_EVENTS`. ST-017 adoption does not supersede that upstream readiness contract.
+
 ## ST-017 Sandbox-First Adoption
 
 Installed on validation branch `validation/st017-sandbox-adoption`:
@@ -44,15 +48,17 @@ change installed
 -> live public-output verification
 ```
 
-The existing single Pages workflow is preserved. Pull requests execute validation and upload `stegguardian-st017-sandbox-report`; deployment and live-record verification remain restricted to non-PR execution after validation succeeds.
+The existing Pages workflow is preserved. Pull requests execute validation and upload `stegguardian-st017-sandbox-report`; deployment and live-record verification remain restricted to non-PR execution after validation succeeds.
 
-Current branch status before observed workflow evidence:
+Current branch status after the first observed execution:
 
 ```text
-SANDBOX: NOT_RUN
-GITHUB_ACTIONS: NOT_OBSERVED
+SANDBOX: FAIL — canonical live-fetch command marker missing
+GITHUB_ACTIONS: FAIL
 PUBLIC_OUTPUT: NOT_VERIFIED
 ```
+
+The marker defect has been repaired and the next PR run must be inspected before merge.
 
 ## Media-Pipeline Guardian Integration
 
@@ -131,8 +137,8 @@ They do not create Guardian enforcement authority, provider authority, execution
 ## Remaining Open Check
 
 ```text
-execute and inspect the ST-017 pull-request sandbox
-merge only after SANDBOX PASS and GitHub Actions PASS
+rerun and inspect the repaired ST-017 pull-request sandbox
+merge only after SANDBOX PASS and both PR workflows PASS
 confirm the resulting main Pages deploy job succeeds
 confirm verify-live-public-records succeeds
 inspect the uploaded live fetch report artifact
