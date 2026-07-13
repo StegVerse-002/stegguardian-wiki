@@ -19,6 +19,47 @@ Parallel sessions must not restart the resolved Pages repair path.
 Site has concurrent active work and must not be modified from this workstream.
 Admissibility-wiki Goal 5 remains separately active and must not be modified from this workstream.
 
+## Preserved Upstream Readiness Surface
+
+The active Guardian summary remains bound to `Standing-Proof-Engine v0.5.0` and status `READY_FOR_UPSTREAM_GATE_EVENTS`. ST-017 adoption does not supersede that upstream readiness contract.
+
+## ST-017 Sandbox-First Adoption
+
+Installed on validation branch `validation/st017-sandbox-adoption`:
+
+```text
+templates/sandbox-first/stegguardian-wiki.sandbox-profile.json
+scripts/run_sandbox_validation.py
+scripts/check_st017_sandbox_adoption.py
+reports/sandbox-first-validation.report.json
+.github/workflows/pages.yml PR validation job
+```
+
+Required sequence:
+
+```text
+change installed
+-> isolated temporary repository copy
+-> compile and Guardian validators
+-> SANDBOX PASS
+-> GitHub Actions observation
+-> merge
+-> main-only Pages deployment
+-> live public-output verification
+```
+
+The existing Pages workflow is preserved. Pull requests execute validation and upload `stegguardian-st017-sandbox-report`; deployment and live-record verification remain restricted to non-PR execution after validation succeeds.
+
+Current branch status after the first observed execution:
+
+```text
+SANDBOX: FAIL — canonical live-fetch command marker missing
+GITHUB_ACTIONS: FAIL
+PUBLIC_OUTPUT: NOT_VERIFIED
+```
+
+The marker defect has been repaired and the next PR run must be inspected before merge.
+
 ## Media-Pipeline Guardian Integration
 
 Installed and enforced:
@@ -53,18 +94,6 @@ scripts/fetch_live_public_record_urls.py live schema verification
 
 StegGuardian and StegTalk now share the same schema identifier and required common fields. `cross_wiki_schema_consistency_confirmed` remains false until workflow artifacts prove both published schema and health-record URLs.
 
-Latest shared-schema commits:
-
-```text
-19c5ee4d6c3dad421c800bd5c36123e156b34b00
-9e1ec729513d39d21aa68e806a7bf9b28c939137
-5c34f50429484a28b51b013ec6cdea42c7fe516c
-375e1af8822c037bced490f4b535dcb8236b39cd
-ca5693f403c6b050d6596a17adff624004bc986f
-f814aa26e818690f393cf5bba2e2c1b577f25a4f
-df1cbcc8bbd930264cab2da7ceb50ef83aa3cb1c
-```
-
 ## Automated Live Public-Record Verification
 
 The existing Pages workflow contains:
@@ -74,14 +103,7 @@ deploy
   -> verify-live-public-records
 ```
 
-The dependent job:
-
-- uses GitHub's network after deployment;
-- retries up to 12 times at 15-second intervals;
-- verifies public JSON record types, including the shared health schema title;
-- writes `reports/live-public-record-url-fetch-report.json`;
-- uploads `stegguardian-live-public-record-url-fetch-report` for 30 days;
-- fails closed if verification does not converge.
+The dependent job uses GitHub's network after deployment, retries up to 12 times at 15-second intervals, writes `reports/live-public-record-url-fetch-report.json`, uploads `stegguardian-live-public-record-url-fetch-report`, and fails closed if verification does not converge.
 
 No successful live-verification result is claimed until the job and enforcement step succeed.
 
@@ -102,33 +124,29 @@ python scripts/check_cross_wiki_health_status.py
 python scripts/check_public_records_manifest.py
 python scripts/check_pages_workflow_validation.py
 python scripts/check_guardian_local_state.py
-```
-
-Manual network execution remains diagnostic only:
-
-```text
-python scripts/fetch_live_public_record_urls.py \
-  --write-report data/live-public-record-url-fetch-report.json
+python scripts/check_st017_sandbox_adoption.py --structural-only
+python scripts/run_sandbox_validation.py
 ```
 
 ## Boundary
 
-The media page, schemas, health records, endpoint registry, graphs, manifests, workflow artifacts, and fetch reports are propagation and evidence-awareness records only.
+The media page, schemas, health records, endpoint registry, graphs, manifests, workflow artifacts, sandbox reports, and fetch reports are propagation and evidence-awareness records only.
 
-They do not create Guardian enforcement authority, provider authority, execution authority, live-media authority, permanent retention, replay standing, reconstruction standing, or upgrade-based admissibility.
+They do not create Guardian enforcement authority, provider authority, execution authority, live-media authority, permanent retention, replay standing, reconstruction standing, release authority, tag authority, deployment authority beyond the existing workflow, or upgrade-based admissibility.
 
 ## Remaining Open Check
 
 ```text
-confirm the Pages deploy job succeeds
+rerun and inspect the repaired ST-017 pull-request sandbox
+merge only after SANDBOX PASS and both PR workflows PASS
+confirm the resulting main Pages deploy job succeeds
 confirm verify-live-public-records succeeds
 inspect the uploaded live fetch report artifact
 update live verification state only after successful evidence
 confirm StegTalk and StegGuardian publicly expose the identical shared schema
 standardize Site and admissibility-wiki only through their active handoff owners
-promote the reusable schema and checker to repo-standards after multi-repo live proof
 ```
 
 ## Archive Readiness
 
-This handoff contains the current media-pipeline, shared-schema, workflow, public-verification, authority-boundary, coordination, and continuation state. Earlier conversation context is not required.
+This handoff contains the current ST-017 adoption, media-pipeline, shared-schema, workflow, public-verification, authority-boundary, coordination, and continuation state. Earlier conversation context is not required.
