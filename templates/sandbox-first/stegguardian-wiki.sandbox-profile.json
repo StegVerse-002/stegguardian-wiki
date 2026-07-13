@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "sandbox_validation_profile",
+  "profile_id": "stegguardian-wiki-default",
+  "repository": "StegVerse-002/stegguardian-wiki",
+  "timeout_seconds": 300,
+  "exclude": [".git", "__pycache__", ".pytest_cache", "reports", "_site"],
+  "commands": [
+    {"id": "compile-python", "argv": ["python", "-m", "compileall", "scripts"], "expected_exit": 0},
+    {"id": "validate-guardian-local-state", "argv": ["python", "scripts/check_guardian_local_state.py"], "expected_exit": 0},
+    {"id": "validate-pages-workflow", "argv": ["python", "scripts/check_pages_workflow_validation.py"], "expected_exit": 0},
+    {"id": "validate-st017-adoption", "argv": ["python", "scripts/check_st017_sandbox_adoption.py", "--structural-only"], "expected_exit": 0}
+  ]
+}
