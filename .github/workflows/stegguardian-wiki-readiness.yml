@@ -14,4 +14,4 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-      - run: python scripts/check_repo_standards_guardian_summary.py
+      - run: python scripts/check_stegguardian_wiki_readiness.py
