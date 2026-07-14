@@ -16,7 +16,7 @@ def main() -> int:
         "pull_request:",
         "push:",
         "workflow_dispatch:",
-        "python scripts/check_repo_standards_guardian_summary.py",
+        "python scripts/check_stegguardian_wiki_readiness.py",
     ]
     missing = [item for item in required if item not in text]
     if missing:
