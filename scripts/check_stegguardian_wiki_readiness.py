@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CHECKS = (
     "scripts/check_repo_standards_guardian_summary.py",
     "scripts/check_stegguardian_wiki_workflow.py",
+    "scripts/check_stegguardian_wiki_task_completion.py",
 )
 
 
