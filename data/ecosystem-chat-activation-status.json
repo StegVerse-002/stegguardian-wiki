@@ -1,0 +1,17 @@
+{
+  "schema": "stegverse.ecosystem_chat.guardian_projection.v1",
+  "repository": "StegVerse-002/stegguardian-wiki",
+  "generated_at": "2026-07-16T00:00:00+00:00",
+  "state": "ACTIVATION_EVIDENCE_PENDING",
+  "source_repository": "StegVerse-Labs/Site",
+  "source_state_sha256": null,
+  "source_packet_sha256": null,
+  "manual_user_action_required": false,
+  "authority_boundary": {
+    "projection_grants_guardian_authority": false,
+    "projection_grants_execution_authority": false,
+    "projection_grants_release_authority": false,
+    "projection_is_custody": false
+  },
+  "projection_sha256": "17be1b0a6fb9d45bceee5d02c65d7107b21f47ee51fd0f2b61bf8e12531fa705"
+}
