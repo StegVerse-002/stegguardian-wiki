@@ -43,6 +43,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Refresh and validate Ecosystem Chat activation projection
+        run: python scripts/check_ecosystem_chat_activation_projection.py
       - name: Validate LLM free-tier trust page
         run: python scripts/check_llm_free_tier_trust_chain_page.py
       - name: Validate media pipeline Guardian boundary
@@ -69,6 +71,13 @@ jobs:
         run: python scripts/check_public_records_manifest.py
       - name: Validate Pages deployment trigger status
         run: python scripts/check_pages_deployment_trigger_status.py
+      - name: Upload Ecosystem Chat activation projection
+        uses: actions/upload-artifact@v4
+        with:
+          name: stegguardian-ecosystem-chat-activation-projection
+          path: data/ecosystem-chat-activation-status.json
+          if-no-files-found: error
+          retention-days: 30
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Prepare static site
@@ -83,6 +92,7 @@ jobs:
           cp data/cross-wiki-health-status.json _site/data/cross-wiki-health-status.json
           cp data/cross-wiki-health-status.schema.json _site/data/cross-wiki-health-status.schema.json
           cp data/ecosystem-documentation-endpoints.json _site/data/ecosystem-documentation-endpoints.json
+          cp data/ecosystem-chat-activation-status.json _site/data/ecosystem-chat-activation-status.json
           cp data/live-public-record-url-verification.json _site/data/live-public-record-url-verification.json
           cp data/deployment-receipt.json _site/data/deployment-receipt.json
           cp data/session-coordination-status.json _site/data/session-coordination-status.json
@@ -122,6 +132,7 @@ jobs:
             <a href="data/cross-wiki-health-status.json">Cross-Wiki Health Status</a>
             <a href="data/cross-wiki-health-status.schema.json">Cross-Wiki Health Status Schema</a>
             <a href="data/ecosystem-documentation-endpoints.json">Ecosystem Documentation Endpoints</a>
+            <a href="data/ecosystem-chat-activation-status.json">Ecosystem Chat Activation Status</a>
             <a href="data/live-public-record-url-verification.json">Live Public Record URL Verification</a>
             <a href="data/deployment-receipt.json">Deployment Receipt</a>
             <a href="data/session-coordination-status.json">Session Coordination Status</a>
