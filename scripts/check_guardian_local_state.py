@@ -5,6 +5,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 COMMANDS = [
+    [sys.executable, "scripts/import_publisher_ecosystem_chat_activation.py"],
     [sys.executable, "scripts/check_llm_free_tier_trust_chain_page.py"],
     [sys.executable, "scripts/check_media_pipeline_guardian_boundary.py"],
     [sys.executable, "scripts/check_page_index.py"],
