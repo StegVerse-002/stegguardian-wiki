@@ -20,9 +20,14 @@ StegGuardian wiki is intentionally published from `StegVerse-002/stegguardian-wi
 
 - `receipts/stegtalk-boundary-receipt.json`
 
-## Current Handoff
+## Current Handoffs
 
 - `STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md`
+- `docs/ECOSYSTEM_CHAT_SITE_PROPAGATION_CONSUMER_HANDOFF.md`
+
+## Automated Ecosystem Chat Projection
+
+The hourly Pages workflow refreshes, validates, uploads, and publishes `data/ecosystem-chat-activation-status.json`. Pending upstream evidence creates no user task and grants no Guardian, execution, release, publication, custody, or admissibility authority.
 
 ## Boundary
 
