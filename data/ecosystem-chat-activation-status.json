@@ -1,17 +1,28 @@
 {
-  "schema": "stegverse.ecosystem_chat.guardian_projection.v1",
+  "schema": "stegverse.ecosystem_chat.guardian_projection.v2",
   "repository": "StegVerse-002/stegguardian-wiki",
-  "generated_at": "2026-07-16T00:00:00+00:00",
+  "generated_at": "2026-07-19T14:08:33.615834+00:00",
   "state": "ACTIVATION_EVIDENCE_PENDING",
   "source_repository": "StegVerse-Labs/Site",
-  "source_state_sha256": null,
-  "source_packet_sha256": null,
+  "source_state": "ACTIVATION_PENDING_EVIDENCE",
+  "source_propagation_state": "PENDING_ACTIVATION_EVIDENCE",
+  "source_state_sha256": "f66bedbcab47665b911ef70f87896d4270f867fa7ea9ae20378ebd7f4739d4b1",
+  "source_packet_sha256": "808a9f3bf0907925a068cf7ebe63f36e7c3b348378e7dbde2e07119f36a70ee5",
+  "destination_declared": true,
+  "destination_ingestion_ready": false,
+  "required_action": "wait_for_verified_activation_state",
+  "blockers": [
+    "site_activation_not_complete",
+    "destination_ingestion_not_ready"
+  ],
   "manual_user_action_required": false,
   "authority_boundary": {
     "projection_grants_guardian_authority": false,
     "projection_grants_execution_authority": false,
     "projection_grants_release_authority": false,
-    "projection_is_custody": false
+    "projection_is_custody": false,
+    "projection_grants_admissibility_authority": false,
+    "projection_grants_publication_authority": false
   },
-  "projection_sha256": "17be1b0a6fb9d45bceee5d02c65d7107b21f47ee51fd0f2b61bf8e12531fa705"
+  "projection_sha256": "b6ef4f5cd95a43ffe95634286b2495e333ebbd60bae93788b5b0d6ddba78aec2"
 }
