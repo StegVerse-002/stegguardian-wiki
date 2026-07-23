@@ -9,6 +9,7 @@
     {"id": "compile-python", "argv": ["python", "-m", "compileall", "scripts"], "expected_exit": 0},
     {"id": "validate-guardian-local-state", "argv": ["python", "scripts/check_guardian_local_state.py"], "expected_exit": 0},
     {"id": "validate-pages-workflow", "argv": ["python", "scripts/check_pages_workflow_validation.py"], "expected_exit": 0},
+    {"id": "validate-sv-continuity-109", "argv": ["python", "scripts/check_sv_continuity_109_guardian_receipt.py"], "expected_exit": 0},
     {"id": "validate-st017-adoption", "argv": ["python", "scripts/check_st017_sandbox_adoption.py", "--structural-only"], "expected_exit": 0}
   ]
 }
