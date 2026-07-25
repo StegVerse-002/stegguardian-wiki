@@ -2,62 +2,102 @@
 
 ## Scope
 
-This record preserves the automatic downstream Ecosystem Chat activation projection for `StegVerse-002/stegguardian-wiki`.
+This record preserves the bounded downstream Ecosystem Chat activation projection for `StegVerse-002/stegguardian-wiki`.
 
-## Source chain
+## Authoritative source chain
 
 ```text
-StegVerse-Labs/Site activation state
--> GCAT-BCAT-Engine/Publisher hourly importer
--> Publisher data/ecosystem-chat-activation-status.json
+StegVerse-Labs/Site exact-SHA orchestration
+-> Site terminal orchestration receipt
+-> master-records/orchestration custody RECORDED
+-> reconstruction PASS
+-> GCAT-BCAT-Engine/Publisher custody-bound activation status
 -> StegGuardian Wiki importer
 -> data/ecosystem-chat-publisher-activation.json
--> existing Guardian local-state and Pages validation chain
+-> data/ecosystem-chat-activation-status.json
+-> Guardian validation and Pages deployment chain
 ```
 
 ## Installed files
 
 ```text
 scripts/import_publisher_ecosystem_chat_activation.py
+scripts/check_guardian_activation_orchestration_contract.py
 scripts/check_guardian_local_state.py
+.github/workflows/pages.yml
 data/ecosystem-chat-publisher-activation.json (generated)
-.github/workflows/pages.yml (existing workflow owner)
+data/ecosystem-chat-activation-status.json (generated public mirror)
 ```
-
-`check_guardian_local_state.py` now invokes the Publisher importer before the existing Guardian validators. No new workflow, manual dispatch, artifact download, file movement, merge observation, or user confirmation is required for this projection.
 
 ## Acceptance boundary
 
-The importer requires:
+The Guardian importer records a verified projection only when Publisher provides:
 
-- Publisher schema `stegverse.publisher.ecosystem_chat_activation_status.v1`;
-- Publisher publication, release, custody, and execution flags to remain `false`;
-- `manual_user_action_required=false`;
-- `status=VERIFIED_ACTIVATION_IMPORTED` and `activation_complete=true` before recording a verified projection.
+```text
+schema = stegverse.publisher.ecosystem_chat_activation_status.v2
+status_sha256 = valid canonical digest
+status = VERIFIED_ACTIVATION_IMPORTED
+activation_complete = true
+terminal_custody_verified = true
+terminal_custody_sha256 = valid SHA-256 digest
+custody_repository = master-records/orchestration
+manual_user_action_required = false
+publication_authorized = false
+release_authorized = false
+execution_authorized = false
+```
 
-Missing Publisher state is recorded as `PENDING_PUBLISHER_ACTIVATION`. Invalid schema or authority fields fail closed as `REJECTED_PUBLISHER_ACTIVATION`.
+Missing upstream evidence remains `PENDING_PUBLISHER_ACTIVATION`. Invalid schema, digest, custody, or authority fields become `REJECTED_PUBLISHER_ACTIVATION` and fail closed.
+
+## Orchestration repair
+
+The Pages workflow no longer owns an hourly schedule. It now uses:
+
+```text
+push to main -> validate -> import custody-bound Publisher projection -> deploy -> verify
+pull request -> validation only
+workflow dispatch -> validation only
+cancel-in-progress = true
+```
+
+A manual dispatch cannot deploy Pages. Superseded runs are cancelled. The workflow no longer reads Site activation directly for the Guardian activation decision; Publisher is the required bounded downstream source after Master Records custody.
 
 ## Authority boundary
 
-The projection is awareness-only. It does not create Guardian enforcement authority, publication authority, release authority, custody, execution authority, deployment authority, or an admissibility determination.
-
-## Commits
-
 ```text
-40ff08c4872d9c7b51edf1bf4b980103119075b5  add importer
-beb3847e281a650265a436fe057e7beef701b075  integrate importer into Guardian local-state chain
+Publisher activation != Guardian enforcement authority
+terminal custody != Guardian enforcement authority
+reconstruction PASS != execution authority
+Guardian projection != publication authority
+Pages deployment != admissibility determination
+URL verification != standing
 ```
 
-GitHub exposed no combined status checks for `beb3847`. Missing status is not treated as validation success; the repository-owned Pages workflow remains responsible for producing evidence.
+All projection authority flags remain false.
 
-## Manual-task posture
+## Current evidence state
 
 ```text
-manual_user_action_required: false
-continuation_owner: existing Guardian validation and Pages workflow
-source_observation_owner: Publisher hourly importer
+terminal-custody-aware importer: INSTALLED
+Guardian orchestration contract: INSTALLED
+canonical local-state binding: INSTALLED
+hourly workflow schedule: REMOVED
+superseded-run cancellation: INSTALLED
+manual deployment authority: REMOVED
+first live custody-bound Guardian projection: NOT YET OBSERVED
+first live Pages verification containing custody hash: NOT YET OBSERVED
+```
+
+## Next task
+
+```text
+1. Observe the first current-main workflow containing commit b5b44cc9b7b38f2540c2fcf95d89786e6308f579 or later.
+2. Repair only the first exact validation failure without weakening custody checks.
+3. Preserve the first Guardian projection carrying the same terminal_custody_sha256 as Publisher and admissibility-wiki.
+4. Preserve the first successful live Pages verification for that projection.
+5. Do not infer Guardian authority from projection, custody, reconstruction, deployment, or URL availability.
 ```
 
 ## Archive readiness
 
-No future continuation requires the conversation that installed this consumer. Remaining activation is determined by upstream machine-generated evidence and the repository-owned workflow.
+Repository history, this handoff, the importer, the orchestration contract, the canonical local-state chain, workflow artifacts, and the eventual live projection preserve continuation. The active cross-repository goal remains open until a real custody hash is observed consistently across Publisher, admissibility-wiki, and StegGuardian Wiki.
