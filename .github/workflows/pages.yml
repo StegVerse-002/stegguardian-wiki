@@ -5,8 +5,6 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  schedule:
-    - cron: "37 * * * *"
 
 permissions:
   contents: read
@@ -14,8 +12,8 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages-${{ github.event_name }}-${{ github.ref }}
-  cancel-in-progress: false
+  group: stegguardian-pages-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   validate:
@@ -24,6 +22,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Validate Guardian activation orchestration contract
+        run: python scripts/check_guardian_activation_orchestration_contract.py
       - name: Execute Guardian sandbox
         run: python scripts/run_sandbox_validation.py
       - name: Upload Guardian sandbox report
@@ -37,7 +37,7 @@ jobs:
 
   deploy:
     needs: validate
-    if: github.event_name != 'pull_request'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -45,8 +45,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Refresh and validate Ecosystem Chat activation projection
-        run: python scripts/check_ecosystem_chat_activation_projection.py
+      - name: Import custody-bound Publisher activation projection
+        run: python scripts/import_publisher_ecosystem_chat_activation.py
       - name: Validate LLM free-tier trust page
         run: python scripts/check_llm_free_tier_trust_chain_page.py
       - name: Validate media pipeline Guardian boundary
@@ -76,8 +76,10 @@ jobs:
       - name: Upload Ecosystem Chat activation projection
         uses: actions/upload-artifact@v4
         with:
-          name: stegguardian-ecosystem-chat-activation-projection
-          path: data/ecosystem-chat-activation-status.json
+          name: stegguardian-ecosystem-chat-activation-projection-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            data/ecosystem-chat-publisher-activation.json
+            data/ecosystem-chat-activation-status.json
           if-no-files-found: error
           retention-days: 30
       - name: Configure Pages
@@ -95,6 +97,7 @@ jobs:
           cp data/cross-wiki-health-status.schema.json _site/data/cross-wiki-health-status.schema.json
           cp data/ecosystem-documentation-endpoints.json _site/data/ecosystem-documentation-endpoints.json
           cp data/ecosystem-chat-activation-status.json _site/data/ecosystem-chat-activation-status.json
+          cp data/ecosystem-chat-publisher-activation.json _site/data/ecosystem-chat-publisher-activation.json
           cp data/live-public-record-url-verification.json _site/data/live-public-record-url-verification.json
           cp data/deployment-receipt.json _site/data/deployment-receipt.json
           cp data/session-coordination-status.json _site/data/session-coordination-status.json
@@ -135,6 +138,7 @@ jobs:
             <a href="data/cross-wiki-health-status.schema.json">Cross-Wiki Health Status Schema</a>
             <a href="data/ecosystem-documentation-endpoints.json">Ecosystem Documentation Endpoints</a>
             <a href="data/ecosystem-chat-activation-status.json">Ecosystem Chat Activation Status</a>
+            <a href="data/ecosystem-chat-publisher-activation.json">Publisher Activation Projection</a>
             <a href="data/live-public-record-url-verification.json">Live Public Record URL Verification</a>
             <a href="data/deployment-receipt.json">Deployment Receipt</a>
             <a href="data/session-coordination-status.json">Session Coordination Status</a>
@@ -152,7 +156,7 @@ jobs:
   verify-live-public-records:
     name: Verify deployed machine records
     needs: deploy
-    if: github.event_name != 'pull_request'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -179,7 +183,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: stegguardian-live-public-record-url-fetch-report
+          name: stegguardian-live-public-record-url-fetch-report-${{ github.run_id }}-${{ github.run_attempt }}
           path: reports/live-public-record-url-fetch-report.json
           if-no-files-found: error
           retention-days: 30
@@ -193,6 +197,6 @@ jobs:
         if: always()
         run: |
           echo "## StegGuardian Live Public Record Verification" >> "$GITHUB_STEP_SUMMARY"
-          echo "**Report artifact:** stegguardian-live-public-record-url-fetch-report" >> "$GITHUB_STEP_SUMMARY"
+          echo "**Report artifact:** stegguardian-live-public-record-url-fetch-report-${{ github.run_id }}-${{ github.run_attempt }}" >> "$GITHUB_STEP_SUMMARY"
           echo "**Bounded retries:** 12 attempts, 15 seconds apart" >> "$GITHUB_STEP_SUMMARY"
-          echo "**Authority boundary:** URL availability does not grant standing, guardian authority, or execution authority" >> "$GITHUB_STEP_SUMMARY"
+          echo "**Authority boundary:** URL availability does not grant standing, Guardian authority, or execution authority" >> "$GITHUB_STEP_SUMMARY"
