@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""Import Publisher's Ecosystem Chat activation projection for StegGuardian.
-
-The imported record is awareness-only and cannot grant Guardian enforcement,
-publication, release, custody, execution, deployment, or admissibility authority.
-"""
+"""Import Publisher activation only when terminal custody is independently verified."""
 from __future__ import annotations
 
 import hashlib
@@ -15,6 +11,7 @@ from urllib import error, request
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "data" / "ecosystem-chat-publisher-activation.json"
+PUBLIC_OUTPUT = ROOT / "data" / "ecosystem-chat-activation-status.json"
 SOURCE_URL = os.getenv(
     "STEGVERSE_PUBLISHER_ECOSYSTEM_CHAT_STATUS_URL",
     "https://raw.githubusercontent.com/GCAT-BCAT-Engine/Publisher/main/data/ecosystem-chat-activation-status.json",
@@ -30,10 +27,14 @@ def canonical_hash(payload: dict[str, Any]) -> str:
     ).hexdigest()
 
 
+def valid_digest(value: object) -> bool:
+    return isinstance(value, str) and len(value) == 64 and all(ch in "0123456789abcdef" for ch in value)
+
+
 def fetch() -> tuple[dict[str, Any], str]:
     outbound = request.Request(
         SOURCE_URL,
-        headers={"Accept": "application/json", "User-Agent": "StegVerse-Guardian-Wiki-Activation-Importer/1.1"},
+        headers={"Accept": "application/json", "User-Agent": "StegVerse-Guardian-Wiki-Activation-Importer/2.0"},
     )
     with request.urlopen(outbound, timeout=TIMEOUT) as response:
         raw = response.read()
@@ -45,17 +46,21 @@ def fetch() -> tuple[dict[str, Any], str]:
 
 def validate(source: dict[str, Any]) -> list[str]:
     failures: list[str] = []
-    if source.get("schema") != "stegverse.publisher.ecosystem_chat_activation_status.v1":
+    if source.get("schema") != "stegverse.publisher.ecosystem_chat_activation_status.v2":
         failures.append("schema_mismatch")
-    if not isinstance(source.get("status_sha256"), str):
-        failures.append("status_digest_missing")
-    elif source.get("status_sha256") != canonical_hash(source):
+    if source.get("status_sha256") != canonical_hash(source):
         failures.append("status_digest_mismatch")
-    for key in ("publication_authorized", "release_authorized", "custody_recorded", "execution_authorized"):
+    for key in ("publication_authorized", "release_authorized", "execution_authorized"):
         if source.get(key) is not False:
             failures.append(f"authority_boundary_invalid:{key}")
     if source.get("manual_user_action_required") is not False:
         failures.append("manual_action_boundary_invalid")
+    if source.get("terminal_custody_verified") is not True:
+        failures.append("terminal_custody_not_verified")
+    if not valid_digest(source.get("terminal_custody_sha256")):
+        failures.append("terminal_custody_digest_invalid")
+    if source.get("custody_repository") != "master-records/orchestration":
+        failures.append("custody_repository_mismatch")
     return failures
 
 
@@ -64,9 +69,10 @@ def write(status: str, reason: str, source: dict[str, Any] | None = None, digest
         source
         and source.get("status") == "VERIFIED_ACTIVATION_IMPORTED"
         and source.get("activation_complete") is True
+        and source.get("terminal_custody_verified") is True
     )
     payload = {
-        "schema": "stegverse.stegguardian_wiki.ecosystem_chat_activation_projection.v1",
+        "schema": "stegverse.stegguardian_wiki.ecosystem_chat_activation_projection.v2",
         "status": status,
         "reason": reason,
         "source_repository": "GCAT-BCAT-Engine/Publisher",
@@ -75,6 +81,9 @@ def write(status: str, reason: str, source: dict[str, Any] | None = None, digest
         "publisher_status_sha256": source.get("status_sha256") if source else None,
         "publisher_status": source.get("status") if source else None,
         "publisher_activation_complete": source.get("activation_complete") if source else False,
+        "terminal_custody_sha256": source.get("terminal_custody_sha256") if source else None,
+        "terminal_custody_verified": source.get("terminal_custody_verified") is True if source else False,
+        "custody_repository": source.get("custody_repository") if source else None,
         "verified_activation_projection": verified and status == "VERIFIED_PUBLISHER_ACTIVATION_IMPORTED",
         "manual_user_action_required": False,
         "authority_boundary": {
@@ -86,8 +95,10 @@ def write(status: str, reason: str, source: dict[str, Any] | None = None, digest
             "projection_is_admissibility_determination": False,
         },
     }
+    encoded = json.dumps(payload, indent=2, sort_keys=True) + "\n"
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    OUTPUT.write_text(encoded, encoding="utf-8")
+    PUBLIC_OUTPUT.write_text(encoded, encoding="utf-8")
 
 
 def main() -> int:
@@ -107,7 +118,7 @@ def main() -> int:
     if source.get("status") != "VERIFIED_ACTIVATION_IMPORTED" or source.get("activation_complete") is not True:
         write("PENDING_PUBLISHER_ACTIVATION", "publisher_activation_not_complete", source, digest)
         return 0
-    write("VERIFIED_PUBLISHER_ACTIVATION_IMPORTED", "publisher_projection_verified", source, digest)
+    write("VERIFIED_PUBLISHER_ACTIVATION_IMPORTED", "publisher_terminal_custody_projection_verified", source, digest)
     print("STEGGUARDIAN_WIKI_ECOSYSTEM_CHAT_ACTIVATION_IMPORT_PASS")
     return 0
 
