@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "visibility_authority_guardian_status",
+  "state": "IMPLEMENTED_PENDING_WORKFLOW_VERIFICATION",
+  "page": "pages/visibility-authority-guardian-boundary.md",
+  "invariants": {
+    "public_visibility_is_guardian_authority": false,
+    "acknowledgement_is_endorsement": false,
+    "acknowledgement_is_attribution": false,
+    "reconstruction_is_authorization": false,
+    "publication_is_execution_authority": false
+  },
+  "authority_posture": "DOCUMENTATION_AND_PROPAGATION_AWARENESS_ONLY",
+  "manual_user_action_required": false,
+  "production_ready": false
+}

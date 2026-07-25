@@ -81,6 +81,26 @@
       }
     },
     {
+      "title": "Visibility and Authority Guardian Boundary",
+      "path": "pages/visibility-authority-guardian-boundary.md",
+      "status": "installed",
+      "source_chain": [
+        "StegVerse-org/StegVerse-SDK",
+        "GCAT-BCAT-Engine/Publisher",
+        "StegVerse-Labs/Site",
+        "master-records/orchestration",
+        "StegVerse-Labs/admissibility-wiki"
+      ],
+      "activation_state": "documentation_and_propagation_awareness_only",
+      "non_claims": {
+        "guardian_enforcement_authority": false,
+        "publication_authority": false,
+        "execution_authority": false,
+        "custody_authority": false,
+        "admissibility": false
+      }
+    },
+    {
       "title": "StegGuardian Verification Status",
       "path": "docs/STEGGUARDIAN_VERIFICATION_STATUS.md",
       "status": "installed",
