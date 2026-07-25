@@ -5,54 +5,122 @@
   "publicly_viewable": false,
   "visibility_note": "repository visibility is private unless changed outside this artifact",
   "pages": [
-    {"title":"StegTalk Guardian and Account Boundary","path":"pages/stegtalk-guardian-account-boundary.md","status":"installed"},
-    {"title":"Guardian Account Boundary Vocabulary","path":"pages/guardian-account-boundary-vocabulary.md","status":"installed"},
-    {"title":"Recovery Authority","path":"pages/recovery-authority.md","status":"installed"},
-    {"title":"Account Federation","path":"pages/account-federation.md","status":"installed"},
-    {"title":"Device Bound Guardian Enforcement","path":"pages/device-bound-guardian-enforcement.md","status":"installed"},
     {
-      "title":"Entity Sandbox Runner Repair Reentry Flow",
-      "path":"pages/entity-sandbox-runner-repair-reentry-flow.md",
-      "status":"installed",
-      "source_repo":"StegGhost/entity-sandbox-runner",
-      "activation_state":"pending_external_evidence"
+      "title": "StegTalk Guardian and Account Boundary",
+      "path": "pages/stegtalk-guardian-account-boundary.md",
+      "status": "installed"
     },
     {
-      "title":"LLM Free Tier Trust Chain",
-      "path":"pages/llm-free-tier-trust-chain.md",
-      "status":"installed",
-      "source_repo":"StegVerse-Labs/admissibility-wiki",
-      "source_chain":["StegVerse-org/LLM-adapter","StegVerse-Labs/Site","StegVerse-org/StegVerse-SDK","StegVerse-Labs/admissibility-wiki","GCAT-BCAT-Engine/Publisher"],
-      "activation_state":"downstream_propagation_awareness_only",
-      "non_claims":{"guardian_enforcement_authority":false,"provider_authority":false,"execution_authority":false,"permanent_retention":false,"replay_standing":false,"reconstruction_standing":false,"upgrade_based_admissibility":false}
+      "title": "Guardian Account Boundary Vocabulary",
+      "path": "pages/guardian-account-boundary-vocabulary.md",
+      "status": "installed"
     },
     {
-      "title":"Media Pipeline Guardian Boundary",
-      "path":"pages/media-pipeline-guardian-boundary.md",
-      "status":"installed",
-      "source_repo":"StegVerse-Labs/collective-environment-engine",
-      "source_chain":["StegVerse-Labs/collective-environment-engine","GCAT-BCAT-Engine/Publisher","StegVerse-Labs/Site"],
-      "activation_state":"downstream_awareness_only",
-      "non_claims":{"live_camera_use":false,"live_microphone_use":false,"public_broadcast_capability":false,"guardian_enforcement_authority":false,"execution_authority":false,"provider_authority":false}
+      "title": "Recovery Authority",
+      "path": "pages/recovery-authority.md",
+      "status": "installed"
     },
     {
-      "title":"Visibility and Authority Guardian Boundary",
-      "path":"pages/visibility-authority-guardian-boundary.md",
-      "status":"installed",
-      "source_chain":["StegVerse-org/StegVerse-SDK","GCAT-BCAT-Engine/Publisher","StegVerse-Labs/Site","master-records/orchestration","StegVerse-Labs/admissibility-wiki"],
-      "activation_state":"documentation_and_propagation_awareness_only",
-      "non_claims":{"guardian_enforcement_authority":false,"publication_authority":false,"execution_authority":false,"custody_authority":false,"admissibility":false}
+      "title": "Account Federation",
+      "path": "pages/account-federation.md",
+      "status": "installed"
     },
     {
-      "title":"StegGuardian Verification Status",
-      "path":"docs/STEGGUARDIAN_VERIFICATION_STATUS.md",
-      "status":"installed",
-      "activation_state":"local_validation_pass_user_observed_workflow_success_connector_unconfirmed",
-      "checks":["python scripts/check_guardian_local_state.py","python scripts/check_stegguardian_verification_status.py"],
-      "non_claims":{"connector_confirmed_workflow_metadata":false,"public_deployment_verification":false,"tag_verification":false,"guardian_enforcement_authority":false,"execution_authority":false}
+      "title": "Device Bound Guardian Enforcement",
+      "path": "pages/device-bound-guardian-enforcement.md",
+      "status": "installed"
+    },
+    {
+      "title": "Entity Sandbox Runner Repair Reentry Flow",
+      "path": "pages/entity-sandbox-runner-repair-reentry-flow.md",
+      "status": "installed",
+      "source_repo": "StegGhost/entity-sandbox-runner",
+      "activation_state": "pending_external_evidence"
+    },
+    {
+      "title": "LLM Free Tier Trust Chain",
+      "path": "pages/llm-free-tier-trust-chain.md",
+      "status": "installed",
+      "source_repo": "StegVerse-Labs/admissibility-wiki",
+      "source_chain": [
+        "StegVerse-org/LLM-adapter",
+        "StegVerse-Labs/Site",
+        "StegVerse-org/StegVerse-SDK",
+        "StegVerse-Labs/admissibility-wiki",
+        "GCAT-BCAT-Engine/Publisher"
+      ],
+      "activation_state": "downstream_propagation_awareness_only",
+      "non_claims": {
+        "guardian_enforcement_authority": false,
+        "provider_authority": false,
+        "execution_authority": false,
+        "permanent_retention": false,
+        "replay_standing": false,
+        "reconstruction_standing": false,
+        "upgrade_based_admissibility": false
+      }
+    },
+    {
+      "title": "Media Pipeline Guardian Boundary",
+      "path": "pages/media-pipeline-guardian-boundary.md",
+      "status": "installed",
+      "source_repo": "StegVerse-Labs/collective-environment-engine",
+      "source_chain": [
+        "StegVerse-Labs/collective-environment-engine",
+        "GCAT-BCAT-Engine/Publisher",
+        "StegVerse-Labs/Site"
+      ],
+      "activation_state": "downstream_awareness_only",
+      "non_claims": {
+        "live_camera_use": false,
+        "live_microphone_use": false,
+        "public_broadcast_capability": false,
+        "guardian_enforcement_authority": false,
+        "execution_authority": false,
+        "provider_authority": false
+      }
+    },
+    {
+      "title": "Visibility and Authority Guardian Boundary",
+      "path": "pages/visibility-authority-guardian-boundary.md",
+      "status": "installed",
+      "source_chain": [
+        "StegVerse-org/StegVerse-SDK",
+        "GCAT-BCAT-Engine/Publisher",
+        "StegVerse-Labs/Site",
+        "master-records/orchestration",
+        "StegVerse-Labs/admissibility-wiki"
+      ],
+      "activation_state": "documentation_and_propagation_awareness_only",
+      "non_claims": {
+        "guardian_enforcement_authority": false,
+        "publication_authority": false,
+        "execution_authority": false,
+        "custody_authority": false,
+        "admissibility": false
+      }
+    },
+    {
+      "title": "StegGuardian Verification Status",
+      "path": "docs/STEGGUARDIAN_VERIFICATION_STATUS.md",
+      "status": "installed",
+      "activation_state": "local_validation_pass_user_observed_workflow_success_connector_unconfirmed",
+      "checks": [
+        "python scripts/check_guardian_local_state.py",
+        "python scripts/check_stegguardian_verification_status.py"
+      ],
+      "non_claims": {
+        "connector_confirmed_workflow_metadata": false,
+        "public_deployment_verification": false,
+        "tag_verification": false,
+        "guardian_enforcement_authority": false,
+        "execution_authority": false
+      }
     }
   ],
-  "receipts": ["receipts/stegtalk-boundary-receipt.json"],
+  "receipts": [
+    "receipts/stegtalk-boundary-receipt.json"
+  ],
   "handoff": "STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md",
   "production_ready": false
 }
