@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Import Publisher activation only when terminal custody is independently verified."""
 from __future__ import annotations
-
 import hashlib
 import json
 import os
@@ -22,9 +21,7 @@ TIMEOUT = float(os.getenv("STEGVERSE_PUBLISHER_STATUS_FETCH_TIMEOUT_SECONDS", "2
 def canonical_hash(payload: dict[str, Any]) -> str:
     material = dict(payload)
     material.pop("status_sha256", None)
-    return hashlib.sha256(
-        json.dumps(material, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode("utf-8")
-    ).hexdigest()
+    return hashlib.sha256(json.dumps(material, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode("utf-8")).hexdigest()
 
 
 def valid_digest(value: object) -> bool:
@@ -32,10 +29,7 @@ def valid_digest(value: object) -> bool:
 
 
 def fetch() -> tuple[dict[str, Any], str]:
-    outbound = request.Request(
-        SOURCE_URL,
-        headers={"Accept": "application/json", "User-Agent": "StegVerse-Guardian-Wiki-Activation-Importer/2.0"},
-    )
+    outbound = request.Request(SOURCE_URL, headers={"Accept": "application/json", "User-Agent": "StegVerse-Guardian-Wiki-Activation-Importer/2.1"})
     with request.urlopen(outbound, timeout=TIMEOUT) as response:
         raw = response.read()
     value = json.loads(raw.decode("utf-8"))
@@ -55,22 +49,25 @@ def validate(source: dict[str, Any]) -> list[str]:
             failures.append(f"authority_boundary_invalid:{key}")
     if source.get("manual_user_action_required") is not False:
         failures.append("manual_action_boundary_invalid")
-    if source.get("terminal_custody_verified") is not True:
-        failures.append("terminal_custody_not_verified")
-    if not valid_digest(source.get("terminal_custody_sha256")):
-        failures.append("terminal_custody_digest_invalid")
-    if source.get("custody_repository") != "master-records/orchestration":
-        failures.append("custody_repository_mismatch")
+
+    verified_claim = source.get("status") == "VERIFIED_ACTIVATION_IMPORTED" or source.get("activation_complete") is True
+    if verified_claim:
+        if source.get("terminal_custody_verified") is not True:
+            failures.append("terminal_custody_not_verified")
+        if not valid_digest(source.get("terminal_custody_sha256")):
+            failures.append("terminal_custody_digest_invalid")
+        if source.get("custody_repository") != "master-records/orchestration":
+            failures.append("custody_repository_mismatch")
+    else:
+        if source.get("terminal_custody_verified") not in (False, None):
+            failures.append("pending_terminal_custody_boundary_invalid")
+        if source.get("terminal_custody_sha256") not in (None, ""):
+            failures.append("pending_terminal_custody_digest_must_be_empty")
     return failures
 
 
 def write(status: str, reason: str, source: dict[str, Any] | None = None, digest: str | None = None) -> None:
-    verified = bool(
-        source
-        and source.get("status") == "VERIFIED_ACTIVATION_IMPORTED"
-        and source.get("activation_complete") is True
-        and source.get("terminal_custody_verified") is True
-    )
+    verified = bool(source and source.get("status") == "VERIFIED_ACTIVATION_IMPORTED" and source.get("activation_complete") is True and source.get("terminal_custody_verified") is True)
     payload = {
         "schema": "stegverse.stegguardian_wiki.ecosystem_chat_activation_projection.v2",
         "status": status,
