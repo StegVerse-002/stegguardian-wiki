@@ -8,6 +8,7 @@ RUNNER = ROOT / "scripts/run_sandbox_validation.py"
 WORKFLOW = ROOT / ".github/workflows/pages.yml"
 HANDOFF = ROOT / "STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md"
 
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--structural-only", action="store_true")
@@ -24,8 +25,14 @@ def main() -> int:
             if required not in ids: errors.append("missing_command:"+required)
     if WORKFLOW.exists():
         text=WORKFLOW.read_text()
-        for marker in ("pull_request:","validate:","python scripts/run_sandbox_validation.py","stegguardian-st017-sandbox-report","github.event_name != 'pull_request'","needs: validate","verify-live-public-records:"):
+        for marker in ("pull_request:","validate:","python scripts/run_sandbox_validation.py","stegguardian-st017-sandbox-report","needs: validate","verify-live-public-records:"):
             if marker not in text: errors.append("workflow_missing:"+marker)
+        deployment_guards = (
+            "github.event_name != 'pull_request'",
+            "github.event_name == 'push' && github.ref == 'refs/heads/main'",
+        )
+        if not any(marker in text for marker in deployment_guards):
+            errors.append("workflow_missing:main_only_non_pr_deployment_guard")
     if HANDOFF.exists() and "ST-017 Sandbox-First Adoption" not in HANDOFF.read_text(): errors.append("handoff_missing_st017")
     if errors:
         print("STEGGUARDIAN ST-017 ADOPTION: FAIL - "+", ".join(errors)); return 1
