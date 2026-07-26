@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "state_type": "stegguardian_wiki_orchestration_state",
+  "repository": "StegVerse-002/stegguardian-wiki",
+  "handoff": "STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md",
+  "status": "ACTIVE",
+  "heartbeat": {
+    "model": "TRANSITION_DRIVEN_HEALTH_RELATIVE",
+    "repository_heartbeat": 1,
+    "ecosystem_heartbeat": 1,
+    "time_role": "WATCHDOG_ONLY",
+    "system_health": "HEALTHY_DECLARED_DEPENDENCY_BLOCK",
+    "last_transition": "HIL_SUCCESSION_AND_GUARDIAN_BOUNDARY_INSTALLED",
+    "progress_effect": true,
+    "authority_effect": false
+  },
+  "active_sequence": {
+    "task_sequence": 1,
+    "label": "current work task sequence 0001",
+    "state": "BLOCKED_BUT_OBSERVED",
+    "idle_terminal_statement": "end of current work task sequence 0001, no tasks running"
+  },
+  "ownership": {
+    "site_hil_upload": "StegVerse-Labs/Site active upload session",
+    "live_provider_and_persistent_endpoint": "StegVerse-org/LLM-adapter issue #18",
+    "custody_and_reconstructability": "master-records/orchestration issue #2",
+    "publisher_ingestion_awareness": "GCAT-BCAT-Engine/Publisher",
+    "bounded_admissibility_projection": "StegVerse-Labs/admissibility-wiki",
+    "guardian_interpretation": "StegVerse-002/stegguardian-wiki",
+    "visibility_authority_boundary": "merged PR #7"
+  },
+  "active_tasks": [],
+  "blocked_tasks": [
+    {
+      "task_id": "GUARDIAN-HIL-0001",
+      "workload": "Publish bounded Guardian interpretation of the verified HIL chain",
+      "execution_class": "DEPENDENCY_BLOCKED",
+      "state": "BLOCKED_BUT_OBSERVED",
+      "dependencies": [
+        "HIL upload completion",
+        "authorized real-provider execution",
+        "exact response and usage persistence",
+        "authenticated Master-Records custody",
+        "reconstructability PASS",
+        "immutable zero-blocker activation receipt",
+        "Site ACTIVATION_COMPLETE",
+        "Publisher VERIFIED_INGESTION_READY",
+        "admissibility-wiki bounded interpretation"
+      ]
+    }
+  ],
+  "policy": {
+    "incoming_request_is_candidate_workload": true,
+    "duplicate_workloads_fail_closed": true,
+    "guardian_interpretation_requires_complete_upstream_chain": true,
+    "visibility_is_authority": false,
+    "reconstruction_is_authorization": false,
+    "admissibility_interpretation_is_guardian_enforcement": false,
+    "guardian_documentation_is_enforcement_activation": false,
+    "cross_repository_mutation_authority": false,
+    "manual_user_tasks_required": false
+  },
+  "authority": {
+    "guardian_enforcement": false,
+    "override": false,
+    "execution": false,
+    "publication": false,
+    "deployment": false,
+    "release": false,
+    "custody": false,
+    "admissibility": false
+  }
+}
