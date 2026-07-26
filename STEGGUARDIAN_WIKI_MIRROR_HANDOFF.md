@@ -4,28 +4,107 @@
 
 This file is the current handoff and task source of truth for `StegVerse-002/stegguardian-wiki`.
 
+## Mandatory orchestration entry
+
+Every arriving session or automation must read this handoff and `data/stegguardian-wiki-orchestration-state.json` before opening a branch, issue, pull request, workflow, or implementation path.
+
+The incoming request is a candidate workload. It does not itself grant Guardian, enforcement, execution, publication, deployment, release, custody, admissibility, override, or cross-repository mutation authority.
+
+Required entry sequence:
+
+```text
+1. Read STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md.
+2. Read data/stegguardian-wiki-orchestration-state.json.
+3. Preserve active ownership and claimed paths.
+4. Classify the candidate workload as PARALLEL_SAFE, EXCLUSIVE, or DEPENDENCY_BLOCKED.
+5. Continue only admitted work.
+6. Update the handoff and orchestration state before closure.
+```
+
 ## Current Priority
 
 StegGuardian Wiki is live at `https://stegverse-002.github.io/stegguardian-wiki/` by user-observed confirmation.
 
-Current integration goal: complete live machine-record verification and establish a reusable shared cross-wiki health contract without duplicating active Site or admissibility-wiki workstreams.
+Current integration goals:
+
+```text
+1. complete live machine-record verification;
+2. preserve the reusable shared cross-wiki health contract;
+3. receive the verified HIL succession chain without duplicating Site, LLM-adapter, Master-Records, Publisher, or admissibility-wiki work;
+4. publish Guardian interpretation only after the complete upstream evidence path is verified.
+```
+
+## Current live task sequence
+
+```text
+current work task sequence 0001
+state: BLOCKED_BUT_OBSERVED
+system health: HEALTHY_DECLARED_DEPENDENCY_BLOCK
+heartbeat model: TRANSITION_DRIVEN_HEALTH_RELATIVE
+active Guardian implementation tasks: none
+queued HIL Guardian projection: DEPENDENCY_BLOCKED
+idle terminal statement: end of current work task sequence 0001, no tasks running
+```
+
+Time-based observation is watchdog-only. It does not claim progress, authority, validation, deployment, public reachability, enforcement readiness, or HIL completion.
 
 ## Session Coordination
 
-No open issue or pull request claims the current Guardian live-record or shared-health-schema task.
+No open issue or pull request currently claims a new Guardian HIL interpretation workload.
 
-Parallel sessions must not restart the resolved Pages repair path.
+Parallel sessions must not restart the resolved Pages repair path, recreate the shared health contract, duplicate the visibility-authority Guardian boundary, or independently reinterpret pending upstream HIL evidence.
 
 Site has concurrent active work and must not be modified from this workstream.
-Admissibility-wiki Goal 5 remains separately active and must not be modified from this workstream.
+LLM-adapter issue #18 owns live provider and persistent-endpoint activation.
+Master-Records orchestration issue #2 owns HIL custody and reconstructability evidence.
+Publisher owns downstream Site propagation awareness.
+Admissibility-wiki owns bounded admissibility interpretation.
+
+## HIL succession chain
+
+Guardian HIL projection is admitted only after this ordered chain exists:
+
+```text
+StegVerse-Labs/Site HIL upload completion
+-> StegVerse-org/LLM-adapter authorized real-provider execution
+-> exact provider response and usage persistence
+-> master-records/orchestration authenticated custody
+-> reconstructability PASS
+-> immutable zero-blocker activation receipt
+-> StegVerse-Labs/Site ACTIVATION_COMPLETE
+-> GCAT-BCAT-Engine/Publisher VERIFIED_INGESTION_READY
+-> StegVerse-Labs/admissibility-wiki bounded admissibility projection
+-> StegVerse-002/stegguardian-wiki Guardian interpretation
+```
+
+Until the full chain is verified, Guardian state remains fail-closed and must not be upgraded from dependency-blocked awareness.
+
+## Guardian HIL boundary
+
+```text
+upload != custody
+provider output != authority
+persistence != custody
+custody != authorization
+reconstruction PASS != execution authority
+Site activation != Guardian authority
+Publisher ingestion != admissibility
+admissibility interpretation != Guardian enforcement
+Guardian documentation != enforcement activation
+visibility != authority
+acknowledgement != endorsement
+reference != association
+```
+
+No HIL artifact, projection, receipt, page, workflow result, public URL, or cross-wiki status may independently create Guardian enforcement, override, execution, publication, release, deployment, standing, or admissibility authority.
 
 ## Preserved Upstream Readiness Surface
 
-The active Guardian summary remains bound to `Standing-Proof-Engine v0.5.0` and status `READY_FOR_UPSTREAM_GATE_EVENTS`. ST-017 adoption does not supersede that upstream readiness contract.
+The active Guardian summary remains bound to `Standing-Proof-Engine v0.5.0` and status `READY_FOR_UPSTREAM_GATE_EVENTS`. ST-017 adoption and HIL orchestration do not supersede that upstream readiness contract.
 
 ## ST-017 Sandbox-First Adoption
 
-Installed on validation branch `validation/st017-sandbox-adoption`:
+Installed and merged:
 
 ```text
 templates/sandbox-first/stegguardian-wiki.sandbox-profile.json
@@ -50,15 +129,20 @@ change installed
 
 The existing Pages workflow is preserved. Pull requests execute validation and upload `stegguardian-st017-sandbox-report`; deployment and live-record verification remain restricted to non-PR execution after validation succeeds.
 
-Current branch status after the first observed execution:
+No successful live-verification result is claimed without durable workflow evidence.
+
+## Visibility-Authority Guardian Boundary
+
+Installed and merged through PR #7:
 
 ```text
-SANDBOX: FAIL — canonical live-fetch command marker missing
-GITHUB_ACTIONS: FAIL
-PUBLIC_OUTPUT: NOT_VERIFIED
+pages/visibility-authority-guardian-boundary.md
+data/visibility-authority-guardian-status.json
+scripts/check_visibility_authority_guardian_boundary.py
+docs/VISIBILITY_AUTHORITY_GUARDIAN_MIRROR_HANDOFF.md
 ```
 
-The marker defect has been repaired and the next PR run must be inspected before merge.
+This boundary remains active and must govern future HIL projection. Visibility, publication, acknowledgement, reference, reconstruction, and public reachability do not create Guardian or execution authority.
 
 ## Media-Pipeline Guardian Integration
 
@@ -92,7 +176,9 @@ scripts/check_public_records_manifest.py schema requirement
 scripts/fetch_live_public_record_urls.py live schema verification
 ```
 
-StegGuardian and StegTalk now share the same schema identifier and required common fields. `cross_wiki_schema_consistency_confirmed` remains false until workflow artifacts prove both published schema and health-record URLs.
+StegGuardian and StegTalk share the same schema identifier and required common fields. `cross_wiki_schema_consistency_confirmed` remains false until workflow artifacts prove both published schema and health-record URLs.
+
+The repository heartbeat state in `data/stegguardian-wiki-orchestration-state.json` coordinates workload health. It does not replace or redefine the public cross-wiki health schema.
 
 ## Automated Live Public-Record Verification
 
@@ -117,6 +203,7 @@ https://stegverse-002.github.io/stegguardian-wiki/
 
 ```text
 python scripts/check_media_pipeline_guardian_boundary.py
+python scripts/check_visibility_authority_guardian_boundary.py
 python scripts/check_page_index.py
 python scripts/check_page_relationship_graph.py
 python scripts/check_cross_wiki_metadata_graph.py
@@ -130,23 +217,24 @@ python scripts/run_sandbox_validation.py
 
 ## Boundary
 
-The media page, schemas, health records, endpoint registry, graphs, manifests, workflow artifacts, sandbox reports, and fetch reports are propagation and evidence-awareness records only.
+The media page, visibility-authority page, schemas, health records, orchestration state, endpoint registry, graphs, manifests, workflow artifacts, sandbox reports, fetch reports, HIL receipts, and downstream projections are propagation and evidence-awareness records only.
 
-They do not create Guardian enforcement authority, provider authority, execution authority, live-media authority, permanent retention, replay standing, reconstruction standing, release authority, tag authority, deployment authority beyond the existing workflow, or upgrade-based admissibility.
+They do not create Guardian enforcement authority, provider authority, execution authority, live-media authority, permanent retention, replay standing, reconstruction standing, release authority, tag authority, deployment authority beyond the existing workflow, override authority, or upgrade-based admissibility.
 
 ## Remaining Open Check
 
 ```text
-rerun and inspect the repaired ST-017 pull-request sandbox
-merge only after SANDBOX PASS and both PR workflows PASS
-confirm the resulting main Pages deploy job succeeds
-confirm verify-live-public-records succeeds
+observe successful Pages deployment and verify-live-public-records evidence when exposed
 inspect the uploaded live fetch report artifact
 update live verification state only after successful evidence
 confirm StegTalk and StegGuardian publicly expose the identical shared schema
-standardize Site and admissibility-wiki only through their active handoff owners
+wait for the complete verified HIL succession chain
+produce bounded Guardian interpretation only after admissibility-wiki evidence exists
+preserve fail-closed non-enforcement posture
 ```
+
+No manual route checks, workflow triggering, receipt construction, file movement, deployment confirmation, or evidence transcription is assigned to the user.
 
 ## Archive Readiness
 
-This handoff contains the current ST-017 adoption, media-pipeline, shared-schema, workflow, public-verification, authority-boundary, coordination, and continuation state. Earlier conversation context is not required.
+This handoff and `data/stegguardian-wiki-orchestration-state.json` preserve the current ST-017 adoption, media-pipeline, visibility-authority, shared-schema, workflow, public-verification, HIL succession, authority-boundary, coordination, blocker, and continuation state. Earlier conversation context is not required.
