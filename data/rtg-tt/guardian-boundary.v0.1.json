@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.1.0",
+  "projection_id": "stegguardian-rtg-tt-boundary",
+  "contract_version": "rtg-tt-v0.1",
+  "site_source": "StegVerse-Labs/Site@50d417b2dbf29d3812bdae8c3d1942b1ce5a5162",
+  "stegcore_source": "StegVerse-Labs/StegCore@47cb26c513c9404017e650e025b8cc14eb02c41c",
+  "mapping": {
+    "RESOLUTION_SATISFIED": "ALLOW",
+    "FAIL_CLOSED": "DENY",
+    "QUARANTINE": "DEFER"
+  },
+  "guardian_rules": {
+    "unknown_source_binding": "DENY",
+    "authority_escalation": "DENY",
+    "unresolved_evidence": "DEFER",
+    "quarantine": "DEFER",
+    "execution_without_commit_authorization": "DENY"
+  },
+  "authority": {
+    "commitment": false,
+    "execution": false,
+    "custody": false,
+    "publication": false,
+    "release": false
+  }
+}
