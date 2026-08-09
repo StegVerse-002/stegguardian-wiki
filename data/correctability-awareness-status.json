@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "stegverse.correctability.guardian_awareness",
+  "source_repository": "StegVerse-Labs/StegCore",
+  "source_goal": "CORRECTABILITY-LAYER-001",
+  "source_validation": {
+    "workflow_run_id": 30774680694,
+    "job_id": 91567818006,
+    "head_sha": "21cf5ddfe3f58da270718b4c627a2f56adb580eb",
+    "fixture_count": 10,
+    "passed_count": 10,
+    "artifact_id": 8841612361,
+    "artifact_digest": "sha256:030f22b998a6f9c382db5463a4cc55f6d70132d5dd20d880778b5efda9844536"
+  },
+  "awareness": {
+    "correctability_is_distinct_from_guardian_enforcement": true,
+    "reconstructability_is_not_authorized_intervention": true,
+    "late_request_is_not_timely_correction": true,
+    "post_irreversibility_compensation_is_not_prevention": true,
+    "visibility_is_not_authority": true,
+    "documentation_is_not_enforcement": true
+  },
+  "guardian_effect": {
+    "state": "VERIFIED_SOURCE_SEMANTICS_AWARENESS_ONLY",
+    "guardian_enforcement_authorized": false,
+    "override_authorized": false,
+    "execution_authorized": false,
+    "publication_authorized": false,
+    "release_authorized": false,
+    "custody_recorded": false,
+    "admissibility_determined": false
+  },
+  "execution_class": "PARALLEL_SAFE_NON_HIL_AWARENESS",
+  "manual_user_action_required": false
+}
