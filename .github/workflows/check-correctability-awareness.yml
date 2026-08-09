@@ -1,0 +1,26 @@
+name: Check Correctability Awareness
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - data/correctability-awareness-status.json
+      - scripts/check_correctability_awareness.py
+      - .github/workflows/check-correctability-awareness.yml
+      - docs/CORRECTABILITY_AWARENESS_MIRROR_HANDOFF.md
+      - STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate bounded correctability Guardian awareness
+        run: python scripts/check_correctability_awareness.py
