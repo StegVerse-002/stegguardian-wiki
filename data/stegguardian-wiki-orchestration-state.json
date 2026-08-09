@@ -6,11 +6,11 @@
   "status": "ACTIVE",
   "heartbeat": {
     "model": "TRANSITION_DRIVEN_HEALTH_RELATIVE",
-    "repository_heartbeat": 1,
-    "ecosystem_heartbeat": 1,
+    "repository_heartbeat": 2,
+    "ecosystem_heartbeat": 2,
     "time_role": "WATCHDOG_ONLY",
     "system_health": "HEALTHY_DECLARED_DEPENDENCY_BLOCK",
-    "last_transition": "HIL_SUCCESSION_AND_GUARDIAN_BOUNDARY_INSTALLED",
+    "last_transition": "CORRECTABILITY_AWARENESS_INTEGRATION_COMPLETE",
     "progress_effect": true,
     "authority_effect": false
   },
@@ -27,9 +27,29 @@
     "publisher_ingestion_awareness": "GCAT-BCAT-Engine/Publisher",
     "bounded_admissibility_projection": "StegVerse-Labs/admissibility-wiki",
     "guardian_interpretation": "StegVerse-002/stegguardian-wiki",
-    "visibility_authority_boundary": "merged PR #7"
+    "visibility_authority_boundary": "merged PR #7",
+    "correctability_awareness": "docs/CORRECTABILITY_AWARENESS_MIRROR_HANDOFF.md"
   },
   "active_tasks": [],
+  "completed_tasks": [
+    {
+      "task_id": "GUARDIAN-CORRECTABILITY-0001",
+      "workload": "Ingest hosted-validated StegCore correctability semantics as bounded non-HIL Guardian awareness",
+      "execution_class": "PARALLEL_SAFE_NON_HIL_AWARENESS",
+      "state": "COMPLETED",
+      "claim_state": "RELEASED_COMPLETE",
+      "completion_evidence": {
+        "data_commit": "7d6ff2881b26272a5f7b3ec9e49b83bea3a1a922",
+        "validator_commit": "03f515aadba552bb78251c65cf5393ac6591e47a",
+        "workflow_commit": "b722e6f105f7f5b93c05fbba886c6a8a0f25c39a",
+        "handoff_commit": "1015ba3681cfde853fd0e286720a0adfa64019e3",
+        "workflow_run_id": 31290120403,
+        "job_id": 93185742651,
+        "workflow_conclusion": "success",
+        "authority_effect": false
+      }
+    }
+  ],
   "blocked_tasks": [
     {
       "task_id": "GUARDIAN-HIL-0001",
