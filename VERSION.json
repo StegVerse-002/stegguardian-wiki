@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "STEGVERSE-STEGGUARDIAN-WIKI",
+  "repository": "StegVerse-002/stegguardian-wiki",
+  "component_version": "2026.08.21-dev.1",
+  "version_stage": "DEVELOPMENT",
+  "release": {
+    "tag": null,
+    "commit": null,
+    "release_evidence": []
+  },
+  "validated_capabilities": [
+    {
+      "capability_id": "GUARDIAN-CORRECTABILITY-0001",
+      "state": "RELEASED_COMPLETE",
+      "workflow_run": 31290120403,
+      "job_id": 93185742651
+    },
+    {
+      "capability_id": "VISIBILITY-AUTHORITY-GUARDIAN-BOUNDARY",
+      "state": "IMPLEMENTED_MERGED"
+    }
+  ],
+  "public_surface": {
+    "state": "LIVE_USER_OBSERVED",
+    "url": "https://stegverse-002.github.io/stegguardian-wiki/",
+    "live_machine_record_verification": "PENDING"
+  },
+  "runtime": {
+    "state": "PENDING",
+    "evidence": [
+      "STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md",
+      "data/stegguardian-wiki-orchestration-state.json"
+    ],
+    "next_required_state": "VERIFIED_UPSTREAM_HIL_CHAIN_THEN_GUARDIAN_INTERPRETATION"
+  },
+  "activation": {
+    "state": "PENDING",
+    "evidence": [
+      "STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md"
+    ],
+    "current_projection": "HEALTHY_DECLARED_DEPENDENCY_BLOCK"
+  },
+  "upstream_readiness_identity": "Standing-Proof-Engine v0.5.0",
+  "source_of_truth": "STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md",
+  "version_contract": "StegVerse-Labs/Site:docs/ECOSYSTEM_COMPONENT_VERSION_CONTRACT.md",
+  "guardian_enforcement_authority": false,
+  "release_authority": false,
+  "authority_effect": "NONE"
+}
