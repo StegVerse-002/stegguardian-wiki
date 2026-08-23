@@ -7,19 +7,19 @@
   "heartbeat": {
     "model": "TRANSITION_DRIVEN_HEALTH_RELATIVE",
     "canonical_protocol_relation": "REPOSITORY_WORKLOAD_HEALTH_ONLY_NOT_HB_PROTOCOL_TIMING",
-    "repository_heartbeat": 3,
-    "ecosystem_heartbeat": 3,
+    "repository_heartbeat": 4,
+    "ecosystem_heartbeat": 4,
     "time_role": "WATCHDOG_ONLY",
     "system_health": "HEALTHY_DECLARED_DEPENDENCY_BLOCK",
-    "last_transition": "HB32_PROTOCOL_AWARENESS_SOURCE_INSTALLED_VALIDATION_PENDING",
+    "last_transition": "HB32_PROTOCOL_AWARENESS_COMPLETE_VALIDATED_MERGED",
     "progress_effect": true,
     "authority_effect": false
   },
   "active_sequence": {
     "task_sequence": 1,
     "label": "current work task sequence 0001",
-    "state": "PARALLEL_SAFE_AWARENESS_VALIDATION_RUNNING_WITH_HIL_DEPENDENCY_BLOCK",
-    "idle_terminal_statement": null
+    "state": "BLOCKED_BUT_OBSERVED",
+    "idle_terminal_statement": "end of current work task sequence 0001, no tasks running"
   },
   "ownership": {
     "site_hil_upload": "StegVerse-Labs/Site active upload/runtime lane",
@@ -32,26 +32,7 @@
     "correctability_awareness": "docs/CORRECTABILITY_AWARENESS_MIRROR_HANDOFF.md",
     "hb32_protocol_awareness": "docs/HEARTBEAT_PROTOCOL_ANCHOR_GUARDIAN_MIRROR_HANDOFF.md"
   },
-  "active_tasks": [
-    {
-      "task_id": "GUARDIAN-HB32-PROTOCOL-AWARENESS-001",
-      "workload": "Consume verified HB32 heartbeat protocol semantics as bounded Guardian awareness without creating timing or enforcement authority",
-      "execution_class": "PARALLEL_SAFE_NON_HIL_AWARENESS",
-      "owner": "branch feat/hb32-protocol-awareness",
-      "claim_state": "CLAIMED_FOR_INTEGRATION_AND_VALIDATION",
-      "state": "SOURCE_INSTALLED_VALIDATION_PENDING",
-      "claimed_paths": [
-        "docs/HEARTBEAT_PROTOCOL_ANCHOR_GUARDIAN_MIRROR_HANDOFF.md",
-        "data/heartbeat-protocol-anchor-awareness.json",
-        "scripts/check_heartbeat_protocol_anchor_awareness.py",
-        ".github/workflows/check-heartbeat-protocol-anchor-awareness.yml",
-        "data/stegguardian-wiki-orchestration-state.json",
-        "STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md"
-      ],
-      "collision_boundary": "Does not modify GUARDIAN-HIL-0001 dependencies, Guardian enforcement, admissibility, custody, Pages deployment authority, or upstream heartbeat runtime",
-      "release_condition": "focused validator and hosted PR validation PASS, merge to main, main evidence recorded, claim released"
-    }
-  ],
+  "active_tasks": [],
   "completed_tasks": [
     {
       "task_id": "GUARDIAN-CORRECTABILITY-0001",
@@ -67,6 +48,26 @@
         "workflow_run_id": 31290120403,
         "job_id": 93185742651,
         "workflow_conclusion": "success",
+        "authority_effect": false
+      }
+    },
+    {
+      "task_id": "GUARDIAN-HB32-PROTOCOL-AWARENESS-001",
+      "workload": "Consume verified HB32 heartbeat protocol semantics as bounded Guardian awareness without creating timing or enforcement authority",
+      "execution_class": "PARALLEL_SAFE_NON_HIL_AWARENESS",
+      "state": "COMPLETED",
+      "claim_state": "RELEASED_COMPLETE",
+      "completion_evidence": {
+        "pull_request": 12,
+        "validated_head": "576e69244cde44eb0ca79ed484178890a196d2f8",
+        "merge": "01724413450a6e911214853cacbcd93e872407aa",
+        "focused_workflow_run_id": 32669878905,
+        "focused_workflow_conclusion": "success",
+        "pages_validation_run_id": 32669878782,
+        "pages_validation_conclusion": "success",
+        "readiness_run_id": 32669878802,
+        "readiness_conclusion": "success",
+        "handoff": "docs/HEARTBEAT_PROTOCOL_ANCHOR_GUARDIAN_MIRROR_HANDOFF.md",
         "authority_effect": false
       }
     }
