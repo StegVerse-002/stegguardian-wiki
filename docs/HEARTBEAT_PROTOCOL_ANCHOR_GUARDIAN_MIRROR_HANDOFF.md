@@ -1,6 +1,6 @@
 # Heartbeat Protocol Anchor Guardian Mirror Handoff
 
-Updated: 2026-08-23T17:02:00-05:00
+Updated: 2026-08-23T17:14:00-05:00
 
 ## Authority and scope
 
@@ -17,6 +17,7 @@ guardian_enforcement_authority: false
 execution_authority: false
 heartbeat_timing_authority: false
 publication_authority: false
+state: COMPLETE_VALIDATED_MERGED
 ```
 
 This goal is a bounded non-HIL Guardian-awareness integration. It does not satisfy or bypass `GUARDIAN-HIL-0001`, and it does not create Guardian enforcement standing from heartbeat observation.
@@ -39,9 +40,19 @@ authority_effect: NONE
 
 The heartbeat is a synchronization/reference protocol. A Guardian page, repository transition, workflow, watchdog, worker, task, claim, fence, lease, receipt, observation, resident sampler, GitHub Action, or third-party service does not cause the next heartbeat reference to exist.
 
-## Guardian interpretation boundary
+## Installed repository integration
 
-Required interpretation:
+```text
+data/heartbeat-protocol-anchor-awareness.json
+scripts/check_heartbeat_protocol_anchor_awareness.py
+.github/workflows/check-heartbeat-protocol-anchor-awareness.yml
+docs/HEARTBEAT_PROTOCOL_ANCHOR_GUARDIAN_MIRROR_HANDOFF.md
+data/stegguardian-wiki-orchestration-state.json
+```
+
+The machine-readable record binds the exact HB32 anchor, 10 ms / 100 Hz oscillator-only semantics, terminal LIVE-009 proof, noncausal observation, repository-local workload-health separation, unchanged HIL block, and all-false Guardian/execution/publication/admissibility/custody/timing authority.
+
+## Guardian interpretation boundary
 
 ```text
 protocol heartbeat reference != Guardian authority
@@ -54,18 +65,17 @@ Guardian observation != heartbeat progression
 Guardian repository heartbeat != canonical HB protocol epoch
 ```
 
-`data/stegguardian-wiki-orchestration-state.json` currently uses `TRANSITION_DRIVEN_HEALTH_RELATIVE` terminology for repository workload health. That remains a repository-local orchestration projection only and must not be interpreted as the canonical 100 Hz heartbeat protocol.
-
-Time-based observation remains watchdog-only. It does not advance or define heartbeat protocol references.
+`data/stegguardian-wiki-orchestration-state.json` uses `TRANSITION_DRIVEN_HEALTH_RELATIVE` for repository workload health only. It is explicitly classified as `REPOSITORY_WORKLOAD_HEALTH_ONLY_NOT_HB_PROTOCOL_TIMING`. Time remains watchdog-only.
 
 ## HIL separation
 
 The existing HIL succession chain remains dependency-blocked and unchanged:
 
 ```text
-Site HIL completion
--> authorized provider execution and persistence
--> Master Records custody + reconstruction PASS
+HIL receiver READY + controlled browser receipt
+-> restart exact-byte verification
+-> TVC lifecycle continuation
+-> authenticated Master Records custody + reconstructability PASS
 -> immutable activation receipt
 -> Site ACTIVATION_COMPLETE
 -> Publisher VERIFIED_INGESTION_READY
@@ -73,29 +83,34 @@ Site HIL completion
 -> StegGuardian bounded interpretation
 ```
 
-HB32 awareness does not skip any HIL gate. Heartbeat evidence is not a substitute for HIL receiver readiness, browser receipt, exact-byte restart proof, custody, admissibility, or Guardian authority.
+HB32 awareness does not skip any HIL gate. Heartbeat evidence is not a substitute for receiver readiness, browser receipt, exact-byte restart proof, custody, admissibility, or Guardian authority.
 
-## Required repository integration
-
-1. Publish a machine-readable Guardian awareness record for the HB32 contract.
-2. Validate that all authority fields remain false and the heartbeat reference is noncausal to Guardian execution/enforcement.
-3. Preserve the repository-local orchestration heartbeat as a narrower workload-health mechanism, not protocol heartbeat timing.
-4. Preserve historical heartbeat-related evidence without rewriting it.
-5. Keep GitHub Actions validation-only and TV/TVC as sole credential authority.
-
-## Completion predicate
+## Validation and merge evidence
 
 ```text
-HB32 machine-readable awareness record installed
-validator enforces HB32 anchor / 10 ms / 100 Hz / OSCILLATOR_ONLY
-validator enforces continuous_process_required=false
-validator enforces resident_sampler_required_for_progression=false
-validator enforces observation_is_causal=false
-validator enforces all Guardian/execution/publication/admissibility/custody authority false
-orchestration heartbeat explicitly classified as repository-local workload health only
-HIL dependency chain remains unchanged and blocked until upstream evidence exists
-GitHub runtime authority remains NONE
-TV/TVC remains sole credential authority
+pull_request: StegVerse-002/stegguardian-wiki#12
+validated_head: 576e69244cde44eb0ca79ed484178890a196d2f8
+merge: 01724413450a6e911214853cacbcd93e872407aa
+Check Heartbeat Protocol Anchor Awareness: run 32669878905 SUCCESS
+Publish StegGuardian Wiki PR validation: run 32669878782 SUCCESS
+StegGuardian Wiki Readiness: run 32669878802 SUCCESS
 ```
 
-Source integration is not Guardian enforcement activation. Missing upstream HIL evidence remains a dependency block, not success.
+The workflow has `contents: read` only. Validation and publication workflow success create no runtime, heartbeat, Guardian, enforcement, release, custody, admissibility, or execution authority.
+
+## Completion
+
+```text
+machine-readable awareness record: COMPLETE
+focused validator: COMPLETE / HOSTED PASS
+validation-only workflow: COMPLETE / HOSTED PASS
+orchestration heartbeat distinction: COMPLETE
+HIL separation: PRESERVED / DEPENDENCY_BLOCKED
+Guardian authority effect: NONE
+GitHub runtime authority: NONE
+third-party runtime required: false
+claim_state: RELEASED_COMPLETE
+session_dependency: false
+```
+
+This bounded propagation target is complete. `GUARDIAN-HIL-0001` remains separately blocked on its real upstream evidence chain; completion here must not be cited as HIL Guardian activation.
