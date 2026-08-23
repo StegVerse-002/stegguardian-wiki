@@ -1,0 +1,35 @@
+name: Check Heartbeat Protocol Anchor Awareness
+
+on:
+  pull_request:
+    paths:
+      - data/heartbeat-protocol-anchor-awareness.json
+      - scripts/check_heartbeat_protocol_anchor_awareness.py
+      - .github/workflows/check-heartbeat-protocol-anchor-awareness.yml
+      - docs/HEARTBEAT_PROTOCOL_ANCHOR_GUARDIAN_MIRROR_HANDOFF.md
+      - STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md
+      - data/stegguardian-wiki-orchestration-state.json
+  push:
+    branches: [main]
+    paths:
+      - data/heartbeat-protocol-anchor-awareness.json
+      - scripts/check_heartbeat_protocol_anchor_awareness.py
+      - .github/workflows/check-heartbeat-protocol-anchor-awareness.yml
+      - docs/HEARTBEAT_PROTOCOL_ANCHOR_GUARDIAN_MIRROR_HANDOFF.md
+      - STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md
+      - data/stegguardian-wiki-orchestration-state.json
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate bounded HB32 Guardian awareness
+        run: python scripts/check_heartbeat_protocol_anchor_awareness.py
