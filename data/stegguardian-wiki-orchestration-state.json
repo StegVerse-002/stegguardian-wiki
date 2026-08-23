@@ -1,36 +1,57 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "state_type": "stegguardian_wiki_orchestration_state",
   "repository": "StegVerse-002/stegguardian-wiki",
   "handoff": "STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md",
   "status": "ACTIVE",
   "heartbeat": {
     "model": "TRANSITION_DRIVEN_HEALTH_RELATIVE",
-    "repository_heartbeat": 2,
-    "ecosystem_heartbeat": 2,
+    "canonical_protocol_relation": "REPOSITORY_WORKLOAD_HEALTH_ONLY_NOT_HB_PROTOCOL_TIMING",
+    "repository_heartbeat": 3,
+    "ecosystem_heartbeat": 3,
     "time_role": "WATCHDOG_ONLY",
     "system_health": "HEALTHY_DECLARED_DEPENDENCY_BLOCK",
-    "last_transition": "CORRECTABILITY_AWARENESS_INTEGRATION_COMPLETE",
+    "last_transition": "HB32_PROTOCOL_AWARENESS_SOURCE_INSTALLED_VALIDATION_PENDING",
     "progress_effect": true,
     "authority_effect": false
   },
   "active_sequence": {
     "task_sequence": 1,
     "label": "current work task sequence 0001",
-    "state": "BLOCKED_BUT_OBSERVED",
-    "idle_terminal_statement": "end of current work task sequence 0001, no tasks running"
+    "state": "PARALLEL_SAFE_AWARENESS_VALIDATION_RUNNING_WITH_HIL_DEPENDENCY_BLOCK",
+    "idle_terminal_statement": null
   },
   "ownership": {
-    "site_hil_upload": "StegVerse-Labs/Site active upload session",
-    "live_provider_and_persistent_endpoint": "StegVerse-org/LLM-adapter issue #18",
-    "custody_and_reconstructability": "master-records/orchestration issue #2",
+    "site_hil_upload": "StegVerse-Labs/Site active upload/runtime lane",
+    "live_provider_and_persistent_endpoint": "StegVerse-org/LLM-adapter canonical runtime lane",
+    "custody_and_reconstructability": "master-records/orchestration",
     "publisher_ingestion_awareness": "GCAT-BCAT-Engine/Publisher",
     "bounded_admissibility_projection": "StegVerse-Labs/admissibility-wiki",
     "guardian_interpretation": "StegVerse-002/stegguardian-wiki",
     "visibility_authority_boundary": "merged PR #7",
-    "correctability_awareness": "docs/CORRECTABILITY_AWARENESS_MIRROR_HANDOFF.md"
+    "correctability_awareness": "docs/CORRECTABILITY_AWARENESS_MIRROR_HANDOFF.md",
+    "hb32_protocol_awareness": "docs/HEARTBEAT_PROTOCOL_ANCHOR_GUARDIAN_MIRROR_HANDOFF.md"
   },
-  "active_tasks": [],
+  "active_tasks": [
+    {
+      "task_id": "GUARDIAN-HB32-PROTOCOL-AWARENESS-001",
+      "workload": "Consume verified HB32 heartbeat protocol semantics as bounded Guardian awareness without creating timing or enforcement authority",
+      "execution_class": "PARALLEL_SAFE_NON_HIL_AWARENESS",
+      "owner": "branch feat/hb32-protocol-awareness",
+      "claim_state": "CLAIMED_FOR_INTEGRATION_AND_VALIDATION",
+      "state": "SOURCE_INSTALLED_VALIDATION_PENDING",
+      "claimed_paths": [
+        "docs/HEARTBEAT_PROTOCOL_ANCHOR_GUARDIAN_MIRROR_HANDOFF.md",
+        "data/heartbeat-protocol-anchor-awareness.json",
+        "scripts/check_heartbeat_protocol_anchor_awareness.py",
+        ".github/workflows/check-heartbeat-protocol-anchor-awareness.yml",
+        "data/stegguardian-wiki-orchestration-state.json",
+        "STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md"
+      ],
+      "collision_boundary": "Does not modify GUARDIAN-HIL-0001 dependencies, Guardian enforcement, admissibility, custody, Pages deployment authority, or upstream heartbeat runtime",
+      "release_condition": "focused validator and hosted PR validation PASS, merge to main, main evidence recorded, claim released"
+    }
+  ],
   "completed_tasks": [
     {
       "task_id": "GUARDIAN-CORRECTABILITY-0001",
@@ -57,16 +78,17 @@
       "execution_class": "DEPENDENCY_BLOCKED",
       "state": "BLOCKED_BUT_OBSERVED",
       "dependencies": [
-        "HIL upload completion",
-        "authorized real-provider execution",
-        "exact response and usage persistence",
+        "HIL receiver READY and controlled browser receipt",
+        "restart exact-byte verification",
+        "TVC lifecycle continuation",
         "authenticated Master-Records custody",
         "reconstructability PASS",
         "immutable zero-blocker activation receipt",
         "Site ACTIVATION_COMPLETE",
         "Publisher VERIFIED_INGESTION_READY",
         "admissibility-wiki bounded interpretation"
-      ]
+      ],
+      "heartbeat_awareness_satisfies_dependencies": false
     }
   ],
   "policy": {
@@ -77,6 +99,8 @@
     "reconstruction_is_authorization": false,
     "admissibility_interpretation_is_guardian_enforcement": false,
     "guardian_documentation_is_enforcement_activation": false,
+    "heartbeat_reference_is_guardian_authority": false,
+    "repository_orchestration_heartbeat_is_protocol_epoch": false,
     "cross_repository_mutation_authority": false,
     "manual_user_tasks_required": false
   },
@@ -88,6 +112,7 @@
     "deployment": false,
     "release": false,
     "custody": false,
-    "admissibility": false
+    "admissibility": false,
+    "heartbeat_timing": false
   }
 }

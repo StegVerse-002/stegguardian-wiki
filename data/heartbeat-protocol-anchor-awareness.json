@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "stegverse.heartbeat_protocol.guardian_awareness",
+  "source_repository": "StegVerse-Labs/.github",
+  "source_goal": "HEARTBEAT-PROTOCOL-ANCHOR-013",
+  "source_refs": {
+    "semantics_handoff": "docs/HEARTBEAT_CARRIER_SIGNAL_MIRROR_HANDOFF.md",
+    "live_status": "control/heartbeat-live-status.json",
+    "live_proof_handoff": "handoffs/HEARTBEAT-INDEPENDENT-OSCILLATOR-LIVE-009.json",
+    "validation_receipt": "receipts/heartbeat/HEARTBEAT-PROTOCOL-ANCHOR-013-validation.json"
+  },
+  "protocol": {
+    "anchor_epoch": 32,
+    "anchor_time_utc": "2026-08-23T19:00:00.000Z",
+    "period_ms": 10,
+    "reference_rate_hz": 100,
+    "progression_dependency": "OSCILLATOR_ONLY",
+    "continuous_process_required": false,
+    "resident_sampler_required_for_progression": false,
+    "observation_is_causal": false,
+    "missed_references_continue_to_exist": true,
+    "live_proof_state": "COMPLETED",
+    "live_proof_transition_id": "INDEPENDENT_HEARTBEAT_LIVE_PROOF_VERIFIED"
+  },
+  "guardian_interpretation": {
+    "heartbeat_reference_is_guardian_authority": false,
+    "heartbeat_reference_is_enforcement_trigger": false,
+    "heartbeat_reference_is_admissibility": false,
+    "heartbeat_reference_is_custody": false,
+    "heartbeat_reference_is_publication_authority": false,
+    "heartbeat_reference_is_execution_authority": false,
+    "guardian_observation_causes_heartbeat_progression": false,
+    "repository_orchestration_heartbeat_is_protocol_epoch": false,
+    "repository_orchestration_heartbeat_role": "WORKLOAD_HEALTH_PROJECTION_ONLY",
+    "time_role": "WATCHDOG_ONLY"
+  },
+  "hil_boundary": {
+    "hil_guardian_task": "GUARDIAN-HIL-0001",
+    "hil_dependency_state": "BLOCKED_BUT_OBSERVED",
+    "heartbeat_awareness_satisfies_hil_dependencies": false,
+    "heartbeat_awareness_grants_guardian_hil_interpretation": false
+  },
+  "authority": {
+    "guardian_enforcement": false,
+    "override": false,
+    "execution": false,
+    "publication": false,
+    "deployment": false,
+    "release": false,
+    "custody": false,
+    "admissibility": false,
+    "heartbeat_timing": false
+  },
+  "credential_authority": "TV/TVC",
+  "github_runtime_authority": "NONE",
+  "third_party_runtime_required": false,
+  "manual_user_action_required": false
+}
