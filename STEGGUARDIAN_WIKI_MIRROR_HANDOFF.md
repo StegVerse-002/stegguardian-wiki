@@ -238,3 +238,28 @@ No manual route checks, workflow triggering, receipt construction, file movement
 ## Archive Readiness
 
 This handoff and `data/stegguardian-wiki-orchestration-state.json` preserve the current ST-017 adoption, media-pipeline, visibility-authority, shared-schema, workflow, public-verification, HIL succession, authority-boundary, coordination, blocker, and continuation state. Earlier conversation context is not required.
+
+
+## Governance Observatory publication awareness — issue #13
+
+```text
+task_id: GUARDIAN-GOVOBS-PUBLICATION-AWARENESS-013
+execution_class: PARALLEL_SAFE_NON_HIL_AWARENESS
+source_publication_merge: 52d9a8f596ade145f5b08e44e98395d328476ecc
+state: IMPLEMENTED_VALIDATION_PENDING
+manual_user_action_required: false
+```
+
+This bounded awareness lane is intentionally outside `GUARDIAN-HIL-0001` and does not satisfy or alter its dependencies.
+
+Installed surfaces are documented in `docs/GOVERNANCE_OBSERVATORY_AWARENESS_MIRROR_HANDOFF.md`.
+
+```text
+publication != Guardian authority
+visibility != authority
+observation != standing
+documentation != enforcement activation
+AEGISAI source capture != runtime validation
+```
+
+Completion requires hosted validation, merge, post-merge validation, claim release, and evidence return to StegVerse-Labs/governance-observatory issue #5.
