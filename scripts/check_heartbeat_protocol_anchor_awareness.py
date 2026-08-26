@@ -18,11 +18,19 @@ def main():
     require(data.get("source_goal") == "HEARTBEAT-PROTOCOL-ANCHOR-013", "source_goal")
 
     refs = data.get("source_refs", {})
-    for key in ("semantics_handoff", "live_status", "live_proof_handoff", "validation_receipt"):
+    for key in ("semantics_handoff", "identifier_encoding_handoff", "live_status", "live_proof_handoff", "validation_receipt"):
         require(bool(refs.get(key)), f"source ref {key}")
 
     protocol = data.get("protocol", {})
     require(protocol.get("anchor_epoch") == 32, "anchor_epoch")
+    require(protocol.get("anchor_heartbeat_id") == "HB-0000000W", "anchor_heartbeat_id")
+    encoding = protocol.get("heartbeat_identifier_encoding", {})
+    require(encoding.get("encoding") == "FIXED_WIDTH_BASE36", "identifier encoding")
+    require(encoding.get("prefix") == "HB-", "identifier prefix")
+    require(encoding.get("width") == 8, "identifier width")
+    require(encoding.get("alphabet") == "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ", "identifier alphabet")
+    require(encoding.get("integer_epoch_remains_canonical") is True, "integer epoch canonical")
+    require(encoding.get("reversible") is True, "identifier reversible")
     require(protocol.get("anchor_time_utc") == "2026-08-23T19:00:00.000Z", "anchor_time_utc")
     require(protocol.get("period_ms") == 10, "period_ms")
     require(protocol.get("reference_rate_hz") == 100, "reference_rate_hz")
