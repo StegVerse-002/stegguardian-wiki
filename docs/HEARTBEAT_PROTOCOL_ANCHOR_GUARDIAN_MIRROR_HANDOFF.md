@@ -150,3 +150,39 @@ exact hosted validation for compact-identifier commit: NOT OBSERVED
 GUARDIAN-HIL-0001: SEPARATE / BLOCKED ON UPSTREAM REAL EVIDENCE
 Guardian authority effect: NONE
 ```
+
+
+## 2026-08-26 compact identifier validator hardening and exact local execution
+
+The focused Guardian awareness validator now explicitly validates the compact identifier source reference and representation fields:
+
+\`\`\`text
+9d0038052ec8be92dbecca7446826841f1d38664  Validate compact heartbeat identifier semantics
+identifier_encoding_handoff: required
+anchor_heartbeat_id == HB-0000000W
+encoding == FIXED_WIDTH_BASE36
+prefix == HB-
+width == 8
+alphabet == 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ
+integer_epoch_remains_canonical == true
+reversible == true
+\`\`\`
+
+Exact connector-retrieved current validator/data were executed in the coordinating machine and returned PASS. Durable bounded receipt:
+
+\`reports/heartbeat/compact-identifier-local-validation-2026-08-26.json\`
+commit: \`b19839bc95a3ecab1d58ff858b31364203e46f8b\`
+
+Receipt semantics remain non-authorizing:
+
+\`\`\`text
+result: PASS
+hosted_validation: false
+release_authority: false
+runtime_authority: false
+credential_consumed: false
+credential_authority: TV/TVC
+guardian_hil_satisfied: false
+\`\`\`
+
+This proves the compact-ID source semantics under exact local execution. Hosted validation of the later compact-ID state remains separately unobserved, and \`GUARDIAN-HIL-0001\` remains dependency-blocked.
