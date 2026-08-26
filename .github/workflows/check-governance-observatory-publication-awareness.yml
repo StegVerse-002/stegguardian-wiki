@@ -1,0 +1,35 @@
+name: Check Governance Observatory Publication Awareness
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - data/governance-observatory-publication-awareness-status.json
+      - scripts/check_governance_observatory_publication_awareness.py
+      - .github/workflows/check-governance-observatory-publication-awareness.yml
+      - docs/GOVERNANCE_OBSERVATORY_AWARENESS_MIRROR_HANDOFF.md
+      - STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md
+      - data/stegguardian-wiki-orchestration-state.json
+  pull_request:
+    paths:
+      - data/governance-observatory-publication-awareness-status.json
+      - scripts/check_governance_observatory_publication_awareness.py
+      - .github/workflows/check-governance-observatory-publication-awareness.yml
+      - docs/GOVERNANCE_OBSERVATORY_AWARENESS_MIRROR_HANDOFF.md
+      - STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md
+      - data/stegguardian-wiki-orchestration-state.json
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate bounded Governance Observatory Guardian awareness
+        run: python scripts/check_governance_observatory_publication_awareness.py
