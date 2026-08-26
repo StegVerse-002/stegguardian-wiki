@@ -34,3 +34,20 @@ framework record != Guardian interpretation
 This awareness lane is independent of and does not satisfy any dependency of `GUARDIAN-HIL-0001`.
 
 Completion requires target workflow PASS, merge to main, main-branch PASS, orchestration claim release, and evidence return to Governance Observatory issue #5.
+
+
+## Completion
+
+```text
+state: COMPLETE_VALIDATED_MERGED_LIVE_VERIFIED
+target_pr: 14
+merge_commit: 7d984de2161b7b546f66089cbc12f812400ad49f
+dedicated_awareness_run: 33024215052 SUCCESS
+live_public_record_proof_run: 33024875987
+live_public_record_job: 98363906051 SUCCESS
+claim_state: RELEASED_COMPLETE
+hil_dependency_effect: false
+authority_effect: false
+```
+
+The live proof required repair of the pre-existing cross-wiki metadata machine-record discriminator under issue #15 / PR #16; that repair is now merged and live-verified.
