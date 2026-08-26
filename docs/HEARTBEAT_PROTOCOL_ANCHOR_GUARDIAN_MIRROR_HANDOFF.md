@@ -114,3 +114,39 @@ session_dependency: false
 ```
 
 This bounded propagation target is complete. `GUARDIAN-HIL-0001` remains separately blocked on its real upstream evidence chain; completion here must not be cited as HIL Guardian activation.
+
+
+## 2026-08-26 compact identifier propagation reconciliation
+
+Current main additionally consumes the canonical compact heartbeat identifier representation:
+
+```text
+anchor integer epoch: 32
+anchor heartbeat id: HB-0000000W
+display format: HB-XXXXXXXX
+encoding: FIXED_WIDTH_BASE36
+width: 8
+integer epoch remains canonical: true
+reversible: true
+```
+
+Live source evidence:
+
+```text
+01a551cbcae4c073aef2aec283bebebca54a71f2  Consume compact Base36 heartbeat identifier contract
+data/heartbeat-protocol-anchor-awareness.json: UPDATED
+```
+
+This remains a bounded non-HIL awareness change. It does not grant Guardian enforcement, admissibility, execution, publication, custody, route, credential, or heartbeat timing authority, and it does not satisfy `GUARDIAN-HIL-0001`.
+
+No hosted workflow run is associated with the exact compact-identifier commit in the currently observable PR-run surface. Therefore compact-identifier source is IMPLEMENTED/MERGED but exact hosted validation for that commit remains NOT OBSERVED. The earlier HB32 awareness validation remains valid for its prior scope and may not be promoted to validation of this later representation change.
+
+Current bounded state:
+
+```text
+HB32 awareness baseline: COMPLETE_VALIDATED_MERGED
+HB-XXXXXXXX Base36 representation consumed: IMPLEMENTED / MERGED
+exact hosted validation for compact-identifier commit: NOT OBSERVED
+GUARDIAN-HIL-0001: SEPARATE / BLOCKED ON UPSTREAM REAL EVIDENCE
+Guardian authority effect: NONE
+```
