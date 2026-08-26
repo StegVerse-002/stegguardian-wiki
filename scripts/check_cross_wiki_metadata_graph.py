@@ -30,6 +30,8 @@ def main() -> int:
     else:
         payload = json.loads(GRAPH.read_text(encoding="utf-8"))
 
+    if payload.get("record_type") != "stegguardian_cross_wiki_metadata_graph":
+        errors.append("record_type_mismatch")
     if payload.get("graph_type") != "stegverse_cross_wiki_metadata_graph_seed":
         errors.append("graph_type_mismatch")
     if payload.get("scope") != "guardian_seed":
