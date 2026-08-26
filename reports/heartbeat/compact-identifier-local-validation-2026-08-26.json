@@ -1,0 +1,28 @@
+{
+  "schema": "stegverse.local-source-validation.v1",
+  "goal_id": "GUARDIAN-HEARTBEAT-COMPACT-ID-VALIDATION-20260826",
+  "repository": "StegVerse-002/stegguardian-wiki",
+  "source_commit": "9d0038052ec8be92dbecca7446826841f1d38664",
+  "validator_path": "scripts/check_heartbeat_protocol_anchor_awareness.py",
+  "validator_blob_sha": "ad73d4430104d11768e01e173a751362c2dd582a",
+  "data_path": "data/heartbeat-protocol-anchor-awareness.json",
+  "data_blob_sha": "0fc4efca9697b478f364eb22bcd37a9e07106201",
+  "result": "PASS",
+  "validated_semantics": {
+    "anchor_epoch": 32,
+    "anchor_heartbeat_id": "HB-0000000W",
+    "encoding": "FIXED_WIDTH_BASE36",
+    "width": 8,
+    "period_ms": 10,
+    "reference_rate_hz": 100,
+    "progression_dependency": "OSCILLATOR_ONLY",
+    "authority_effect": "NONE",
+    "guardian_hil_satisfied": false
+  },
+  "execution_environment": "coordinating machine from exact connector-retrieved source",
+  "hosted_validation": false,
+  "release_authority": false,
+  "runtime_authority": false,
+  "credential_authority": "TV/TVC",
+  "credential_consumed": false
+}
