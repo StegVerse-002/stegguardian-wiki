@@ -1,6 +1,6 @@
 # Heartbeat Protocol Anchor Guardian Mirror Handoff
 
-Updated: 2026-08-23T17:14:00-05:00
+Updated: 2026-08-26T18:36:00-05:00
 
 ## Authority and scope
 
