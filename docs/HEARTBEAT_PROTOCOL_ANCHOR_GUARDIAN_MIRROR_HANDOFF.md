@@ -186,3 +186,31 @@ guardian_hil_satisfied: false
 \`\`\`
 
 This proves the compact-ID source semantics under exact local execution. Hosted validation of the later compact-ID state remains separately unobserved, and \`GUARDIAN-HIL-0001\` remains dependency-blocked.
+
+
+## 2026-08-26 hosted compact-identifier validation completion
+
+The hardened compact-identifier-aware Guardian validator is now hosted-observed PASS on a later current-main head containing the change:
+
+\`\`\`text
+workflow: Check Heartbeat Protocol Anchor Awareness
+run: 33024215029
+job: 98361619345
+head: 7d984de2161b7b546f66089cbc12f812400ad49f
+step: Validate bounded HB32 Guardian awareness
+result: SUCCESS
+\`\`\`
+
+The separate StegGuardian Wiki Readiness run \`33024215036\` also succeeded on that head. A separate publication workflow failed on that same head; that publication failure is not rewritten as success and does not invalidate the bounded heartbeat-awareness validator PASS.
+
+Current bounded compact-ID state:
+
+\`\`\`text
+HB32 awareness baseline: COMPLETE_VALIDATED_MERGED
+HB-XXXXXXXX Base36 representation: COMPLETE_VALIDATED
+exact local focused validation: PASS
+hosted focused validation: PASS
+Guardian enforcement authority: NONE
+GUARDIAN-HIL-0001: SEPARATE / BLOCKED ON UPSTREAM REAL EVIDENCE
+publication completion from this heartbeat goal: NOT CLAIMED
+\`\`\`
