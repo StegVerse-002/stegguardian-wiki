@@ -49,6 +49,22 @@
         "data/stegguardian-wiki-orchestration-state.json"
       ],
       "hil_dependency_effect": false
+    },
+    {
+      "task_id": "GUARDIAN-CROSS-WIKI-METADATA-RECORD-TYPE-015",
+      "workload": "Repair live cross-wiki metadata graph record_type contract and re-prove deployed machine-record verification",
+      "execution_class": "PARALLEL_SAFE_LIVE_RECORD_REPAIR",
+      "state": "IMPLEMENTATION_VALIDATION_IN_PROGRESS",
+      "claim_state": "CLAIMED_FOR_IMPLEMENTATION",
+      "owner": "issue #15 / fix/cross-wiki-metadata-record-type-15",
+      "collision_boundary": [
+        "data/cross-wiki-metadata-graph.json",
+        "scripts/check_cross_wiki_metadata_graph.py",
+        "STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md",
+        "data/stegguardian-wiki-orchestration-state.json"
+      ],
+      "authority_effect": false,
+      "hil_dependency_effect": false
     }
   ],
   "completed_tasks": [
@@ -134,5 +150,5 @@
     "admissibility": false,
     "heartbeat_timing": false
   },
-  "last_transition": "GOVERNANCE_OBSERVATORY_PUBLICATION_AWARENESS_IMPLEMENTATION_STARTED"
+  "last_transition": "CROSS_WIKI_METADATA_RECORD_TYPE_REPAIR_STARTED"
 }
