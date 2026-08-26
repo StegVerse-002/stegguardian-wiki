@@ -291,3 +291,44 @@ do not alter graph semantics or authority boundaries
 Completion requires PR validation, merge, post-merge Pages deployment, successful deployed-machine-record verification, claim release, and closure evidence returned to Governance Observatory issue #5.
 
 This repair does not create Guardian, standing, execution, publication, custody, deployment, or cross-repository authority and does not satisfy `GUARDIAN-HIL-0001`.
+
+
+## Governance Observatory awareness + live-record repair completion — 2026-08-26
+
+The bounded publication-awareness lane and the discovered public machine-record contract repair are both complete.
+
+```text
+governance_observatory_awareness:
+  issue: 13
+  pr: 14
+  merge: 7d984de2161b7b546f66089cbc12f812400ad49f
+  dedicated_awareness_run: 33024215052 SUCCESS
+  readiness_run: 33024215036 SUCCESS
+  claim_state: RELEASED_COMPLETE
+  state: COMPLETE_VALIDATED_MERGED_LIVE_VERIFIED
+
+cross_wiki_metadata_record_repair:
+  issue: 15
+  pr: 16
+  merge: 15ee30d7334ac4511692c1f9e906b0c9e215bf9e
+  repaired_record_type: stegguardian_cross_wiki_metadata_graph
+  pages_run: 33024875987
+  ST-017_validation: SUCCESS
+  deploy: SUCCESS
+  deployed_machine_record_job: 98363906051 SUCCESS
+  claim_state: RELEASED_COMPLETE
+  state: COMPLETE_VALIDATED_MERGED_LIVE_VERIFIED
+```
+
+The first live-verification attempt on the repaired merge was cancelled by workflow concurrency after deployment, so the cancelled verification job was explicitly rerun after the colliding PR workflow completed. The rerun fetched deployed records, uploaded its live report, enforced the result, and completed successfully.
+
+The pre-repair failure remains preserved as evidence:
+
+```text
+failed_run: 33024215040
+failed_job: 98361762130
+artifact: 9627819079
+cause: public cross-wiki metadata graph lacked record_type
+```
+
+No HIL dependency is satisfied by this work. No Guardian enforcement, standing, execution, custody, admissibility, override, release, or cross-repository mutation authority is created.
