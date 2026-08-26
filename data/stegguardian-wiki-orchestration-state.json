@@ -32,41 +32,7 @@
     "correctability_awareness": "docs/CORRECTABILITY_AWARENESS_MIRROR_HANDOFF.md",
     "hb32_protocol_awareness": "docs/HEARTBEAT_PROTOCOL_ANCHOR_GUARDIAN_MIRROR_HANDOFF.md"
   },
-  "active_tasks": [
-    {
-      "task_id": "GUARDIAN-GOVOBS-PUBLICATION-AWARENESS-013",
-      "workload": "Consume confirmed Governance Observatory publication state as bounded non-HIL Guardian awareness",
-      "execution_class": "PARALLEL_SAFE_NON_HIL_AWARENESS",
-      "state": "IMPLEMENTATION_VALIDATION_IN_PROGRESS",
-      "claim_state": "CLAIMED_FOR_IMPLEMENTATION",
-      "owner": "issue #13 / integration/governance-observatory-publication-awareness-13",
-      "collision_boundary": [
-        "data/governance-observatory-publication-awareness-status.json",
-        "scripts/check_governance_observatory_publication_awareness.py",
-        ".github/workflows/check-governance-observatory-publication-awareness.yml",
-        "docs/GOVERNANCE_OBSERVATORY_AWARENESS_MIRROR_HANDOFF.md",
-        "STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md",
-        "data/stegguardian-wiki-orchestration-state.json"
-      ],
-      "hil_dependency_effect": false
-    },
-    {
-      "task_id": "GUARDIAN-CROSS-WIKI-METADATA-RECORD-TYPE-015",
-      "workload": "Repair live cross-wiki metadata graph record_type contract and re-prove deployed machine-record verification",
-      "execution_class": "PARALLEL_SAFE_LIVE_RECORD_REPAIR",
-      "state": "IMPLEMENTATION_VALIDATION_IN_PROGRESS",
-      "claim_state": "CLAIMED_FOR_IMPLEMENTATION",
-      "owner": "issue #15 / fix/cross-wiki-metadata-record-type-15",
-      "collision_boundary": [
-        "data/cross-wiki-metadata-graph.json",
-        "scripts/check_cross_wiki_metadata_graph.py",
-        "STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md",
-        "data/stegguardian-wiki-orchestration-state.json"
-      ],
-      "authority_effect": false,
-      "hil_dependency_effect": false
-    }
-  ],
+  "active_tasks": [],
   "completed_tasks": [
     {
       "task_id": "GUARDIAN-CORRECTABILITY-0001",
@@ -102,6 +68,40 @@
         "readiness_run_id": 32669878802,
         "readiness_conclusion": "success",
         "handoff": "docs/HEARTBEAT_PROTOCOL_ANCHOR_GUARDIAN_MIRROR_HANDOFF.md",
+        "authority_effect": false
+      }
+    },
+    {
+      "task_id": "GUARDIAN-GOVOBS-PUBLICATION-AWARENESS-013",
+      "workload": "Consume confirmed Governance Observatory publication state as bounded non-HIL Guardian awareness",
+      "execution_class": "PARALLEL_SAFE_NON_HIL_AWARENESS",
+      "state": "COMPLETE_VALIDATED_MERGED_LIVE_VERIFIED",
+      "claim_state": "RELEASED_COMPLETE",
+      "completion_evidence": {
+        "pull_request": 14,
+        "merge": "7d984de2161b7b546f66089cbc12f812400ad49f",
+        "dedicated_awareness_run_id": 33024215052,
+        "readiness_run_id": 33024215036,
+        "live_proof_run_id": 33024875987,
+        "live_proof_job_id": 98363906051,
+        "live_proof_conclusion": "success",
+        "authority_effect": false
+      }
+    },
+    {
+      "task_id": "GUARDIAN-CROSS-WIKI-METADATA-RECORD-TYPE-015",
+      "workload": "Repair live cross-wiki metadata graph record_type contract and re-prove deployed machine-record verification",
+      "execution_class": "PARALLEL_SAFE_LIVE_RECORD_REPAIR",
+      "state": "COMPLETE_VALIDATED_MERGED_LIVE_VERIFIED",
+      "claim_state": "RELEASED_COMPLETE",
+      "completion_evidence": {
+        "issue": 15,
+        "pull_request": 16,
+        "merge": "15ee30d7334ac4511692c1f9e906b0c9e215bf9e",
+        "pages_run_id": 33024875987,
+        "live_verification_job_id": 98363906051,
+        "live_verification_conclusion": "success",
+        "repaired_record_type": "stegguardian_cross_wiki_metadata_graph",
         "authority_effect": false
       }
     }
@@ -150,5 +150,5 @@
     "admissibility": false,
     "heartbeat_timing": false
   },
-  "last_transition": "CROSS_WIKI_METADATA_RECORD_TYPE_REPAIR_STARTED"
+  "last_transition": "GOVERNANCE_OBSERVATORY_AWARENESS_AND_LIVE_RECORD_REPAIR_COMPLETE_VALIDATED_MERGED_LIVE_VERIFIED"
 }
