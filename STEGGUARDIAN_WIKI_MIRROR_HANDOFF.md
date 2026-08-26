@@ -263,3 +263,31 @@ AEGISAI source capture != runtime validation
 ```
 
 Completion requires hosted validation, merge, post-merge validation, claim release, and evidence return to StegVerse-Labs/governance-observatory issue #5.
+
+
+## Cross-wiki metadata live-record repair — issue #15
+
+```text
+task_id: GUARDIAN-CROSS-WIKI-METADATA-RECORD-TYPE-015
+execution_class: PARALLEL_SAFE_LIVE_RECORD_REPAIR
+source_failure_run: 33024215040
+source_failure_job: 98361762130
+source_failure_artifact: 9627819079
+state: IMPLEMENTED_VALIDATION_PENDING
+manual_user_action_required: false
+```
+
+Observed failure was precise and fail-closed: the deployed `data/cross-wiki-metadata-graph.json` returned HTTP 200 but lacked the machine-record discriminator expected by `scripts/fetch_live_public_record_urls.py`.
+
+Bounded repair:
+
+```text
+preserve graph_type: stegverse_cross_wiki_metadata_graph_seed
+add record_type: stegguardian_cross_wiki_metadata_graph
+require record_type in local graph validator
+do not alter graph semantics or authority boundaries
+```
+
+Completion requires PR validation, merge, post-merge Pages deployment, successful deployed-machine-record verification, claim release, and closure evidence returned to Governance Observatory issue #5.
+
+This repair does not create Guardian, standing, execution, publication, custody, deployment, or cross-repository authority and does not satisfy `GUARDIAN-HIL-0001`.
