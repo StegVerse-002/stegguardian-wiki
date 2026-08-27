@@ -135,17 +135,35 @@ Preserved boundary fields:
 - `payment_is_entitlement: false`
 - `transport_is_authority: false`
 
-Current lifecycle:
+Final generated-Ste gPay projection lifecycle:
 ```text
-IMPLEMENTED: true on reconciliation branch
-VALIDATED: pending exact-head hosted observation
-MERGED: false
-DEPLOYED: false
-ACTIVATED: false
-OBSERVED: pending
-RECONSTRUCTED: false/not claimed
+IMPLEMENTED: true
+VALIDATED: true
+MERGED: true
+DEPLOYED: true as Pages/public machine-record projection only
+ACTIVATED: false as Guardian enforcement/financial/runtime authority
+OBSERVED: true
+RECONSTRUCTED: false/not required for this bounded projection goal
 RELEASED: false
-COMPLETE: false
+COMPLETE: true for this bounded downstream projection goal only
 ```
 
-No user action is required. The next executable action is exact-head PR validation through the existing hosted workflows, followed by merge only if current and green, then main-branch Pages/deployment observation without inferring Guardian enforcement or release authority.
+Final evidence:
+```text
+PR: #19
+exact PR head: 4814f990cd6bab89d5a2af5296e763f611d3a44f
+PR Pages run: 33094859487 SUCCESS
+PR readiness run: 33094859495 SUCCESS
+required marker: GENERATED_STEGPAY_GUARDIAN_IMPORT=PASS
+aggregate marker: STEGGUARDIAN LOCAL STATE: PASS
+merge commit: d7a4bdd0e92a4c2fa13ddf81ecf9af68974081cb
+main Pages run: 33094989577
+main validation: SUCCESS
+main Pages deployment: SUCCESS
+main deployed-machine-record verification: SUCCESS
+main readiness run: 33094989575 SUCCESS
+```
+
+The Pages deployment is evidence/public projection transport only. It does not grant Guardian enforcement, payment, execution, custody, publication authority, release authority, or runtime authority. No tag or release is authorized by this test-only evidence.
+
+No user action is required. The generated-Ste gPay Guardian projection claim-release condition has been satisfied and this bounded goal may be treated as COMPLETE while unrelated StegGuardian goals remain governed by their own handoffs and claims.
