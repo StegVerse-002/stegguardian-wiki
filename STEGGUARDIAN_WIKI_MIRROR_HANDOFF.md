@@ -358,3 +358,25 @@ AEGISAI source capture != runtime validation
 ```
 
 Completion requires target workflow PASS, merge, post-merge Pages deployment, deployed-machine-record verification PASS, claim release, and evidence return to StegVerse-Labs/governance-observatory issue #10.
+
+
+### Governance Observatory v0.1.0 release awareness completion
+
+```text
+task_id: GUARDIAN-GOVOBS-V0.1.0-RELEASE-AWARENESS-017
+issue: 17 CLOSED
+target_pr: 18
+merge_commit: 29325da2e633f1a3c16a23123d5668793e30998d
+dedicated_awareness_run: 33025944766 SUCCESS
+readiness_run: 33025944653 SUCCESS
+pages_run: 33025944644 SUCCESS
+ST-017_validation: SUCCESS
+deploy: SUCCESS
+deployed_machine_record_job: 98367250304 SUCCESS
+claim_state: RELEASED_COMPLETE
+state: COMPLETE_VALIDATED_MERGED_LIVE_VERIFIED
+authority_effect: false
+hil_dependency_effect: false
+```
+
+The actual `v0.1.0` release is now durably reflected as Guardian awareness. It does not satisfy `GUARDIAN-HIL-0001` or create Guardian, standing, execution, custody, admissibility, release, or enforcement authority.
