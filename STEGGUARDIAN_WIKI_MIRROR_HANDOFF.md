@@ -332,3 +332,29 @@ cause: public cross-wiki metadata graph lacked record_type
 ```
 
 No HIL dependency is satisfied by this work. No Guardian enforcement, standing, execution, custody, admissibility, override, release, or cross-repository mutation authority is created.
+
+
+## Governance Observatory v0.1.0 release awareness — issue #17
+
+```text
+task_id: GUARDIAN-GOVOBS-V0.1.0-RELEASE-AWARENESS-017
+execution_class: PARALLEL_SAFE_NON_HIL_RELEASE_AWARENESS
+source_version: 0.1.0
+source_tag: v0.1.0
+source_release_id: 377486341
+source_release_state_head: 31afc11745507e4764c2c9f44be1e5143e920ef1
+state: IMPLEMENTED_VALIDATION_PENDING
+manual_user_action_required: false
+```
+
+This lane extends the completed publication-awareness projection to actual versioned-release awareness. It remains outside `GUARDIAN-HIL-0001`.
+
+```text
+release != Guardian authority
+tag != standing
+documentation != enforcement
+release awareness != custody or execution
+AEGISAI source capture != runtime validation
+```
+
+Completion requires target workflow PASS, merge, post-merge Pages deployment, deployed-machine-record verification PASS, claim release, and evidence return to StegVerse-Labs/governance-observatory issue #10.
