@@ -32,25 +32,7 @@
     "correctability_awareness": "docs/CORRECTABILITY_AWARENESS_MIRROR_HANDOFF.md",
     "hb32_protocol_awareness": "docs/HEARTBEAT_PROTOCOL_ANCHOR_GUARDIAN_MIRROR_HANDOFF.md"
   },
-  "active_tasks": [
-    {
-      "task_id": "GUARDIAN-GOVOBS-V0.1.0-RELEASE-AWARENESS-017",
-      "workload": "Consume Governance Observatory v0.1.0 as bounded non-HIL Guardian release awareness",
-      "execution_class": "PARALLEL_SAFE_NON_HIL_RELEASE_AWARENESS",
-      "state": "IMPLEMENTATION_VALIDATION_IN_PROGRESS",
-      "claim_state": "CLAIMED_FOR_IMPLEMENTATION",
-      "owner": "issue #17 / integration/governance-observatory-v0.1.0-release-awareness-17",
-      "collision_boundary": [
-        "data/governance-observatory-publication-awareness-status.json",
-        "scripts/check_governance_observatory_publication_awareness.py",
-        "docs/GOVERNANCE_OBSERVATORY_AWARENESS_MIRROR_HANDOFF.md",
-        "STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md",
-        "data/stegguardian-wiki-orchestration-state.json"
-      ],
-      "hil_dependency_effect": false,
-      "authority_effect": false
-    }
-  ],
+  "active_tasks": [],
   "completed_tasks": [
     {
       "task_id": "GUARDIAN-CORRECTABILITY-0001",
@@ -122,6 +104,24 @@
         "repaired_record_type": "stegguardian_cross_wiki_metadata_graph",
         "authority_effect": false
       }
+    },
+    {
+      "task_id": "GUARDIAN-GOVOBS-V0.1.0-RELEASE-AWARENESS-017",
+      "workload": "Consume Governance Observatory v0.1.0 as bounded non-HIL Guardian release awareness",
+      "execution_class": "PARALLEL_SAFE_NON_HIL_RELEASE_AWARENESS",
+      "state": "COMPLETE_VALIDATED_MERGED_LIVE_VERIFIED",
+      "claim_state": "RELEASED_COMPLETE",
+      "completion_evidence": {
+        "issue": 17,
+        "pull_request": 18,
+        "merge": "29325da2e633f1a3c16a23123d5668793e30998d",
+        "dedicated_awareness_run_id": 33025944766,
+        "readiness_run_id": 33025944653,
+        "pages_run_id": 33025944644,
+        "live_verification_job_id": 98367250304,
+        "live_verification_conclusion": "success",
+        "authority_effect": false
+      }
     }
   ],
   "blocked_tasks": [
@@ -168,5 +168,5 @@
     "admissibility": false,
     "heartbeat_timing": false
   },
-  "last_transition": "GOVERNANCE_OBSERVATORY_V0_1_0_RELEASE_AWARENESS_STARTED"
+  "last_transition": "GOVERNANCE_OBSERVATORY_V0_1_0_RELEASE_AWARENESS_COMPLETE_VALIDATED_MERGED_LIVE_VERIFIED"
 }
