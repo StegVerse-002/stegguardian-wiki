@@ -51,3 +51,19 @@ authority_effect: false
 ```
 
 The live proof required repair of the pre-existing cross-wiki metadata machine-record discriminator under issue #15 / PR #16; that repair is now merged and live-verified.
+
+
+## v0.1.0 release-awareness continuation
+
+```text
+source_version: 0.1.0
+source_tag: v0.1.0
+source_release_id: 377486341
+source_release_url: https://github.com/StegVerse-Labs/governance-observatory/releases/tag/v0.1.0
+release_state_head: 31afc11745507e4764c2c9f44be1e5143e920ef1
+target_task: GUARDIAN-GOVOBS-V0.1.0-RELEASE-AWARENESS-017
+state: IMPLEMENTED_VALIDATION_PENDING
+execution_class: PARALLEL_SAFE_NON_HIL_RELEASE_AWARENESS
+```
+
+Publication-awareness completion remains valid. This successor only records the actual versioned release and does not change Guardian authority, HIL state, standing, execution, custody, admissibility, or enforcement.
