@@ -32,7 +32,25 @@
     "correctability_awareness": "docs/CORRECTABILITY_AWARENESS_MIRROR_HANDOFF.md",
     "hb32_protocol_awareness": "docs/HEARTBEAT_PROTOCOL_ANCHOR_GUARDIAN_MIRROR_HANDOFF.md"
   },
-  "active_tasks": [],
+  "active_tasks": [
+    {
+      "task_id": "GUARDIAN-GOVOBS-V0.1.0-RELEASE-AWARENESS-017",
+      "workload": "Consume Governance Observatory v0.1.0 as bounded non-HIL Guardian release awareness",
+      "execution_class": "PARALLEL_SAFE_NON_HIL_RELEASE_AWARENESS",
+      "state": "IMPLEMENTATION_VALIDATION_IN_PROGRESS",
+      "claim_state": "CLAIMED_FOR_IMPLEMENTATION",
+      "owner": "issue #17 / integration/governance-observatory-v0.1.0-release-awareness-17",
+      "collision_boundary": [
+        "data/governance-observatory-publication-awareness-status.json",
+        "scripts/check_governance_observatory_publication_awareness.py",
+        "docs/GOVERNANCE_OBSERVATORY_AWARENESS_MIRROR_HANDOFF.md",
+        "STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md",
+        "data/stegguardian-wiki-orchestration-state.json"
+      ],
+      "hil_dependency_effect": false,
+      "authority_effect": false
+    }
+  ],
   "completed_tasks": [
     {
       "task_id": "GUARDIAN-CORRECTABILITY-0001",
@@ -150,5 +168,5 @@
     "admissibility": false,
     "heartbeat_timing": false
   },
-  "last_transition": "GOVERNANCE_OBSERVATORY_AWARENESS_AND_LIVE_RECORD_REPAIR_COMPLETE_VALIDATED_MERGED_LIVE_VERIFIED"
+  "last_transition": "GOVERNANCE_OBSERVATORY_V0_1_0_RELEASE_AWARENESS_STARTED"
 }
