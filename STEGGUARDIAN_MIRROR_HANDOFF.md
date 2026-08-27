@@ -89,3 +89,63 @@ The project subgoal is archive-safe after hosted workflow evidence is durable. R
 - aggregate integration: 1/1
 - hosted validation: 0/1
 - goal activation: 75%
+
+
+## 2026-08-27 current generated StegPay chain reconciliation
+
+Existing canonical owner retained:
+
+```text
+goal_id: generated-stegpay-authority-boundary-projection
+owner: repository validation lane
+claim_state: MACHINE_OWNED
+duplicate_lane_created: false
+```
+
+Current bounded evidence binding:
+
+```text
+Publisher merge: cf224d1ee78e16c259db3c6349c02c2444469509
+Publisher source: data/generated-stegpay-site-ingestion.json
+Publisher Git blob SHA: 87c4a198239c5bd951f8133c11d5c591c1e9d947
+Publisher canonical JSON SHA-256: bbae4456bb09de7eaa3b9782c000fdef106ad035c1f2dee64f62e4102df302a1
+Site receipt canonical JSON SHA-256: 687d06eb93693d0bd78f00cdefd465d23d92b54c0bbfa7bc0a04b1364f9a452f
+StegOps propagation SHA-256: e59e71bf31879f0bf29a8356f8027304a94a4dee59d3c0be35c3ecc505e7cec9
+consumer receipt SHA-256: b8084ecc9821eb7738e4dccffd239185a072e0bc630e71c72906098a830cf515
+source generation: 2026-08-27T11:58:18Z
+event_id: 09373107-5e4b-483e-85de-9e26c126fc0c
+provider_id: pi_test_123
+```
+
+The active August 2 hashes are superseded for current-state projection and remain historical provenance only.
+
+Workflow consistency repair:
+- `.github/workflows/pages.yml` now invokes `python scripts/check_guardian_local_state.py` in its existing validation job.
+- This satisfies the handoff's pre-existing hosted claim-release contract without adding a new workflow.
+- The Pages workflow remains `contents: read` and does not gain repository mutation authority.
+
+Preserved boundary fields:
+- `signature_boundary_preserved: true`
+- `replay_safe_consumer_observed: true`
+- `guardian_enforcement_authorized: false`
+- `publication_authorized: false`
+- `release_authorized: false`
+- `execution_authorized: false`
+- `custody_recorded: false`
+- `payment_is_entitlement: false`
+- `transport_is_authority: false`
+
+Current lifecycle:
+```text
+IMPLEMENTED: true on reconciliation branch
+VALIDATED: pending exact-head hosted observation
+MERGED: false
+DEPLOYED: false
+ACTIVATED: false
+OBSERVED: pending
+RECONSTRUCTED: false/not claimed
+RELEASED: false
+COMPLETE: false
+```
+
+No user action is required. The next executable action is exact-head PR validation through the existing hosted workflows, followed by merge only if current and green, then main-branch Pages/deployment observation without inferring Guardian enforcement or release authority.
