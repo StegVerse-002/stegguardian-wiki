@@ -26,6 +26,8 @@ jobs:
         run: python scripts/check_guardian_activation_orchestration_contract.py
       - name: Execute Guardian sandbox
         run: python scripts/run_sandbox_validation.py
+      - name: Validate aggregate Guardian local state
+        run: python scripts/check_guardian_local_state.py
       - name: Upload Guardian sandbox report
         if: always()
         uses: actions/upload-artifact@v4
