@@ -67,3 +67,18 @@ execution_class: PARALLEL_SAFE_NON_HIL_RELEASE_AWARENESS
 ```
 
 Publication-awareness completion remains valid. This successor only records the actual versioned release and does not change Guardian authority, HIL state, standing, execution, custody, admissibility, or enforcement.
+
+
+## v0.1.0 release-awareness completion
+
+```text
+state: COMPLETE_VALIDATED_MERGED_LIVE_VERIFIED
+target_pr: 18
+merge_commit: 29325da2e633f1a3c16a23123d5668793e30998d
+dedicated_awareness_run: 33025944766 SUCCESS
+pages_run: 33025944644 SUCCESS
+live_machine_record_job: 98367250304 SUCCESS
+claim_state: RELEASED_COMPLETE
+hil_dependency_effect: false
+authority_effect: false
+```
