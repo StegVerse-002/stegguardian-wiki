@@ -82,3 +82,54 @@ claim_state: RELEASED_COMPLETE
 hil_dependency_effect: false
 authority_effect: false
 ```
+
+## Execution ownership and collision partition
+
+Standard: `StegVerse-Labs/Continuity/docs/REPOSITORY_HANDOFF_STANDARD.md` / `stegverse.handoff-execution-ownership/v1`.
+
+### MANUAL / SESSION-STARTABLE
+
+```yaml
+- task_id: STEGGUARDIAN-GOVOBS-HANDOFF-ADOPTION-027
+  execution_owner: repo-standards #37 integration lane + StegGuardian repository owner
+  claim_state: CLAIMED_FOR_INTEGRATION
+  worker_registry_ref: StegVerse-Labs/repo-standards#37 + StegVerse-002/stegguardian-wiki#27
+  manual_execution_allowed: true
+  manual_allowed_role: integration
+  collision_scope: ownership metadata/textual migration in this completed awareness/release-awareness handoff only
+  release_condition: migration merged and issue #27 reconciled
+  next_executable_action: merge metadata without reopening completed awareness implementation or HIL work
+```
+
+### WORKER-OWNED / DO NOT COMPETE
+
+```yaml
+- task_id: GUARDIAN-HIL-0001
+  execution_owner: canonical HIL succession-chain owners and StegGuardian orchestration lane
+  claim_state: DEPENDENCY_BLOCKED_MACHINE_OWNED
+  worker_registry_ref: STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md + current upstream handoffs/issues/receipts
+  manual_execution_allowed: false
+  manual_allowed_role: observation
+  collision_scope: HIL evidence production/custody/admissibility/Guardian interpretation and runtime execution
+  release_condition: complete verified HIL succession chain reaches the Guardian admission boundary
+  next_executable_action: preserve HIL separation and observe canonical evidence
+```
+
+### ESCALATED / AUTHORITY-OWNED
+
+```yaml
+- task_id: GOVOBS-GUARDIAN-AUTHORITY-BOUNDARY
+  execution_owner: applicable Guardian/component authority -> ecosystem governance
+  claim_state: ESCALATED
+  worker_registry_ref: this handoff + STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md
+  manual_execution_allowed: false
+  manual_allowed_role: reconciliation
+  collision_scope: Guardian enforcement, standing, execution, custody, admissibility, release, or promotion of publication/release awareness into authority
+  release_condition: explicit canonical authority grant for the exact bounded scope
+  next_executable_action: fail closed; awareness is not authority
+```
+
+### COMPLETED / SUPERSEDED
+
+- Publication awareness issue #13 and v0.1.0 release awareness issue #17 are complete, validated, merged, live-verified, and claim-released.
+- Any inference that Governance Observatory publication/release visibility satisfies Guardian HIL dependencies or creates Guardian authority is superseded/prohibited.

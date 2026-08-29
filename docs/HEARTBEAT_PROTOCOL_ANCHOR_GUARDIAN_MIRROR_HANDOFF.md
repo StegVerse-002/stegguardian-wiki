@@ -214,3 +214,55 @@ Guardian enforcement authority: NONE
 GUARDIAN-HIL-0001: SEPARATE / BLOCKED ON UPSTREAM REAL EVIDENCE
 publication completion from this heartbeat goal: NOT CLAIMED
 \`\`\`
+
+## Execution ownership and collision partition
+
+Standard: `StegVerse-Labs/Continuity/docs/REPOSITORY_HANDOFF_STANDARD.md` / `stegverse.handoff-execution-ownership/v1`.
+
+### MANUAL / SESSION-STARTABLE
+
+```yaml
+- task_id: STEGGUARDIAN-HEARTBEAT-HANDOFF-ADOPTION-027
+  execution_owner: repo-standards #37 integration lane + StegGuardian repository owner
+  claim_state: CLAIMED_FOR_INTEGRATION
+  worker_registry_ref: StegVerse-Labs/repo-standards#37 + StegVerse-002/stegguardian-wiki#27
+  manual_execution_allowed: true
+  manual_allowed_role: integration
+  collision_scope: ownership metadata/textual migration in this completed heartbeat-awareness handoff only
+  release_condition: migration merged and issue #27 reconciled
+  next_executable_action: merge metadata without changing heartbeat semantics, runtime, timing, or HIL ownership
+```
+
+### WORKER-OWNED / DO NOT COMPETE
+
+```yaml
+- task_id: GUARDIAN-HB32-AND-HIL-AGGREGATE
+  execution_owner: canonical heartbeat semantics owner plus current StegGuardian orchestration/HIL machine owners
+  claim_state: MACHINE_OWNED_OR_DEPENDENCY_BLOCKED
+  worker_registry_ref: StegVerse-Labs/.github/docs/HEARTBEAT_CARRIER_SIGNAL_MIRROR_HANDOFF.md + STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md + data/stegguardian-wiki-orchestration-state.json
+  manual_execution_allowed: false
+  manual_allowed_role: observation
+  collision_scope: heartbeat protocol semantics/timing, live proof, Guardian HIL succession, repository workload orchestration, runtime execution
+  release_condition: each canonical owner reaches or releases its own machine-observable terminal state
+  next_executable_action: preserve oscillator-only semantics and HIL separation; observe canonical evidence without competing
+```
+
+### ESCALATED / AUTHORITY-OWNED
+
+```yaml
+- task_id: HEARTBEAT-GUARDIAN-AUTHORITY-BOUNDARY
+  execution_owner: heartbeat semantics authority / applicable Guardian authority / ecosystem governance
+  claim_state: ESCALATED
+  worker_registry_ref: upstream heartbeat handoff + this handoff + STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md
+  manual_execution_allowed: false
+  manual_allowed_role: reconciliation
+  collision_scope: heartbeat timing authority, Guardian enforcement, execution, publication, custody, admissibility, credential, route, release, or promotion of observation into causation/authority
+  release_condition: explicit canonical authority grant for the exact bounded scope
+  next_executable_action: fail closed; heartbeat awareness/observation cannot create timing or Guardian authority
+```
+
+### COMPLETED / SUPERSEDED
+
+- HB32 Guardian awareness baseline and the compact `HB-XXXXXXXX` representation are complete and validated for their bounded awareness scope.
+- Prior `NOT OBSERVED` compact-identifier hosted validation state is superseded by the later focused hosted PASS recorded above.
+- Any inference that Guardian observation causes heartbeat progression or that heartbeat evidence satisfies `GUARDIAN-HIL-0001` is superseded/prohibited.
