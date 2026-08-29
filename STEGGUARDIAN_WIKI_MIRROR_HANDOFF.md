@@ -380,3 +380,56 @@ hil_dependency_effect: false
 ```
 
 The actual `v0.1.0` release is now durably reflected as Guardian awareness. It does not satisfy `GUARDIAN-HIL-0001` or create Guardian, standing, execution, custody, admissibility, release, or enforcement authority.
+
+## Execution ownership and collision partition
+
+Standard: `StegVerse-Labs/Continuity/docs/REPOSITORY_HANDOFF_STANDARD.md` / `stegverse.handoff-execution-ownership/v1`.
+
+### MANUAL / SESSION-STARTABLE
+
+```yaml
+- task_id: STEGGUARDIAN-WIKI-HANDOFF-OWNERSHIP-ADOPTION-025
+  execution_owner: repo-standards #37 integration lane + StegGuardian repository owner
+  claim_state: CLAIMED_FOR_INTEGRATION
+  worker_registry_ref: StegVerse-Labs/repo-standards#37 + StegVerse-002/stegguardian-wiki#25
+  manual_execution_allowed: true
+  manual_allowed_role: integration
+  collision_scope: ownership metadata/textual migration in this handoff only; excludes orchestration state transitions, Pages execution/deployment, HIL interpretation, Guardian product behavior, shared health runtime evidence, claims/fences/leases, and every Guardian/standing/execution/publication/deployment/release/custody/admissibility authority surface
+  release_condition: this textual migration is merged and issue #25 is closed or superseded
+  next_executable_action: merge only the ownership metadata after repository validation; do not enter machine-owned or dependency-blocked product scopes
+```
+
+### WORKER-OWNED / DO NOT COMPETE
+
+```yaml
+- task_id: STEGGUARDIAN-WIKI-CURRENT-ORCHESTRATION-AGGREGATE
+  execution_owner: repository orchestration/Pages machine lanes and the task-specific upstream owners identified in this handoff and data/stegguardian-wiki-orchestration-state.json
+  claim_state: MACHINE_OWNED
+  worker_registry_ref: data/stegguardian-wiki-orchestration-state.json + task-specific current handoffs/issues/claims/fences/leases
+  manual_execution_allowed: false
+  manual_allowed_role: observation
+  collision_scope: live machine-record verification, Pages validation/deployment, cross-wiki health publication, HIL succession consumption, Guardian interpretation, and all upstream provider/custody/admissibility dependencies named in the ordered succession chain
+  release_condition: the applicable machine owner independently reaches its task-specific machine-observable terminal condition or explicitly releases/supersedes the collision scope
+  next_executable_action: preserve current orchestration ownership, observe machine evidence, and do not restart or duplicate dependency-blocked work
+```
+
+### ESCALATED / AUTHORITY-OWNED
+
+```yaml
+- task_id: STEGGUARDIAN-WIKI-AUTHORITY-BOUNDARY
+  execution_owner: applicable component authority -> ecosystem governance -> human authority when explicitly required
+  claim_state: ESCALATED
+  worker_registry_ref: this handoff + data/stegguardian-wiki-orchestration-state.json + StegVerse-Labs/Continuity/docs/REPOSITORY_HANDOFF_STANDARD.md
+  manual_execution_allowed: false
+  manual_allowed_role: reconciliation
+  collision_scope: Guardian enforcement, override, execution, publication, deployment beyond the existing workflow, release/tag, custody, standing, admissibility, provider authority, or cross-repository mutation authority
+  release_condition: the applicable canonical authority explicitly grants or reassigns the exact bounded authority scope
+  next_executable_action: fail closed and escalate rather than promote visibility, projection, workflow, public URL, or reconstruction evidence into authority
+```
+
+### COMPLETED / SUPERSEDED
+
+- Governance Observatory publication awareness issue #13 and cross-wiki metadata repair issue #15 are complete with the retained evidence above.
+- Governance Observatory v0.1.0 release awareness issue #17 is complete with the retained evidence above.
+- Resolved Pages repair, shared-health-contract recreation, and visibility-authority-boundary duplication are superseded as new implementation paths.
+- Any inference that visibility, documentation, workflow success, public reachability, reconstruction, or projection evidence creates Guardian enforcement/standing/execution/custody/admissibility/release authority is superseded/prohibited.
