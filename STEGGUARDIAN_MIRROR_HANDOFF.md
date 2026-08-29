@@ -167,3 +167,55 @@ main readiness run: 33094989575 SUCCESS
 The Pages deployment is evidence/public projection transport only. It does not grant Guardian enforcement, payment, execution, custody, publication authority, release authority, or runtime authority. No tag or release is authorized by this test-only evidence.
 
 No user action is required. The generated-Ste gPay Guardian projection claim-release condition has been satisfied and this bounded goal may be treated as COMPLETE while unrelated StegGuardian goals remain governed by their own handoffs and claims.
+
+## Execution ownership and collision partition
+
+Standard: `StegVerse-Labs/Continuity/docs/REPOSITORY_HANDOFF_STANDARD.md` / `stegverse.handoff-execution-ownership/v1`.
+
+### MANUAL / SESSION-STARTABLE
+
+```yaml
+- task_id: STEGGUARDIAN-HANDOFF-OWNERSHIP-ADOPTION-021
+  execution_owner: repo-standards #37 integration lane + StegGuardian repository owner
+  claim_state: CLAIMED_FOR_INTEGRATION
+  worker_registry_ref: StegVerse-Labs/repo-standards#37 + StegVerse-002/stegguardian-wiki#21
+  manual_execution_allowed: true
+  manual_allowed_role: integration
+  collision_scope: ownership metadata/textual migration in this handoff only; excludes Guardian product behavior, Pages execution, projection data, validation logic, claims/fences/leases, publication, release, custody, payment, entitlement, enforcement, and runtime authority
+  release_condition: this handoff migration is merged and the repo-standards adoption registry records the applicable StegGuardian target migration state
+  next_executable_action: merge only the ownership-partition metadata after repository validation; do not enter product-owned scopes
+```
+
+### WORKER-OWNED / DO NOT COMPETE
+
+```yaml
+- task_id: STEGGUARDIAN-ACTIVE-AND-UNRELATED-WORK-AGGREGATE
+  execution_owner: current StegGuardian repository validation/Pages lanes and each task-specific machine owner named by the newest applicable handoff, issue, claim, fence, lease, or registry record
+  claim_state: MACHINE_OWNED
+  worker_registry_ref: STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md + ECOSYSTEM_CHAT_ACTIVATION_MIRROR_HANDOFF.md + task-specific current issues/claims/receipts
+  manual_execution_allowed: false
+  manual_allowed_role: observation
+  collision_scope: Guardian validation, Pages execution/deployment, Ecosystem Chat projection, generated evidence projections, repository-native automation, enforcement semantics, production payment/entitlement, custody, publication/release, and runtime activation
+  release_condition: each canonical worker/task owner reaches its own machine-observable terminal condition or explicitly supersedes/releases that collision scope
+  next_executable_action: leave product/runtime work with its current canonical owner and only observe or reconcile ownership metadata from a noncompeting lane
+```
+
+### ESCALATED / AUTHORITY-OWNED
+
+```yaml
+- task_id: STEGGUARDIAN-AUTHORITY-BOUNDARY
+  execution_owner: StegGuardian repository owner -> applicable component authority -> ecosystem governance -> human authority where explicitly required
+  claim_state: ESCALATED
+  worker_registry_ref: current task-specific handoff/issue/claim plus StegVerse-Labs/Continuity/docs/REPOSITORY_HANDOFF_STANDARD.md
+  manual_execution_allowed: false
+  manual_allowed_role: reconciliation
+  collision_scope: any request to infer or grant Guardian enforcement, production payment/entitlement, custody, publication, release, execution, or runtime authority from projection, transport, test, Pages, or observation evidence
+  release_condition: the applicable higher authority explicitly grants or reassigns the bounded authority scope through its canonical mechanism
+  next_executable_action: fail closed and escalate rather than treating missing/blocked evidence as manual authority
+```
+
+### COMPLETED / SUPERSEDED
+
+- `generated-stegpay-authority-boundary-projection` is complete for its bounded downstream projection goal with the evidence recorded above.
+- The August 2 generated-Ste gPay hashes are superseded as current-state projection and retained only as historical provenance.
+- Any inference that projection, Pages deployment, payment evidence, transport, or test validation grants Guardian enforcement or financial/runtime authority is superseded/prohibited.
