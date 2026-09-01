@@ -36,3 +36,12 @@ Documents in this wiki may describe prototype, candidate, or boundary states. A 
 ## Next Integration Candidate
 
 Create a machine-readable page index and wiki completion receipt for future updates.
+
+
+## Current organization capability integration
+
+This repository is a documentation projection discoverable within the StegVerse-002 organization. It is not an execution dependency of `micro-node-runtime`, does not define entity ontology, and does not hold organization or ecosystem custody authority.
+
+Machine-readable descriptor: `.stegverse/capability/descriptor.json`
+
+Availability, discovery, access, reference, use, and derivation remain distinct evidence states.
