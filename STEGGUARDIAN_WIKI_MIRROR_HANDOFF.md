@@ -442,10 +442,25 @@ task_id: GUARDIAN-STEGCLAW-V1.0.0-RELEASE-AWARENESS-030
 source release: Data-Continuation/StegClaw v1.0.0
 release id: 381434394
 release target: 6b89a4bfb3d4c2fcc61e6cccaa4f292fb4d58cdb
-state: IMPLEMENTED_VALIDATION_PENDING
+state: COMPLETE_VALIDATED_MERGED
 execution_class: PARALLEL_SAFE_NON_HIL_RELEASE_AWARENESS
 handoff: docs/STEGCLAW_RELEASE_AWARENESS_MIRROR_HANDOFF.md
 authority effect: NONE
 ```
 
 This awareness lane does not satisfy or alter GUARDIAN-HIL-0001 dependencies.
+
+
+### StegClaw release-awareness completion evidence
+
+```text
+issue: #30 CLOSED_COMPLETED
+pull request: #32
+validated head: b6e5d423a1e0a681bef17f25af22603b08cf966e
+dedicated awareness run: 33659401718 SUCCESS
+Guardian readiness run: 33659401312 SUCCESS
+Pages validation run: 33659400965 SUCCESS
+merge: cc30d965b8e6ab53a34cbba61eb0587e50fa92cc
+authority effect: NONE
+hil dependency effect: false
+```
