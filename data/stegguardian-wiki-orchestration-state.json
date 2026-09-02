@@ -7,11 +7,11 @@
   "heartbeat": {
     "model": "TRANSITION_DRIVEN_HEALTH_RELATIVE",
     "canonical_protocol_relation": "REPOSITORY_WORKLOAD_HEALTH_ONLY_NOT_HB_PROTOCOL_TIMING",
-    "repository_heartbeat": 4,
-    "ecosystem_heartbeat": 4,
+    "repository_heartbeat": 5,
+    "ecosystem_heartbeat": 5,
     "time_role": "WATCHDOG_ONLY",
     "system_health": "HEALTHY_DECLARED_DEPENDENCY_BLOCK",
-    "last_transition": "HB32_PROTOCOL_AWARENESS_COMPLETE_VALIDATED_MERGED",
+    "last_transition": "STEGCLAW_V1_0_0_RELEASE_AWARENESS_IMPLEMENTED_VALIDATION_PENDING",
     "progress_effect": true,
     "authority_effect": false
   },
@@ -32,7 +32,19 @@
     "correctability_awareness": "docs/CORRECTABILITY_AWARENESS_MIRROR_HANDOFF.md",
     "hb32_protocol_awareness": "docs/HEARTBEAT_PROTOCOL_ANCHOR_GUARDIAN_MIRROR_HANDOFF.md"
   },
-  "active_tasks": [],
+  "active_tasks": [
+    {
+      "task_id": "GUARDIAN-STEGCLAW-V1.0.0-RELEASE-AWARENESS-030",
+      "workload": "Consume verified StegClaw v1.0.0 as bounded non-HIL Guardian release awareness",
+      "execution_class": "PARALLEL_SAFE_NON_HIL_RELEASE_AWARENESS",
+      "state": "IMPLEMENTED_VALIDATION_PENDING",
+      "claim_state": "CLAIMED_FOR_VALIDATION",
+      "owner": "StegVerse-002/stegguardian-wiki issue #30",
+      "handoff": "docs/STEGCLAW_RELEASE_AWARENESS_MIRROR_HANDOFF.md",
+      "hil_dependency_effect": false,
+      "authority_effect": false
+    }
+  ],
   "completed_tasks": [
     {
       "task_id": "GUARDIAN-CORRECTABILITY-0001",
@@ -168,5 +180,5 @@
     "admissibility": false,
     "heartbeat_timing": false
   },
-  "last_transition": "GOVERNANCE_OBSERVATORY_V0_1_0_RELEASE_AWARENESS_COMPLETE_VALIDATED_MERGED_LIVE_VERIFIED"
+  "last_transition": "STEGCLAW_V1_0_0_RELEASE_AWARENESS_IMPLEMENTED_VALIDATION_PENDING"
 }
