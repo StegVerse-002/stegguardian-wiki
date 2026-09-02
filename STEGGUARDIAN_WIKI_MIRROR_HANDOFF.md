@@ -433,3 +433,19 @@ Standard: `StegVerse-Labs/Continuity/docs/REPOSITORY_HANDOFF_STANDARD.md` / `ste
 - Governance Observatory v0.1.0 release awareness issue #17 is complete with the retained evidence above.
 - Resolved Pages repair, shared-health-contract recreation, and visibility-authority-boundary duplication are superseded as new implementation paths.
 - Any inference that visibility, documentation, workflow success, public reachability, reconstruction, or projection evidence creates Guardian enforcement/standing/execution/custody/admissibility/release authority is superseded/prohibited.
+
+
+## StegClaw v1.0.0 release awareness — issue #30
+
+```text
+task_id: GUARDIAN-STEGCLAW-V1.0.0-RELEASE-AWARENESS-030
+source release: Data-Continuation/StegClaw v1.0.0
+release id: 381434394
+release target: 6b89a4bfb3d4c2fcc61e6cccaa4f292fb4d58cdb
+state: IMPLEMENTED_VALIDATION_PENDING
+execution_class: PARALLEL_SAFE_NON_HIL_RELEASE_AWARENESS
+handoff: docs/STEGCLAW_RELEASE_AWARENESS_MIRROR_HANDOFF.md
+authority effect: NONE
+```
+
+This awareness lane does not satisfy or alter GUARDIAN-HIL-0001 dependencies.
