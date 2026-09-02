@@ -7,11 +7,11 @@
   "heartbeat": {
     "model": "TRANSITION_DRIVEN_HEALTH_RELATIVE",
     "canonical_protocol_relation": "REPOSITORY_WORKLOAD_HEALTH_ONLY_NOT_HB_PROTOCOL_TIMING",
-    "repository_heartbeat": 5,
-    "ecosystem_heartbeat": 5,
+    "repository_heartbeat": 6,
+    "ecosystem_heartbeat": 6,
     "time_role": "WATCHDOG_ONLY",
     "system_health": "HEALTHY_DECLARED_DEPENDENCY_BLOCK",
-    "last_transition": "STEGCLAW_V1_0_0_RELEASE_AWARENESS_IMPLEMENTED_VALIDATION_PENDING",
+    "last_transition": "STEGCLAW_V1_0_0_RELEASE_AWARENESS_COMPLETE_VALIDATED_MERGED",
     "progress_effect": true,
     "authority_effect": false
   },
@@ -32,19 +32,7 @@
     "correctability_awareness": "docs/CORRECTABILITY_AWARENESS_MIRROR_HANDOFF.md",
     "hb32_protocol_awareness": "docs/HEARTBEAT_PROTOCOL_ANCHOR_GUARDIAN_MIRROR_HANDOFF.md"
   },
-  "active_tasks": [
-    {
-      "task_id": "GUARDIAN-STEGCLAW-V1.0.0-RELEASE-AWARENESS-030",
-      "workload": "Consume verified StegClaw v1.0.0 as bounded non-HIL Guardian release awareness",
-      "execution_class": "PARALLEL_SAFE_NON_HIL_RELEASE_AWARENESS",
-      "state": "IMPLEMENTED_VALIDATION_PENDING",
-      "claim_state": "CLAIMED_FOR_VALIDATION",
-      "owner": "StegVerse-002/stegguardian-wiki issue #30",
-      "handoff": "docs/STEGCLAW_RELEASE_AWARENESS_MIRROR_HANDOFF.md",
-      "hil_dependency_effect": false,
-      "authority_effect": false
-    }
-  ],
+  "active_tasks": [],
   "completed_tasks": [
     {
       "task_id": "GUARDIAN-CORRECTABILITY-0001",
@@ -134,6 +122,23 @@
         "live_verification_conclusion": "success",
         "authority_effect": false
       }
+    },
+    {
+      "task_id": "GUARDIAN-STEGCLAW-V1.0.0-RELEASE-AWARENESS-030",
+      "workload": "Consume verified StegClaw v1.0.0 as bounded non-HIL Guardian release awareness",
+      "execution_class": "PARALLEL_SAFE_NON_HIL_RELEASE_AWARENESS",
+      "state": "COMPLETE_VALIDATED_MERGED",
+      "claim_state": "RELEASED_COMPLETE",
+      "completion_evidence": {
+        "issue": 30,
+        "pull_request": 32,
+        "validated_head": "b6e5d423a1e0a681bef17f25af22603b08cf966e",
+        "dedicated_awareness_run_id": 33659401718,
+        "readiness_run_id": 33659401312,
+        "pages_validation_run_id": 33659400965,
+        "merge": "cc30d965b8e6ab53a34cbba61eb0587e50fa92cc",
+        "authority_effect": false
+      }
     }
   ],
   "blocked_tasks": [
@@ -180,5 +185,5 @@
     "admissibility": false,
     "heartbeat_timing": false
   },
-  "last_transition": "STEGCLAW_V1_0_0_RELEASE_AWARENESS_IMPLEMENTED_VALIDATION_PENDING"
+  "last_transition": "STEGCLAW_V1_0_0_RELEASE_AWARENESS_COMPLETE_VALIDATED_MERGED"
 }
