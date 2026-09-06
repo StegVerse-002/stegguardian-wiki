@@ -2,11 +2,18 @@
   "schema_version": "1.0.0",
   "record_type": "stegguardian_tga_projection_status",
   "task_id": "GUARDIAN-TGA-037",
-  "state": "IMPLEMENTED_VALIDATION_PENDING",
+  "state": "COMPLETE_VALIDATED_MERGED",
   "execution_class": "PARALLEL_SAFE_NON_HIL_AWARENESS",
   "upstream": {
     "site_merge": "75a02d24cd9a413bdd268f0d831a87eb651dde6f",
     "publisher_merge": "e4c820149605d317a9bfa0a80645556d6db753a3"
+  },
+  "completion_evidence": {
+    "pull_request": 38,
+    "merge_commit": "82417880151f5801dc7bad01874c952aded7d68c",
+    "tga_validation_run": 34001390793,
+    "readiness_run": 34001390751,
+    "pages_validation_run": 34001390759
   },
   "preserved": {
     "provenance": true,
