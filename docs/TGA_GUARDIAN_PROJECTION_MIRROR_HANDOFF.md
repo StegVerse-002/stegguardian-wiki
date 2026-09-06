@@ -1,6 +1,6 @@
 # TGA Guardian Projection Mirror Handoff
 
-Status: COMPLETE_VALIDATED_MERGED
+Status: COMPLETE_VALIDATED_MERGED_README_RECONCILIATION_IN_PROGRESS
 Updated: 2026-09-05
 Repository: StegVerse-002/stegguardian-wiki
 Goal ID: GUARDIAN-TGA-037
@@ -46,12 +46,27 @@ This lane remains explicitly outside `GUARDIAN-HIL-0001` and satisfies no HIL su
 - `.github/workflows/validate-tga-guardian-projection.yml`
 - this handoff
 
+## README completeness preflight
+
+The merged TGA Guardian projection materially added a public documentation page, status object, validator, and workflow while the repository README did not list the page, handoff, or authority boundary. README impact is therefore **required**, not waived.
+
+Collision preflight: the repository has no open pull requests, so no observed active branch owns `README.md` or these TGA paths.
+
+The bounded repair adds only documentation and preserves:
+- canonical representation != canonical reality;
+- narration/presentation != canonical evidence;
+- counterfactual projection != historical applicability;
+- validation != Guardian enforcement;
+- `authority_effect = NONE_GOVERNANCE_PROJECTION_ONLY`;
+- TGA remains outside Guardian HIL succession.
+
 ## Downstream
 
-StegIndex may reconcile `tga_stegguardian_wiki_projection_available` from this validated repository-owned evidence. This does not create Guardian enforcement or HIL authority.
+StegIndex may reconcile `tga_stegguardian_wiki_projection_available` from validated repository-owned evidence. This does not create Guardian enforcement or HIL authority.
 
 ```yaml
 source_state: COMPLETE_VALIDATED_MERGED
+readme_impact: REQUIRED_RECONCILIATION_IN_PROGRESS
 authority_effect: NONE_GOVERNANCE_PROJECTION_ONLY
 hil_dependency_effect: false
 user_action_required: false

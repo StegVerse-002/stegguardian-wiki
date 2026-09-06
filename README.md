@@ -2,7 +2,7 @@
 
 ## Status
 
-This repository is the StegGuardian wiki target for guardian, account, boundary, and propagation notes.
+This repository is the StegGuardian wiki target for guardian, account, boundary, propagation, and governance-contestability notes.
 
 ## Org Boundary Note
 
@@ -15,6 +15,31 @@ StegGuardian wiki is intentionally published from `StegVerse-002/stegguardian-wi
 - [Recovery Authority](pages/recovery-authority.md)
 - [Account Federation](pages/account-federation.md)
 - [Device Bound Guardian Enforcement](pages/device-bound-guardian-enforcement.md)
+- [Temporal Governed Analysis Guardian Boundary](pages/temporal-governed-analysis-guardian-boundary.md)
+
+## Temporal Governed Analysis projection
+
+The TGA Guardian page is a governance/contestability projection of validated upstream TGA evidence. It preserves exact source/time/provenance traceability, rule/law/context versioning, uncertainty, competing or unresolved representations, challengeable evidence paths, and explicit counterfactual boundaries.
+
+```text
+pages/temporal-governed-analysis-guardian-boundary.md
+data/tga-guardian-projection-status.json
+docs/TGA_GUARDIAN_PROJECTION_MIRROR_HANDOFF.md
+scripts/check_tga_guardian_projection.py
+.github/workflows/validate-tga-guardian-projection.yml
+```
+
+TGA Guardian boundary:
+
+```text
+canonical_representation != canonical_reality
+narration_or_presentation != canonical_evidence
+counterfactual_projection != historical_applicability
+validation != Guardian_enforcement
+TGA_Guardian_authority_effect = NONE_GOVERNANCE_PROJECTION_ONLY
+```
+
+The projection creates no Guardian enforcement, override, execution, publication, deployment, custody, admissibility, standing, legal, or adjudicative authority. It is explicitly outside the Guardian HIL succession lane.
 
 ## Current Receipts
 
@@ -24,6 +49,7 @@ StegGuardian wiki is intentionally published from `StegVerse-002/stegguardian-wi
 
 - `STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md`
 - `docs/ECOSYSTEM_CHAT_SITE_PROPAGATION_CONSUMER_HANDOFF.md`
+- `docs/TGA_GUARDIAN_PROJECTION_MIRROR_HANDOFF.md`
 
 ## Automated Ecosystem Chat Projection
 
@@ -36,7 +62,6 @@ Documents in this wiki may describe prototype, candidate, or boundary states. A 
 ## Next Integration Candidate
 
 Create a machine-readable page index and wiki completion receipt for future updates.
-
 
 ## Current organization capability integration
 
