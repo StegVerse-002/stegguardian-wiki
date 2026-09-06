@@ -1,0 +1,32 @@
+name: Validate TGA Guardian Projection
+
+on:
+  pull_request:
+    paths:
+      - 'pages/temporal-governed-analysis-guardian-boundary.md'
+      - 'data/tga-guardian-projection-status.json'
+      - 'docs/TGA_GUARDIAN_PROJECTION_MIRROR_HANDOFF.md'
+      - 'scripts/check_tga_guardian_projection.py'
+      - '.github/workflows/validate-tga-guardian-projection.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'pages/temporal-governed-analysis-guardian-boundary.md'
+      - 'data/tga-guardian-projection-status.json'
+      - 'docs/TGA_GUARDIAN_PROJECTION_MIRROR_HANDOFF.md'
+      - 'scripts/check_tga_guardian_projection.py'
+      - '.github/workflows/validate-tga-guardian-projection.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/check_tga_guardian_projection.py
