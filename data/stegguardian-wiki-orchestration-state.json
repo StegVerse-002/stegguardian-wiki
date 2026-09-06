@@ -7,11 +7,11 @@
   "heartbeat": {
     "model": "TRANSITION_DRIVEN_HEALTH_RELATIVE",
     "canonical_protocol_relation": "REPOSITORY_WORKLOAD_HEALTH_ONLY_NOT_HB_PROTOCOL_TIMING",
-    "repository_heartbeat": 6,
-    "ecosystem_heartbeat": 6,
+    "repository_heartbeat": 7,
+    "ecosystem_heartbeat": 7,
     "time_role": "WATCHDOG_ONLY",
     "system_health": "HEALTHY_DECLARED_DEPENDENCY_BLOCK",
-    "last_transition": "STEGCLAW_V1_0_0_RELEASE_AWARENESS_COMPLETE_VALIDATED_MERGED",
+    "last_transition": "GUARDIAN_TGA_037_COMPLETE_VALIDATED_MERGED",
     "progress_effect": true,
     "authority_effect": false
   },
@@ -30,7 +30,8 @@
     "guardian_interpretation": "StegVerse-002/stegguardian-wiki",
     "visibility_authority_boundary": "merged PR #7",
     "correctability_awareness": "docs/CORRECTABILITY_AWARENESS_MIRROR_HANDOFF.md",
-    "hb32_protocol_awareness": "docs/HEARTBEAT_PROTOCOL_ANCHOR_GUARDIAN_MIRROR_HANDOFF.md"
+    "hb32_protocol_awareness": "docs/HEARTBEAT_PROTOCOL_ANCHOR_GUARDIAN_MIRROR_HANDOFF.md",
+    "tga_governance_projection": "docs/TGA_GUARDIAN_PROJECTION_MIRROR_HANDOFF.md"
   },
   "active_tasks": [],
   "completed_tasks": [
@@ -40,16 +41,7 @@
       "execution_class": "PARALLEL_SAFE_NON_HIL_AWARENESS",
       "state": "COMPLETED",
       "claim_state": "RELEASED_COMPLETE",
-      "completion_evidence": {
-        "data_commit": "7d6ff2881b26272a5f7b3ec9e49b83bea3a1a922",
-        "validator_commit": "03f515aadba552bb78251c65cf5393ac6591e47a",
-        "workflow_commit": "b722e6f105f7f5b93c05fbba886c6a8a0f25c39a",
-        "handoff_commit": "1015ba3681cfde853fd0e286720a0adfa64019e3",
-        "workflow_run_id": 31290120403,
-        "job_id": 93185742651,
-        "workflow_conclusion": "success",
-        "authority_effect": false
-      }
+      "completion_evidence": {"data_commit":"7d6ff2881b26272a5f7b3ec9e49b83bea3a1a922","validator_commit":"03f515aadba552bb78251c65cf5393ac6591e47a","workflow_commit":"b722e6f105f7f5b93c05fbba886c6a8a0f25c39a","handoff_commit":"1015ba3681cfde853fd0e286720a0adfa64019e3","workflow_run_id":31290120403,"job_id":93185742651,"workflow_conclusion":"success","authority_effect":false}
     },
     {
       "task_id": "GUARDIAN-HB32-PROTOCOL-AWARENESS-001",
@@ -57,19 +49,7 @@
       "execution_class": "PARALLEL_SAFE_NON_HIL_AWARENESS",
       "state": "COMPLETED",
       "claim_state": "RELEASED_COMPLETE",
-      "completion_evidence": {
-        "pull_request": 12,
-        "validated_head": "576e69244cde44eb0ca79ed484178890a196d2f8",
-        "merge": "01724413450a6e911214853cacbcd93e872407aa",
-        "focused_workflow_run_id": 32669878905,
-        "focused_workflow_conclusion": "success",
-        "pages_validation_run_id": 32669878782,
-        "pages_validation_conclusion": "success",
-        "readiness_run_id": 32669878802,
-        "readiness_conclusion": "success",
-        "handoff": "docs/HEARTBEAT_PROTOCOL_ANCHOR_GUARDIAN_MIRROR_HANDOFF.md",
-        "authority_effect": false
-      }
+      "completion_evidence": {"pull_request":12,"validated_head":"576e69244cde44eb0ca79ed484178890a196d2f8","merge":"01724413450a6e911214853cacbcd93e872407aa","focused_workflow_run_id":32669878905,"focused_workflow_conclusion":"success","pages_validation_run_id":32669878782,"pages_validation_conclusion":"success","readiness_run_id":32669878802,"readiness_conclusion":"success","handoff":"docs/HEARTBEAT_PROTOCOL_ANCHOR_GUARDIAN_MIRROR_HANDOFF.md","authority_effect":false}
     },
     {
       "task_id": "GUARDIAN-GOVOBS-PUBLICATION-AWARENESS-013",
@@ -77,16 +57,7 @@
       "execution_class": "PARALLEL_SAFE_NON_HIL_AWARENESS",
       "state": "COMPLETE_VALIDATED_MERGED_LIVE_VERIFIED",
       "claim_state": "RELEASED_COMPLETE",
-      "completion_evidence": {
-        "pull_request": 14,
-        "merge": "7d984de2161b7b546f66089cbc12f812400ad49f",
-        "dedicated_awareness_run_id": 33024215052,
-        "readiness_run_id": 33024215036,
-        "live_proof_run_id": 33024875987,
-        "live_proof_job_id": 98363906051,
-        "live_proof_conclusion": "success",
-        "authority_effect": false
-      }
+      "completion_evidence": {"pull_request":14,"merge":"7d984de2161b7b546f66089cbc12f812400ad49f","dedicated_awareness_run_id":33024215052,"readiness_run_id":33024215036,"live_proof_run_id":33024875987,"live_proof_job_id":98363906051,"live_proof_conclusion":"success","authority_effect":false}
     },
     {
       "task_id": "GUARDIAN-CROSS-WIKI-METADATA-RECORD-TYPE-015",
@@ -94,16 +65,7 @@
       "execution_class": "PARALLEL_SAFE_LIVE_RECORD_REPAIR",
       "state": "COMPLETE_VALIDATED_MERGED_LIVE_VERIFIED",
       "claim_state": "RELEASED_COMPLETE",
-      "completion_evidence": {
-        "issue": 15,
-        "pull_request": 16,
-        "merge": "15ee30d7334ac4511692c1f9e906b0c9e215bf9e",
-        "pages_run_id": 33024875987,
-        "live_verification_job_id": 98363906051,
-        "live_verification_conclusion": "success",
-        "repaired_record_type": "stegguardian_cross_wiki_metadata_graph",
-        "authority_effect": false
-      }
+      "completion_evidence": {"issue":15,"pull_request":16,"merge":"15ee30d7334ac4511692c1f9e906b0c9e215bf9e","pages_run_id":33024875987,"live_verification_job_id":98363906051,"live_verification_conclusion":"success","repaired_record_type":"stegguardian_cross_wiki_metadata_graph","authority_effect":false}
     },
     {
       "task_id": "GUARDIAN-GOVOBS-V0.1.0-RELEASE-AWARENESS-017",
@@ -111,17 +73,7 @@
       "execution_class": "PARALLEL_SAFE_NON_HIL_RELEASE_AWARENESS",
       "state": "COMPLETE_VALIDATED_MERGED_LIVE_VERIFIED",
       "claim_state": "RELEASED_COMPLETE",
-      "completion_evidence": {
-        "issue": 17,
-        "pull_request": 18,
-        "merge": "29325da2e633f1a3c16a23123d5668793e30998d",
-        "dedicated_awareness_run_id": 33025944766,
-        "readiness_run_id": 33025944653,
-        "pages_run_id": 33025944644,
-        "live_verification_job_id": 98367250304,
-        "live_verification_conclusion": "success",
-        "authority_effect": false
-      }
+      "completion_evidence": {"issue":17,"pull_request":18,"merge":"29325da2e633f1a3c16a23123d5668793e30998d","dedicated_awareness_run_id":33025944766,"readiness_run_id":33025944653,"pages_run_id":33025944644,"live_verification_job_id":98367250304,"live_verification_conclusion":"success","authority_effect":false}
     },
     {
       "task_id": "GUARDIAN-STEGCLAW-V1.0.0-RELEASE-AWARENESS-030",
@@ -129,16 +81,15 @@
       "execution_class": "PARALLEL_SAFE_NON_HIL_RELEASE_AWARENESS",
       "state": "COMPLETE_VALIDATED_MERGED",
       "claim_state": "RELEASED_COMPLETE",
-      "completion_evidence": {
-        "issue": 30,
-        "pull_request": 32,
-        "validated_head": "b6e5d423a1e0a681bef17f25af22603b08cf966e",
-        "dedicated_awareness_run_id": 33659401718,
-        "readiness_run_id": 33659401312,
-        "pages_validation_run_id": 33659400965,
-        "merge": "cc30d965b8e6ab53a34cbba61eb0587e50fa92cc",
-        "authority_effect": false
-      }
+      "completion_evidence": {"issue":30,"pull_request":32,"validated_head":"b6e5d423a1e0a681bef17f25af22603b08cf966e","dedicated_awareness_run_id":33659401718,"readiness_run_id":33659401312,"pages_validation_run_id":33659400965,"merge":"cc30d965b8e6ab53a34cbba61eb0587e50fa92cc","authority_effect":false}
+    },
+    {
+      "task_id": "GUARDIAN-TGA-037",
+      "workload": "Project TGA governance and contestability semantics as bounded non-HIL Guardian awareness",
+      "execution_class": "PARALLEL_SAFE_NON_HIL_AWARENESS",
+      "state": "COMPLETE_VALIDATED_MERGED",
+      "claim_state": "RELEASED_COMPLETE",
+      "completion_evidence": {"issue":37,"pull_request":38,"merge":"82417880151f5801dc7bad01874c952aded7d68c","dedicated_awareness_run_id":34001390793,"readiness_run_id":34001390751,"pages_validation_run_id":34001390759,"authority_effect":false,"hil_dependency_effect":false}
     }
   ],
   "blocked_tasks": [
@@ -147,17 +98,7 @@
       "workload": "Publish bounded Guardian interpretation of the verified HIL chain",
       "execution_class": "DEPENDENCY_BLOCKED",
       "state": "BLOCKED_BUT_OBSERVED",
-      "dependencies": [
-        "HIL receiver READY and controlled browser receipt",
-        "restart exact-byte verification",
-        "TVC lifecycle continuation",
-        "authenticated Master-Records custody",
-        "reconstructability PASS",
-        "immutable zero-blocker activation receipt",
-        "Site ACTIVATION_COMPLETE",
-        "Publisher VERIFIED_INGESTION_READY",
-        "admissibility-wiki bounded interpretation"
-      ],
+      "dependencies": ["HIL receiver READY and controlled browser receipt","restart exact-byte verification","TVC lifecycle continuation","authenticated Master-Records custody","reconstructability PASS","immutable zero-blocker activation receipt","Site ACTIVATION_COMPLETE","Publisher VERIFIED_INGESTION_READY","admissibility-wiki bounded interpretation"],
       "heartbeat_awareness_satisfies_dependencies": false
     }
   ],
@@ -174,16 +115,6 @@
     "cross_repository_mutation_authority": false,
     "manual_user_tasks_required": false
   },
-  "authority": {
-    "guardian_enforcement": false,
-    "override": false,
-    "execution": false,
-    "publication": false,
-    "deployment": false,
-    "release": false,
-    "custody": false,
-    "admissibility": false,
-    "heartbeat_timing": false
-  },
-  "last_transition": "STEGCLAW_V1_0_0_RELEASE_AWARENESS_COMPLETE_VALIDATED_MERGED"
+  "authority": {"guardian_enforcement":false,"override":false,"execution":false,"publication":false,"deployment":false,"release":false,"custody":false,"admissibility":false,"heartbeat_timing":false},
+  "last_transition": "GUARDIAN_TGA_037_COMPLETE_VALIDATED_MERGED"
 }
