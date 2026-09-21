@@ -11,7 +11,7 @@ Recent `main` commits, including the handoff update commit `aa01ff063a3f888817c0
 The public URL remains:
 
 ```text
-https://stegverse-002.github.io/stegguardian-wiki/
+https://stegguardian.stegverse.org/
 ```
 
 The expected Pages workflow is:
