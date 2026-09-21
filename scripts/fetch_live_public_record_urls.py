@@ -3,7 +3,7 @@
 
 This script is intentionally not part of the default local aggregate gate because it
 requires external network access to GitHub Pages. Run it from an environment that can
-reach https://stegverse-002.github.io/stegguardian-wiki/.
+reach https://stegguardian.stegverse.org/.
 """
 
 from __future__ import annotations
@@ -18,7 +18,7 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_BASE_URL = "https://stegverse-002.github.io/stegguardian-wiki/"
+DEFAULT_BASE_URL = "https://stegguardian.stegverse.org/"
 EXPECTED_RECORDS = [
     "data/public-records-manifest.json",
     "data/cross-wiki-metadata-graph.json",
