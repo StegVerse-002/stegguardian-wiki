@@ -501,3 +501,8 @@ The repository should continue advancing the shared objective: preserve agency a
 Repository Pages source has been corrected from branch-root publication to **GitHub Actions**, matching the existing `.github/workflows/pages.yml` artifact/deploy workflow. The branded custom domain remains `https://stegguardian.stegverse.org/`.
 
 This commit intentionally triggers a fresh main-branch Pages deployment under the corrected source mode. Public completion still requires the existing post-deploy live-record verification to pass.
+
+
+## 2026-09-21 custom-domain attachment confirmed
+
+GitHub Pages now reports the repository live at `https://stegguardian.stegverse.org/`, with Source = GitHub Actions, DNS check successful, and Enforce HTTPS enabled. This commit triggers a fresh deployment after the branded domain attachment became authoritative.
