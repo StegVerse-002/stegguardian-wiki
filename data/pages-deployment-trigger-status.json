@@ -2,7 +2,7 @@
   "schema_version": "0.1.0",
   "record_type": "stegguardian_pages_deployment_trigger_status",
   "repo": "StegVerse-002/stegguardian-wiki",
-  "public_url": "https://stegverse-002.github.io/stegguardian-wiki/",
+  "public_url": "https://stegguardian.stegverse.org/",
   "observed_at": "2026-07-08",
   "diagnosis": "workflow_runs_not_connector_visible_for_recent_main_commits",
   "status": "deployment_trigger_unconfirmed",
