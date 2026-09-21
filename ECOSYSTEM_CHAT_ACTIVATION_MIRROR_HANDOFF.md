@@ -26,7 +26,7 @@ data/ecosystem-chat-activation-status.json
 The existing Pages workflow refreshes and validates the projection before deployment, uploads the projection as a workflow artifact, and publishes it at:
 
 ```text
-https://stegverse-002.github.io/stegguardian-wiki/data/ecosystem-chat-activation-status.json
+https://stegguardian.stegverse.org/data/ecosystem-chat-activation-status.json
 ```
 
 No standalone workflow was added.
