@@ -5,12 +5,12 @@ ROOT = Path(__file__).resolve().parents[1]
 STATUS = ROOT / "data" / "cross-wiki-health-status.json"
 SCHEMA = ROOT / "data" / "cross-wiki-health-status.schema.json"
 EXPECTED_REPO = "StegVerse-002/stegguardian-wiki"
-EXPECTED_ORIGIN_URL = "https://stegverse-002.github.io/stegguardian-wiki/"
+EXPECTED_ORIGIN_URL = "https://stegguardian.stegverse.org/"
 EXPECTED_REGISTRY = "data/ecosystem-documentation-endpoints.json"
 REQUIRED_PEERS = {
-    "stegguardian-wiki": "https://stegverse-002.github.io/stegguardian-wiki/",
-    "stegtalk-wiki": "https://stegverse-labs.github.io/stegtalk-wiki/",
-    "admissibility-wiki": "https://stegverse-labs.github.io/admissibility-wiki/",
+    "stegguardian-wiki": "https://stegguardian.stegverse.org/",
+    "stegtalk-wiki": "https://stegtalk.stegverse.org/",
+    "admissibility-wiki": "https://admissibility.stegverse.org/",
     "stegverse-site": "https://stegverse-labs.github.io/Site/",
 }
 REQUIRED_NON_CLAIMS = {

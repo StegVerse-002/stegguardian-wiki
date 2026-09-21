@@ -7,7 +7,7 @@
     {
       "id": "stegguardian-wiki",
       "repo": "StegVerse-002/stegguardian-wiki",
-      "public_url": "https://stegverse-002.github.io/stegguardian-wiki/",
+      "public_url": "https://stegguardian.stegverse.org/",
       "role": "guardian_boundary_documentation",
       "machine_records": [
         "data/page-index.json",
@@ -19,7 +19,7 @@
     {
       "id": "admissibility-wiki",
       "repo": "StegVerse-Labs/admissibility-wiki",
-      "public_url": "https://stegverse-labs.github.io/admissibility-wiki/",
+      "public_url": "https://admissibility.stegverse.org/",
       "role": "admissibility_and_standing_source",
       "machine_records": []
     },
@@ -33,7 +33,7 @@
     {
       "id": "stegtalk-wiki",
       "repo": "StegVerse-Labs/stegtalk-wiki",
-      "public_url": "https://stegverse-labs.github.io/stegtalk-wiki/",
+      "public_url": "https://stegtalk.stegverse.org/",
       "role": "application_boundary_documentation",
       "machine_records": []
     }

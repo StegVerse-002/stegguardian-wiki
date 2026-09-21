@@ -38,7 +38,7 @@ def main() -> int:
 
     if payload.get("manifest_type") != "stegguardian_public_records_manifest":
         errors.append("manifest_type_mismatch")
-    if payload.get("base_url") != "https://stegverse-002.github.io/stegguardian-wiki/":
+    if payload.get("base_url") != "https://stegguardian.stegverse.org/":
         errors.append("base_url_mismatch")
 
     records = {record.get("path"): record for record in payload.get("records", [])}
@@ -53,7 +53,7 @@ def main() -> int:
             errors.append("manifest_record_not_installed:" + path)
         if record.get("public_exposure_state") != state:
             errors.append("manifest_record_state_mismatch:" + path)
-        expected_url = "https://stegverse-002.github.io/stegguardian-wiki/" + path
+        expected_url = "https://stegguardian.stegverse.org/" + path
         if record.get("url") != expected_url:
             errors.append("manifest_record_url_mismatch:" + path)
 

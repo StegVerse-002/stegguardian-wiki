@@ -2,7 +2,7 @@
   "schema_version": "0.1.0",
   "record_type": "stegguardian_pages_deployment_receipt",
   "repo": "StegVerse-002/stegguardian-wiki",
-  "public_url": "https://stegverse-002.github.io/stegguardian-wiki/",
+  "public_url": "https://stegguardian.stegverse.org/",
   "publication_mode": "github_pages_actions",
   "static_site_output_path": "_site",
   "deployment_state": "pending_external_confirmation",

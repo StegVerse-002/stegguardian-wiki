@@ -7,7 +7,7 @@ This runbook verifies that the published StegGuardian Wiki machine-readable reco
 The public homepage is user-observed live at:
 
 ```text
-https://stegverse-002.github.io/stegguardian-wiki/
+https://stegguardian.stegverse.org/
 ```
 
 Individual machine-record URL confirmation remains pending until the post-deployment verification job succeeds.

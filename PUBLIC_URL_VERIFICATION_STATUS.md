@@ -3,7 +3,7 @@
 ## Public URL
 
 ```text
-https://stegverse-002.github.io/stegguardian-wiki/
+https://stegguardian.stegverse.org/
 ```
 
 ## Current evidence

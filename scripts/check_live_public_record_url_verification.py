@@ -3,7 +3,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 STATUS = ROOT / "data" / "live-public-record-url-verification.json"
-EXPECTED_URL = "https://stegverse-002.github.io/stegguardian-wiki/"
+EXPECTED_URL = "https://stegguardian.stegverse.org/"
 EXPECTED_RECORDS = {
     "data/public-records-manifest.json",
     "data/cross-wiki-metadata-graph.json",

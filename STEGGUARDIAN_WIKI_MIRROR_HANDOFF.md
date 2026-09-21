@@ -23,7 +23,7 @@ Required entry sequence:
 
 ## Current Priority
 
-StegGuardian Wiki is live at `https://stegverse-002.github.io/stegguardian-wiki/` by user-observed confirmation.
+StegGuardian Wiki is live at `https://stegguardian.stegverse.org/` by user-observed confirmation.
 
 Current integration goals:
 
@@ -196,7 +196,7 @@ No successful live-verification result is claimed until the job and enforcement 
 ## Public URL
 
 ```text
-https://stegverse-002.github.io/stegguardian-wiki/
+https://stegguardian.stegverse.org/
 ```
 
 ## Verification Commands

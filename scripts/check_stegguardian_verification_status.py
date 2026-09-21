@@ -14,7 +14,7 @@ REQUIRED_TEXT = [
     "USER_OBSERVED_WORKFLOW_EVIDENCE.md",
     "WORKFLOW_VERIFICATION_STATUS.md",
     "PUBLIC_URL_VERIFICATION_STATUS.md",
-    "https://stegverse-002.github.io/stegguardian-wiki/",
+    "https://stegguardian.stegverse.org/",
     "docs/GUARDIAN_AGGREGATE_WORKFLOW_DELTA.md",
     "does not claim connector-confirmed workflow metadata",
 ]

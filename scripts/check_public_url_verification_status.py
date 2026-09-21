@@ -5,7 +5,7 @@ STATUS = ROOT / "PUBLIC_URL_VERIFICATION_STATUS.md"
 
 REQUIRED_TEXT = [
     "Public URL Verification Status",
-    "https://stegverse-002.github.io/stegguardian-wiki/",
+    "https://stegguardian.stegverse.org/",
     "user_observed_workflow_success: true",
     "connector_confirmed_workflow_metadata: false",
     "public_url_connector_verified: false",
