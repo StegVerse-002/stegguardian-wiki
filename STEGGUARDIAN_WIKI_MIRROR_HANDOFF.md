@@ -494,3 +494,10 @@ This repository contributes to the StegVerse ecosystem sum through: **observabil
 This binding grants no new authority, does not change repository-local execution/credential/admission/routing/custody/publication/consequence boundaries, and does not establish a new runtime or maturity state. Existing handoff evidence remains authoritative for what this repository has actually implemented, validated, released, deployed, activated, observed, or reconstructed.
 
 The repository should continue advancing the shared objective: preserve agency and explicit authority while making consequential transitions bounded and reconstructable, without requiring a specific intelligence provider or collapsing governance into a universal correctness authority.
+
+
+## 2026-09-21 GitHub Pages source correction
+
+Repository Pages source has been corrected from branch-root publication to **GitHub Actions**, matching the existing `.github/workflows/pages.yml` artifact/deploy workflow. The branded custom domain remains `https://stegguardian.stegverse.org/`.
+
+This commit intentionally triggers a fresh main-branch Pages deployment under the corrected source mode. Public completion still requires the existing post-deploy live-record verification to pass.
