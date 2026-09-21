@@ -67,9 +67,9 @@ PUBLIC_URL_VERIFICATION_STATUS.md
 Required public paths are:
 
 ```text
-https://stegverse-002.github.io/stegguardian-wiki/
-https://stegverse-002.github.io/stegguardian-wiki/pages/llm-free-tier-trust-chain.md
-https://stegverse-002.github.io/stegguardian-wiki/data/page-index.json
+https://stegguardian.stegverse.org/
+https://stegguardian.stegverse.org/pages/llm-free-tier-trust-chain.md
+https://stegguardian.stegverse.org/data/page-index.json
 ```
 
 ## Evidence index
