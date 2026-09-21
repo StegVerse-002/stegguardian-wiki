@@ -23,7 +23,7 @@
   ],
   "public_surface": {
     "state": "LIVE_USER_OBSERVED",
-    "url": "https://stegverse-002.github.io/stegguardian-wiki/",
+    "url": "https://stegguardian.stegverse.org/",
     "live_machine_record_verification": "PENDING"
   },
   "runtime": {
