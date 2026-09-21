@@ -35,7 +35,7 @@ REQUIRED_TEXT = [
     "Cross-Wiki Metadata Graph",
     "Cross-Wiki Health Status",
     "Ecosystem Documentation Endpoints",
-    "Live Public Record URL Verification",
+    "Live Public URL Verification",
     "Public Record Verification Runbook",
     "Deployment Receipt",
     "Session Coordination Status",
