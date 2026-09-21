@@ -5,25 +5,25 @@
   "repo": "StegVerse-002/stegguardian-wiki",
   "observed_at": "2026-07-12",
   "status": "pending_live_peer_checks",
-  "origin_public_url": "https://stegverse-002.github.io/stegguardian-wiki/",
+  "origin_public_url": "https://stegguardian.stegverse.org/",
   "peer_registry": "data/ecosystem-documentation-endpoints.json",
   "peers": [
     {
       "id": "stegguardian-wiki",
       "repo": "StegVerse-002/stegguardian-wiki",
-      "public_url": "https://stegverse-002.github.io/stegguardian-wiki/",
+      "public_url": "https://stegguardian.stegverse.org/",
       "relationship": "origin"
     },
     {
       "id": "stegtalk-wiki",
       "repo": "StegVerse-Labs/stegtalk-wiki",
-      "public_url": "https://stegverse-labs.github.io/stegtalk-wiki/",
+      "public_url": "https://stegtalk.stegverse.org/",
       "relationship": "documents_guardian_controls_for"
     },
     {
       "id": "admissibility-wiki",
       "repo": "StegVerse-Labs/admissibility-wiki",
-      "public_url": "https://stegverse-labs.github.io/admissibility-wiki/",
+      "public_url": "https://admissibility.stegverse.org/",
       "relationship": "derives_boundary_terms_from"
     },
     {
