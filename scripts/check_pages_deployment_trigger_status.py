@@ -4,7 +4,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 STATUS = ROOT / "data" / "pages-deployment-trigger-status.json"
 DOC = ROOT / "docs" / "PAGES_DEPLOYMENT_TRIGGER_DIAGNOSIS.md"
-EXPECTED_PUBLIC_URL = "https://stegverse-002.github.io/stegguardian-wiki/"
+EXPECTED_PUBLIC_URL = "https://stegguardian.stegverse.org/"
 REQUIRED_NON_CLAIMS = {
     "public_url_verified": False,
     "workflow_run_confirmed": False,
