@@ -3,7 +3,7 @@
   "record_type": "stegguardian_live_public_record_url_verification",
   "repo": "StegVerse-002/stegguardian-wiki",
   "observed_at": "2026-07-09",
-  "public_url": "https://stegverse-002.github.io/stegguardian-wiki/",
+  "public_url": "https://stegguardian.stegverse.org/",
   "homepage_user_observed_live": true,
   "machine_public_records_expected": [
     "data/public-records-manifest.json",
