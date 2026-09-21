@@ -19,9 +19,9 @@ data/page-relationship-graph.json: installed locally, public exposure pending
 ## Required public records
 
 ```text
-https://stegverse-002.github.io/stegguardian-wiki/data/page-index.json
-https://stegverse-002.github.io/stegguardian-wiki/data/page-metadata.schema.json
-https://stegverse-002.github.io/stegguardian-wiki/data/page-relationship-graph.json
+https://stegguardian.stegverse.org/data/page-index.json
+https://stegguardian.stegverse.org/data/page-metadata.schema.json
+https://stegguardian.stegverse.org/data/page-relationship-graph.json
 ```
 
 ## Boundary
