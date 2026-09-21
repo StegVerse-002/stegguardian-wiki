@@ -117,35 +117,80 @@ jobs:
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <title>StegGuardian Wiki</title>
+            <meta name="description" content="Guardian, account, recovery, contestability, and governed-entity documentation for StegVerse.">
+            <style>
+              :root{color-scheme:light dark;--bg:#f7f8fb;--surface:#fff;--text:#15171b;--muted:#5f6673;--border:#dfe3ea;--accent:#0b57d0;--accent2:#173b72}
+              @media(prefers-color-scheme:dark){:root{--bg:#101216;--surface:#171a20;--text:#f4f6f8;--muted:#aeb5c0;--border:#2b313b;--accent:#8ab4f8;--accent2:#bdd2ff}}
+              *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
+              .wrap{max-width:1080px;margin:0 auto;padding:22px 16px 64px}.nav{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-bottom:28px}.nav a{color:var(--accent);text-decoration:none;font-weight:600}.brand{font-weight:800;color:var(--text)!important;margin-right:auto}
+              .hero{background:linear-gradient(135deg,var(--surface),color-mix(in srgb,var(--surface) 82%,var(--accent) 18%));border:1px solid var(--border);border-radius:22px;padding:28px;margin-bottom:24px}.hero h1{font-size:clamp(2rem,7vw,4rem);line-height:1;margin:0 0 12px}.hero p{max-width:760px;color:var(--muted);font-size:1.08rem;margin:0}.pill{display:inline-block;margin-top:16px;padding:7px 11px;border:1px solid var(--border);border-radius:999px;color:var(--accent2);font-weight:700;background:var(--surface)}
+              h2{margin:30px 0 12px;font-size:1.35rem}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}.card{display:block;padding:17px;border:1px solid var(--border);border-radius:16px;background:var(--surface);text-decoration:none;color:var(--text)}.card:hover{border-color:var(--accent)}.card strong{display:block;margin-bottom:6px}.card span{display:block;color:var(--muted);font-size:.95rem}
+              details{margin-top:22px;border:1px solid var(--border);border-radius:16px;background:var(--surface);padding:14px 16px}summary{cursor:pointer;font-weight:750}.records{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;margin-top:14px}.records a{color:var(--accent);text-decoration:none}
+              .boundary{margin-top:26px;color:var(--muted);font-size:.94rem}.footer{margin-top:34px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted);font-size:.9rem}
+            </style>
           </head>
           <body>
-            <h1>StegGuardian Wiki</h1>
-            <p>Guardian, account, recovery, and boundary documentation.</p>
-            <a href="pages/stegtalk-guardian-account-boundary.md">StegTalk Guardian and Account Boundary</a>
-            <a href="pages/guardian-account-boundary-vocabulary.md">Guardian Account Boundary Vocabulary</a>
-            <a href="pages/recovery-authority.md">Recovery Authority</a>
-            <a href="pages/account-federation.md">Account Federation</a>
-            <a href="pages/device-bound-guardian-enforcement.md">Device Bound Guardian Enforcement</a>
-            <a href="pages/entity-sandbox-runner-repair-reentry-flow.md">Entity Sandbox Runner Repair Reentry Flow</a>
-            <a href="pages/llm-free-tier-trust-chain.md">LLM Free Tier Trust Chain</a>
-            <a href="pages/media-pipeline-guardian-boundary.md">Media Pipeline Guardian Boundary</a>
-            <a href="docs/STEGGUARDIAN_VERIFICATION_STATUS.md">StegGuardian Verification Status</a>
-            <a href="docs/PAGES_DEPLOYMENT_TRIGGER_DIAGNOSIS.md">Pages Deployment Trigger Diagnosis</a>
-            <a href="docs/LIVE_PUBLIC_RECORD_URL_FETCH_RUNBOOK.md">Live Public Record URL Fetch Runbook</a>
-            <a href="data/page-index.json">Page Index</a>
-            <a href="data/page-metadata.schema.json">Page Metadata Schema</a>
-            <a href="data/page-relationship-graph.json">Page Relationship Graph</a>
-            <a href="data/cross-wiki-metadata-graph.json">Cross-Wiki Metadata Graph</a>
-            <a href="data/cross-wiki-health-status.json">Cross-Wiki Health Status</a>
-            <a href="data/cross-wiki-health-status.schema.json">Cross-Wiki Health Status Schema</a>
-            <a href="data/ecosystem-documentation-endpoints.json">Ecosystem Documentation Endpoints</a>
-            <a href="data/ecosystem-chat-activation-status.json">Ecosystem Chat Activation Status</a>
-            <a href="data/ecosystem-chat-publisher-activation.json">Publisher Activation Projection</a>
-            <a href="data/live-public-record-url-verification.json">Live Public Record URL Verification</a>
-            <a href="data/deployment-receipt.json">Deployment Receipt</a>
-            <a href="data/session-coordination-status.json">Session Coordination Status</a>
-            <a href="data/pages-deployment-trigger-status.json">Pages Deployment Trigger Status</a>
-            <a href="data/public-records-manifest.json">Public Records Manifest</a>
+            <main class="wrap">
+              <nav class="nav" aria-label="StegGuardian navigation">
+                <a class="brand" href="/">StegGuardian Wiki</a>
+                <a href="https://stegverse.org/">StegVerse</a>
+                <a href="https://admissibility.stegverse.org/">Admissibility</a>
+                <a href="https://stegtalk.stegverse.org/">StegTalk</a>
+              </nav>
+
+              <section class="hero">
+                <h1>StegGuardian</h1>
+                <p>Public documentation for Guardian relationships, account boundaries, recovery authority, contestability, and governed-entity protections across StegVerse.</p>
+                <span class="pill">Documentation projection — no execution authority</span>
+              </section>
+
+              <h2>Guardian foundations</h2>
+              <section class="grid">
+                <a class="card" href="pages/stegtalk-guardian-account-boundary.md"><strong>StegTalk Guardian &amp; Account Boundary</strong><span>How Guardian roles intersect with StegTalk accounts and communications.</span></a>
+                <a class="card" href="pages/guardian-account-boundary-vocabulary.md"><strong>Guardian Account Boundary Vocabulary</strong><span>Shared terms for identity, account, authority, and boundary reasoning.</span></a>
+                <a class="card" href="pages/recovery-authority.md"><strong>Recovery Authority</strong><span>What recovery may do, what it may not do, and where authority must stop.</span></a>
+                <a class="card" href="pages/account-federation.md"><strong>Account Federation</strong><span>Cross-account relationships and federation boundaries without collapsing identity.</span></a>
+              </section>
+
+              <h2>Enforcement &amp; governed operation</h2>
+              <section class="grid">
+                <a class="card" href="pages/device-bound-guardian-enforcement.md"><strong>Device-Bound Guardian Enforcement</strong><span>Device-local enforcement posture and bounded Guardian action.</span></a>
+                <a class="card" href="pages/entity-sandbox-runner-repair-reentry-flow.md"><strong>Entity Sandbox Repair &amp; Reentry</strong><span>Repair, validation, and reentry flow for governed entities.</span></a>
+                <a class="card" href="pages/media-pipeline-guardian-boundary.md"><strong>Media Pipeline Guardian Boundary</strong><span>Guardian constraints around media handling and governed delivery.</span></a>
+                <a class="card" href="pages/temporal-governed-analysis-guardian-boundary.md"><strong>Temporal Governed Analysis Boundary</strong><span>Contestable time-aware analysis with explicit evidence and authority limits.</span></a>
+                <a class="card" href="pages/llm-free-tier-trust-chain.md"><strong>LLM Free-Tier Trust Chain</strong><span>Trust-envelope documentation for bounded model access and provenance.</span></a>
+              </section>
+
+              <h2>Verification &amp; public operations</h2>
+              <section class="grid">
+                <a class="card" href="docs/STEGGUARDIAN_VERIFICATION_STATUS.md"><strong>Verification Status</strong><span>Current documented verification posture.</span></a>
+                <a class="card" href="docs/PAGES_DEPLOYMENT_TRIGGER_DIAGNOSIS.md"><strong>Pages Deployment Diagnosis</strong><span>Publication trigger and deployment troubleshooting evidence.</span></a>
+                <a class="card" href="docs/LIVE_PUBLIC_RECORD_URL_FETCH_RUNBOOK.md"><strong>Public Record Verification Runbook</strong><span>How live machine-readable records are checked after deployment.</span></a>
+              </section>
+
+              <details>
+                <summary>Technical records and machine-readable surfaces</summary>
+                <div class="records">
+                  <a href="data/page-index.json">Page Index</a>
+                  <a href="data/page-metadata.schema.json">Page Metadata Schema</a>
+                  <a href="data/page-relationship-graph.json">Page Relationship Graph</a>
+                  <a href="data/cross-wiki-metadata-graph.json">Cross-Wiki Metadata Graph</a>
+                  <a href="data/cross-wiki-health-status.json">Cross-Wiki Health Status</a>
+                  <a href="data/cross-wiki-health-status.schema.json">Cross-Wiki Health Schema</a>
+                  <a href="data/ecosystem-documentation-endpoints.json">Ecosystem Documentation Endpoints</a>
+                  <a href="data/ecosystem-chat-activation-status.json">Ecosystem Chat Activation Status</a>
+                  <a href="data/ecosystem-chat-publisher-activation.json">Publisher Activation Projection</a>
+                  <a href="data/live-public-record-url-verification.json">Live Public URL Verification</a>
+                  <a href="data/deployment-receipt.json">Deployment Receipt</a>
+                  <a href="data/session-coordination-status.json">Session Coordination Status</a>
+                  <a href="data/pages-deployment-trigger-status.json">Pages Deployment Trigger Status</a>
+                  <a href="data/public-records-manifest.json">Public Records Manifest</a>
+                </div>
+              </details>
+
+              <p class="boundary"><strong>Boundary:</strong> this wiki documents Guardian concepts, projections, and verification state. Publication does not itself grant Guardian, execution, custody, admissibility, release, or certification authority.</p>
+              <footer class="footer">StegGuardian Wiki · governed-entity documentation within the StegVerse ecosystem.</footer>
+            </main>
           </body>
           </html>
           HTML
