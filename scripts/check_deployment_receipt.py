@@ -3,7 +3,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 RECEIPT = ROOT / "data" / "deployment-receipt.json"
-EXPECTED_URL = "https://stegverse-002.github.io/stegguardian-wiki/"
+EXPECTED_URL = "https://stegguardian.stegverse.org/"
 EXPECTED_RECORDS = {
     "data/page-index.json",
     "data/page-metadata.schema.json",
