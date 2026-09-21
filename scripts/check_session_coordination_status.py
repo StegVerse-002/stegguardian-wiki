@@ -4,7 +4,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 STATUS = ROOT / "data" / "session-coordination-status.json"
 EXPECTED_REPO = "StegVerse-002/stegguardian-wiki"
-EXPECTED_URL = "https://stegverse-002.github.io/stegguardian-wiki/"
+EXPECTED_URL = "https://stegguardian.stegverse.org/"
 REQUIRED_CHECKED_SOURCES = {
     "open_issues",
     "open_pull_requests",
