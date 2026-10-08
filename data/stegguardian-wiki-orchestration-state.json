@@ -24,7 +24,7 @@
   "ownership": {
     "site_hil_upload": "StegVerse-Labs/Site active upload/runtime lane",
     "live_provider_and_persistent_endpoint": "StegVerse-org/LLM-adapter canonical runtime lane",
-    "custody_and_reconstructability": "master-records/orchestration",
+    "organization_records_and_reconstruction": "master-records/orchestration",
     "publisher_ingestion_awareness": "GCAT-BCAT-Engine/Publisher",
     "bounded_admissibility_projection": "StegVerse-Labs/admissibility-wiki",
     "guardian_interpretation": "StegVerse-002/stegguardian-wiki",
@@ -98,7 +98,7 @@
       "workload": "Publish bounded Guardian interpretation of the verified HIL chain",
       "execution_class": "DEPENDENCY_BLOCKED",
       "state": "BLOCKED_BUT_OBSERVED",
-      "dependencies": ["HIL receiver READY and controlled browser receipt","restart exact-byte verification","TVC lifecycle continuation","authenticated Master-Records custody","reconstructability PASS","immutable zero-blocker activation receipt","Site ACTIVATION_COMPLETE","Publisher VERIFIED_INGESTION_READY","admissibility-wiki bounded interpretation"],
+      "dependencies": ["HIL receiver READY and controlled browser receipt","restart exact-byte verification","TVC lifecycle continuation","authenticated Master-Records organization record","reconstructability PASS","immutable zero-blocker activation receipt","Site ACTIVATION_COMPLETE","Publisher VERIFIED_INGESTION_READY","admissibility-wiki bounded interpretation"],
       "heartbeat_awareness_satisfies_dependencies": false
     }
   ],

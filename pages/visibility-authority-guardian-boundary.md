@@ -24,7 +24,7 @@ The implemented ecosystem chain is:
 - SDK: declares state and produces acknowledgement or transition receipts;
 - Publisher: enforces consequential publication actions;
 - Site: renders human and machine projections without authority inference;
-- Master-Records: custodies and reconstructs records without creating authorization;
+- Master-Records: keeps organization records and reconstructs from them without creating authorization;
 - StegGuardian: preserves the boundary at enforcement and recovery surfaces.
 
 This page is documentation and propagation awareness only. It grants no Guardian enforcement, publication, execution, custody, release, deployment, standing, or admissibility authority.
