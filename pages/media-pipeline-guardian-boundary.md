@@ -44,7 +44,7 @@ This downstream page does not claim:
 - account or guardian enforcement authority;
 - final admissibility;
 - final receipt issuance;
-- Master-Records custody;
+- Master Records organization record;
 - or reconstruction success.
 
 ## Cross-Repository Chain
