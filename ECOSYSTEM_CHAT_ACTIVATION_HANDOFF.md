@@ -60,7 +60,7 @@ workflow dispatch -> validation only
 cancel-in-progress = true
 ```
 
-A manual dispatch cannot deploy Pages. Superseded runs are cancelled. The workflow no longer reads Site activation directly for the Guardian activation decision; Publisher is the required bounded downstream source after Master Records custody.
+A manual dispatch cannot deploy Pages. Superseded runs are cancelled. The workflow no longer reads Site activation directly for the Guardian activation decision; Publisher is the required bounded downstream source after Master Records organization record.
 
 ## Authority boundary
 
