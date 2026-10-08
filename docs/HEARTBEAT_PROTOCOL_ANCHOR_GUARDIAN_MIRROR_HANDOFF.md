@@ -75,7 +75,7 @@ The existing HIL succession chain remains dependency-blocked and unchanged:
 HIL receiver READY + controlled browser receipt
 -> restart exact-byte verification
 -> TVC lifecycle continuation
--> authenticated Master Records custody + reconstructability PASS
+-> authenticated Master Records organization record + reconstructability PASS
 -> immutable activation receipt
 -> Site ACTIVATION_COMPLETE
 -> Publisher VERIFIED_INGESTION_READY

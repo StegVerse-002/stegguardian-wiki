@@ -9,7 +9,7 @@ This record preserves the bounded downstream Ecosystem Chat activation projectio
 ```text
 StegVerse-Labs/Site exact-SHA orchestration
 -> Site terminal orchestration receipt
--> master-records/orchestration custody RECORDED
+-> master-records/orchestration organization record RECORDED
 -> reconstruction PASS
 -> GCAT-BCAT-Engine/Publisher custody-bound activation status
 -> StegGuardian Wiki importer

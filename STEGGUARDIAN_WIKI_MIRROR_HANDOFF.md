@@ -56,7 +56,7 @@ Parallel sessions must not restart the resolved Pages repair path, recreate the 
 
 Site has concurrent active work and must not be modified from this workstream.
 LLM-adapter issue #18 owns live provider and persistent-endpoint activation.
-Master-Records orchestration issue #2 owns HIL custody and reconstructability evidence.
+Master-Records orchestration issue #2 owns the HIL organization records and reconstructability results.
 Publisher owns downstream Site propagation awareness.
 Admissibility-wiki owns bounded admissibility interpretation.
 
@@ -68,7 +68,7 @@ Guardian HIL projection is admitted only after this ordered chain exists:
 StegVerse-Labs/Site HIL upload completion
 -> StegVerse-org/LLM-adapter authorized real-provider execution
 -> exact provider response and usage persistence
--> master-records/orchestration authenticated custody
+-> master-records/orchestration authenticated organization record
 -> reconstructability PASS
 -> immutable zero-blocker activation receipt
 -> StegVerse-Labs/Site ACTIVATION_COMPLETE
