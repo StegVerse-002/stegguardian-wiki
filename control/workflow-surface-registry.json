@@ -1,0 +1,229 @@
+{
+  "schema": "stegverse.workflow-surface-registry/v1",
+  "goal_id": "G17-WORKFLOW-SURFACE-MINIMIZATION",
+  "repository": "StegVerse-002/stegguardian-wiki",
+  "policy_issue": "StegVerse-Labs/.github#167, #168; StegVerse-org/.github#166",
+  "preferred_repository_workflow_count_max": 2,
+  "exception_repository_workflow_count_max": 3,
+  "credential_authority": "the SKAP Vault inside KV is the only PII and credential store for every user, including the StegVerse ecosystem's own; no secret or token is referenced, introduced or moved by this fold",
+  "invariants": [
+    "Every workflow file is registered in surfaces[]; an unregistered or changed one fails closed (tests/test_workflow_surface_registry.py).",
+    "A new check is a group in tools/tasks/task_catalog.json, never a new workflow file.",
+    "The stable dispatcher carries no workflow_dispatch, schedule, repository_dispatch, issues or workflow_run trigger; a kept surface is pinned by sha256 and unchanged by the fold.",
+    "G17 documented exception: above 2 workflow files, every kept surface other than the dispatcher carries an exception record (lifecycle and technical-necessity justification); the count never exceeds exception_repository_workflow_count_max (3)."
+  ],
+  "unregistered_workflow_outcome": {
+    "disposition": "FAIL_CLOSED",
+    "failure_code": "UNREGISTERED_WORKFLOW_SURFACE",
+    "failed_predicate": "EVERY_WORKFLOW_FILE_IS_REGISTERED",
+    "required_evidence_or_repair": "register the file in control/workflow-surface-registry.json surfaces[] or fold it into tools/tasks/task_catalog.json",
+    "retry_entrypoint": "tests/test_workflow_surface_registry.py",
+    "owning_existing_goal": "G17-WORKFLOW-SURFACE-MINIMIZATION (StegVerse-Labs/.github#167/#168); StegVerse-org/.github#166",
+    "next_attempt": "the next pull request touching .github/workflows/"
+  },
+  "surfaces": [
+    {
+      "path": ".github/workflows/validation-dispatcher.yml",
+      "classification": "KEEP_STABLE_DISPATCHER",
+      "triggers": [
+        "pull_request",
+        "push"
+      ],
+      "permissions": {
+        "contents": "read"
+      }
+    },
+    {
+      "path": ".github/workflows/pages.yml",
+      "classification": "KEEP_EXISTING_SURFACE_UNCHANGED",
+      "triggers": [
+        "pull_request",
+        "push",
+        "workflow_dispatch"
+      ],
+      "permissions": {
+        "contents": "read",
+        "pages": "write",
+        "id-token": "write"
+      },
+      "reason": "KEEP_EXISTING_SURFACE_UNCHANGED except event selection (documented exception, Pages deployer, contract-pinned): pages: write and id-token: write (deploy-pages); scripts/check_guardian_activation_orchestration_contract.py L8, check_st017_sandbox_adoption.py L8, check_public_url_verification_status.py L12 and check_deployment_receipt.py L49 (data/deployment-receipt.json expected_workflow) read this exact path.",
+      "verbatim_sha256": "a0d72a652680129c2d64c16b1ad543c7461357825971a8697d616ffc27e120b7",
+      "exception": {
+        "lifecycle": "kept surface (writer or contract-pinned)",
+        "justification": "KEEP_EXISTING_SURFACE_UNCHANGED (documented exception, Pages deployer, contract-pinned): pages: write and id-token: write (deploy-pages); scripts/check_guardian_activation_orchestration_contract.py L8, check_st017_sandbox_adoption.py L8, check_public_url_verification_status.py L12 and check_deployment_receipt.py L49 (data/deployment-receipt.json expected_workflow) read this exact path.",
+        "within_exception_ceiling": true
+      },
+      "event_selection_repair": {
+        "pattern": "StegVerse-org/StegVerse-SDK#561 (job-level event gate replaced by a NOT_SELECTED step plus per-step gates)",
+        "jobs": [
+          "deploy",
+          "verify-live-public-records"
+        ],
+        "selected_when": "github.event_name == 'push' && github.ref == 'refs/heads/main'",
+        "environment": "github-pages only when selected; empty (no environment) otherwise",
+        "effect": "on other events both jobs report SUCCESS with a NOT_SELECTED line instead of skipped; main-push behaviour unchanged",
+        "repairs": "SKIPPED_CHECKS_FROM_KEPT_SURFACE (stegguardian-wiki#48, StegVerse-org/.github#166)"
+      }
+    },
+    {
+      "path": ".github/workflows/heartbeat-response-node.yml",
+      "classification": "KEEP_EXISTING_SURFACE_UNCHANGED",
+      "triggers": [
+        "workflow_dispatch",
+        "push",
+        "schedule"
+      ],
+      "permissions": {
+        "contents": "write"
+      },
+      "reason": "KEEP_EXISTING_SURFACE_UNCHANGED (documented exception, receipt writer): contents: write; it commits and pushes heartbeat response receipts (green on its existing schedule through 2026-10-25). Existing triggers byte-unchanged; same disposition as StegGhost (Round 45) and AdmittedCode/.github.",
+      "verbatim_sha256": "dcd9932081736825f096343cb7fad96f7e103d3ecafa274c1e3324d2156fc457",
+      "exception": {
+        "lifecycle": "kept surface (writer or contract-pinned)",
+        "justification": "KEEP_EXISTING_SURFACE_UNCHANGED (documented exception, receipt writer): contents: write; it commits and pushes heartbeat response receipts (green on its existing schedule through 2026-10-25). Existing triggers byte-unchanged; same disposition as StegGhost (Round 45) and AdmittedCode/.github.",
+        "within_exception_ceiling": true
+      }
+    },
+    {
+      "path": ".github/workflows/system-boundary-status-sync.yml",
+      "classification": "KEEP_EXISTING_SURFACE_UNCHANGED",
+      "triggers": [
+        "workflow_dispatch",
+        "schedule"
+      ],
+      "permissions": {
+        "contents": "write"
+      },
+      "reason": "KEEP_EXISTING_SURFACE_UNCHANGED (documented exception, status writer): contents: write; it commits and pushes the system-boundary status (green on its existing schedule through 2026-10-25). Existing triggers byte-unchanged.",
+      "verbatim_sha256": "5298907e1b36c900e4f1ac37253a4327726c4bdb559f73dc28587e90b05f179a",
+      "exception": {
+        "lifecycle": "kept surface (writer or contract-pinned)",
+        "justification": "KEEP_EXISTING_SURFACE_UNCHANGED (documented exception, status writer): contents: write; it commits and pushes the system-boundary status (green on its existing schedule through 2026-10-25). Existing triggers byte-unchanged.",
+        "within_exception_ceiling": true
+      }
+    },
+    {
+      "path": ".github/workflows/stegguardian-wiki-readiness.yml",
+      "classification": "KEEP_EXISTING_SURFACE_UNCHANGED",
+      "triggers": [
+        "pull_request",
+        "push",
+        "workflow_dispatch"
+      ],
+      "permissions": null,
+      "reason": "KEEP_EXISTING_SURFACE_UNCHANGED (contract-pinned): scripts/check_stegguardian_wiki_workflow.py L7 reads this exact file and fails if it is missing or lacks its run text; scripts/check_stegguardian_wiki_readiness.py runs that check, and data/stegguardian-wiki-task-completion-status.json names it as automation_workflow.",
+      "verbatim_sha256": "2089a72b5d21b43edb9bc97d22e7765c5ebe72e4ff961bc21bf52a03efbaa83c",
+      "exception": {
+        "lifecycle": "kept surface (writer or contract-pinned)",
+        "justification": "KEEP_EXISTING_SURFACE_UNCHANGED (contract-pinned): scripts/check_stegguardian_wiki_workflow.py L7 reads this exact file and fails if it is missing or lacks its run text; scripts/check_stegguardian_wiki_readiness.py runs that check, and data/stegguardian-wiki-task-completion-status.json names it as automation_workflow.",
+        "within_exception_ceiling": true
+      }
+    }
+  ],
+  "folded": [
+    {
+      "workflow": ".github/workflows/check-correctability-awareness.yml",
+      "name": "Check Correctability Awareness",
+      "triggers_before": [
+        "push",
+        "workflow_dispatch"
+      ],
+      "classification": "CONSOLIDATE_INTO_STABLE_DISPATCHER",
+      "status": "DONE",
+      "catalog_groups": [
+        "check-correctability-awareness.validate"
+      ],
+      "verbatim_record": "tools/tasks/folded/check-correctability-awareness.yml",
+      "verbatim_sha256": "265dc5f5599242c1cd12c13125372f3d3c0cfbc644ca8a620a9866062329db34"
+    },
+    {
+      "workflow": ".github/workflows/check-governance-observatory-publication-awareness.yml",
+      "name": "Check Governance Observatory Publication Awareness",
+      "triggers_before": [
+        "push",
+        "pull_request",
+        "workflow_dispatch"
+      ],
+      "classification": "CONSOLIDATE_INTO_STABLE_DISPATCHER",
+      "status": "DONE",
+      "catalog_groups": [
+        "check-governance-observatory-publication-awareness.validate"
+      ],
+      "verbatim_record": "tools/tasks/folded/check-governance-observatory-publication-awareness.yml",
+      "verbatim_sha256": "afd794136020a421ac9c1e8a600de7747bc61d07cc0d1031f874a22661bdd5a5"
+    },
+    {
+      "workflow": ".github/workflows/check-heartbeat-protocol-anchor-awareness.yml",
+      "name": "Check Heartbeat Protocol Anchor Awareness",
+      "triggers_before": [
+        "pull_request",
+        "push",
+        "workflow_dispatch"
+      ],
+      "classification": "CONSOLIDATE_INTO_STABLE_DISPATCHER",
+      "status": "DONE",
+      "catalog_groups": [
+        "check-heartbeat-protocol-anchor-awareness.validate"
+      ],
+      "verbatim_record": "tools/tasks/folded/check-heartbeat-protocol-anchor-awareness.yml",
+      "verbatim_sha256": "e05e5374dbdd96681ced893ec8f8e9d5f7fdbd61c2ee58fa7a3156f4199479be"
+    },
+    {
+      "workflow": ".github/workflows/check-stegclaw-release-awareness.yml",
+      "name": "Check StegClaw Release Awareness",
+      "triggers_before": [
+        "push",
+        "pull_request",
+        "workflow_dispatch"
+      ],
+      "classification": "CONSOLIDATE_INTO_STABLE_DISPATCHER",
+      "status": "DONE",
+      "catalog_groups": [
+        "check-stegclaw-release-awareness.validate"
+      ],
+      "verbatim_record": "tools/tasks/folded/check-stegclaw-release-awareness.yml",
+      "verbatim_sha256": "81e7f144afc37c0c237d4087d8d9fdedda832646b64f64220f9922392ed1d574"
+    },
+    {
+      "workflow": ".github/workflows/rtg-tt-guardian-boundary.yml",
+      "name": "RTG-TT Guardian Boundary",
+      "triggers_before": [
+        "pull_request",
+        "push"
+      ],
+      "classification": "CONSOLIDATE_INTO_STABLE_DISPATCHER",
+      "status": "DONE",
+      "catalog_groups": [
+        "rtg-tt-guardian-boundary.verify"
+      ],
+      "verbatim_record": "tools/tasks/folded/rtg-tt-guardian-boundary.yml",
+      "verbatim_sha256": "e59d2cce34082f1df1f2261603473b1527166fbb94938d3207d06f2e16d30f4f"
+    },
+    {
+      "workflow": ".github/workflows/validate-tga-guardian-projection.yml",
+      "name": "Validate TGA Guardian Projection",
+      "triggers_before": [
+        "pull_request",
+        "push",
+        "workflow_dispatch"
+      ],
+      "classification": "CONSOLIDATE_INTO_STABLE_DISPATCHER",
+      "status": "DONE",
+      "catalog_groups": [
+        "validate-tga-guardian-projection.validate"
+      ],
+      "verbatim_record": "tools/tasks/folded/validate-tga-guardian-projection.yml",
+      "verbatim_sha256": "a004b04a1ea8764c05d45542c6104b8948d010d2df38a98b741d95a0e4981f3c"
+    }
+  ],
+  "ceiling_fail_closed": {
+    "disposition": "FAIL_CLOSED",
+    "workflow_count": 5,
+    "failure_code": "G17_CONTRACT_FLOOR_ABOVE_EXCEPTION_CEILING",
+    "failed_predicate": "workflow_count <= exception_repository_workflow_count_max (3)",
+    "required_evidence_or_repair": "pages.yml (Pages deployer, pinned by four scripts), heartbeat-response-node.yml and system-boundary-status-sync.yml (contents: write writers) and stegguardian-wiki-readiness.yml (pinned by scripts/check_stegguardian_wiki_workflow.py L7) stay; a documented single-writer design and a contract change re-pointing those scripts at catalog groups are required before they fold",
+    "retry_entrypoint": "tests/test_workflow_surface_registry.py",
+    "owning_existing_goal": "G17-WORKFLOW-SURFACE-MINIMIZATION (StegVerse-Labs/.github#167/#168); StegVerse-org/.github#166",
+    "next_attempt": "the next pull request touching .github/workflows/ or those contracts"
+  }
+}

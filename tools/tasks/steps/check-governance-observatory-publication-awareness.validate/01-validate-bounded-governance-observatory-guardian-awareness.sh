@@ -1,0 +1,1 @@
+python scripts/check_governance_observatory_publication_awareness.py

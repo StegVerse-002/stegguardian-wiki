@@ -1,0 +1,1 @@
+python scripts/check_heartbeat_protocol_anchor_awareness.py

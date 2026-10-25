@@ -1,0 +1,260 @@
+{
+ "schema": "stegverse.task-catalog/v1",
+ "repository": "StegVerse-002/stegguardian-wiki",
+ "goal_id": "G17-WORKFLOW-SURFACE-MINIMIZATION",
+ "authority": "Rigel 2026-10-24 retroactive G17 enforcement (StegVerse-org/.github#166); pattern StegVerse-Labs/StegDB#60 (eab2e773)",
+ "dispatcher": ".github/workflows/validation-dispatcher.yml",
+ "runner": "tools/tasks/run_catalog.py",
+ "runner_source": "StegVerse-Labs/StegDB tools/tasks/run_catalog.py @ eab2e773271f3e63466a710f1b4555f677882848 (sha256 f741f30557888fd8e4852a52adfc65736a08898d49ade7519f6bcc2672921e9b), copied unmodified",
+ "rule": "Every check a folded workflow job ran is one group here; its step bodies are the original run blocks byte for byte, pinned by sha256, except the repairs listed. A new check is a new group (or a step in one), never a new workflow file.",
+ "path_filters": "Dropped: every group runs on every pull_request and push to main (a superset of the original path-filtered runs). workflow_dispatch/schedule triggers are not carried (no manual dispatch, no cron).",
+ "repairs": [
+  "The six validators used push/pull_request triggers (check-correctability-awareness push-only); as catalog groups they run on every pull request and push to main (a superset). Their workflow_dispatch triggers are not carried."
+ ],
+ "folded_from_commit": "ec047376e66481496e7954ab57800570fe36b4a9",
+ "groups": [
+  {
+   "id": "check-correctability-awareness.validate",
+   "source": {
+    "workflow": ".github/workflows/check-correctability-awareness.yml",
+    "workflow_name": "Check Correctability Awareness",
+    "job": "validate",
+    "job_name": null,
+    "commit": "ec04737",
+    "triggers_before": [
+     "push",
+     "workflow_dispatch"
+    ],
+    "permissions_before": {
+     "contents": "read"
+    }
+   },
+   "events": [
+    "pull_request",
+    "push"
+   ],
+   "env": {},
+   "steps": [
+    {
+     "name": "Validate bounded correctability Guardian awareness",
+     "run_file": "tools/tasks/steps/check-correctability-awareness.validate/01-validate-bounded-correctability-guardian-awareness.sh",
+     "run_sha256": "ea699ed8f84565aa2ac1ae3a3273fc647273bb0e4b27f1becb85518402c4002f"
+    }
+   ],
+   "artifacts": [],
+   "runner": {
+    "fetch_depth": "1",
+    "persist_credentials": "true",
+    "timeout_minutes": 30,
+    "python_version": "3.11"
+   }
+  },
+  {
+   "id": "check-governance-observatory-publication-awareness.validate",
+   "source": {
+    "workflow": ".github/workflows/check-governance-observatory-publication-awareness.yml",
+    "workflow_name": "Check Governance Observatory Publication Awareness",
+    "job": "validate",
+    "job_name": null,
+    "commit": "ec04737",
+    "triggers_before": [
+     "push",
+     "pull_request",
+     "workflow_dispatch"
+    ],
+    "permissions_before": {
+     "contents": "read"
+    }
+   },
+   "events": [
+    "pull_request",
+    "push"
+   ],
+   "env": {},
+   "steps": [
+    {
+     "name": "Validate bounded Governance Observatory Guardian awareness",
+     "run_file": "tools/tasks/steps/check-governance-observatory-publication-awareness.validate/01-validate-bounded-governance-observatory-guardian-awareness.sh",
+     "run_sha256": "aa1df96d3699e6749a2016106edbf50b5a68cf3946b56b920e6d93c211125e19"
+    }
+   ],
+   "artifacts": [],
+   "runner": {
+    "fetch_depth": "1",
+    "persist_credentials": "true",
+    "timeout_minutes": 30,
+    "python_version": "3.11"
+   }
+  },
+  {
+   "id": "check-heartbeat-protocol-anchor-awareness.validate",
+   "source": {
+    "workflow": ".github/workflows/check-heartbeat-protocol-anchor-awareness.yml",
+    "workflow_name": "Check Heartbeat Protocol Anchor Awareness",
+    "job": "validate",
+    "job_name": null,
+    "commit": "ec04737",
+    "triggers_before": [
+     "pull_request",
+     "push",
+     "workflow_dispatch"
+    ],
+    "permissions_before": {
+     "contents": "read"
+    }
+   },
+   "events": [
+    "pull_request",
+    "push"
+   ],
+   "env": {},
+   "steps": [
+    {
+     "name": "Validate bounded HB32 Guardian awareness",
+     "run_file": "tools/tasks/steps/check-heartbeat-protocol-anchor-awareness.validate/01-validate-bounded-hb32-guardian-awareness.sh",
+     "run_sha256": "012694edc479666490be9fe264bafa4911cb0b3af14f07f1b030b854939b0155"
+    }
+   ],
+   "artifacts": [],
+   "runner": {
+    "fetch_depth": "1",
+    "persist_credentials": "true",
+    "timeout_minutes": 30,
+    "python_version": "3.11"
+   }
+  },
+  {
+   "id": "check-stegclaw-release-awareness.validate",
+   "source": {
+    "workflow": ".github/workflows/check-stegclaw-release-awareness.yml",
+    "workflow_name": "Check StegClaw Release Awareness",
+    "job": "validate",
+    "job_name": null,
+    "commit": "ec04737",
+    "triggers_before": [
+     "push",
+     "pull_request",
+     "workflow_dispatch"
+    ],
+    "permissions_before": {
+     "contents": "read"
+    }
+   },
+   "events": [
+    "pull_request",
+    "push"
+   ],
+   "env": {},
+   "steps": [
+    {
+     "name": "Validate bounded StegClaw Guardian release awareness",
+     "run_file": "tools/tasks/steps/check-stegclaw-release-awareness.validate/01-validate-bounded-stegclaw-guardian-release-awareness.sh",
+     "run_sha256": "cf382c0548135e047d810675e5e92ae6bf1eb516b3bf134341536f159945302b"
+    }
+   ],
+   "artifacts": [],
+   "runner": {
+    "fetch_depth": "1",
+    "persist_credentials": "false",
+    "timeout_minutes": 30,
+    "python_version": "3.11"
+   }
+  },
+  {
+   "id": "rtg-tt-guardian-boundary.verify",
+   "source": {
+    "workflow": ".github/workflows/rtg-tt-guardian-boundary.yml",
+    "workflow_name": "RTG-TT Guardian Boundary",
+    "job": "verify",
+    "job_name": null,
+    "commit": "ec04737",
+    "triggers_before": [
+     "pull_request",
+     "push"
+    ],
+    "permissions_before": {
+     "contents": "read"
+    }
+   },
+   "events": [
+    "pull_request",
+    "push"
+   ],
+   "env": {},
+   "steps": [
+    {
+     "name": "step 1",
+     "run_file": "tools/tasks/steps/rtg-tt-guardian-boundary.verify/01-step-1.sh",
+     "run_sha256": "1a2292a093d2a6ea94c678cb9c23aad1d458ab1205025e3d53895deebbf7864b"
+    }
+   ],
+   "artifacts": [],
+   "runner": {
+    "fetch_depth": "1",
+    "persist_credentials": "true",
+    "timeout_minutes": 30,
+    "python_version": "3.12"
+   }
+  },
+  {
+   "id": "validate-tga-guardian-projection.validate",
+   "source": {
+    "workflow": ".github/workflows/validate-tga-guardian-projection.yml",
+    "workflow_name": "Validate TGA Guardian Projection",
+    "job": "validate",
+    "job_name": null,
+    "commit": "ec04737",
+    "triggers_before": [
+     "pull_request",
+     "push",
+     "workflow_dispatch"
+    ],
+    "permissions_before": {
+     "contents": "read"
+    }
+   },
+   "events": [
+    "pull_request",
+    "push"
+   ],
+   "env": {},
+   "steps": [
+    {
+     "name": "step 1",
+     "run_file": "tools/tasks/steps/validate-tga-guardian-projection.validate/01-step-1.sh",
+     "run_sha256": "bb148aa421ee8178dd486f04f5ef7e5b0a0e3a2f9a597643ca06e5662edb5b0b"
+    }
+   ],
+   "artifacts": [],
+   "runner": {
+    "fetch_depth": "1",
+    "persist_credentials": "true",
+    "timeout_minutes": 30,
+    "python_version": "3.12"
+   }
+  },
+  {
+   "id": "workflow-surface-registry.validate",
+   "catalog_addition": "G17 registry gate (no folded source workflow)",
+   "events": [
+    "pull_request",
+    "push"
+   ],
+   "env": {},
+   "steps": [
+    {
+     "name": "Workflow files equal the registered surfaces; catalog verifies ALLOW",
+     "run_file": "tools/tasks/steps/workflow-surface-registry.validate/01-registry.sh",
+     "run_sha256": "811824e88664923006be2eeb35632d710f5504145967f61632ad9e8fbdcb35ca"
+    }
+   ],
+   "artifacts": [],
+   "runner": {
+    "fetch_depth": "1",
+    "persist_credentials": "false",
+    "timeout_minutes": 10,
+    "python_version": "3.11"
+   }
+  }
+ ]
+}
