@@ -1,0 +1,1 @@
+python scripts/check_correctability_awareness.py

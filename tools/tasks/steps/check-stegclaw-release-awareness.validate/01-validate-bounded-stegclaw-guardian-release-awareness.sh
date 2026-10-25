@@ -1,0 +1,1 @@
+python scripts/check_stegclaw_release_awareness.py
