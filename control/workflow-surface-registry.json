@@ -46,12 +46,23 @@
         "pages": "write",
         "id-token": "write"
       },
-      "reason": "KEEP_EXISTING_SURFACE_UNCHANGED (documented exception, Pages deployer, contract-pinned): pages: write and id-token: write (deploy-pages); scripts/check_guardian_activation_orchestration_contract.py L8, check_st017_sandbox_adoption.py L8, check_public_url_verification_status.py L12 and check_deployment_receipt.py L49 (data/deployment-receipt.json expected_workflow) read this exact path.",
-      "verbatim_sha256": "cfd4162944aa53aca9526a47c5fba6f11221525c4f0d675e56848fe9d355bee1",
+      "reason": "KEEP_EXISTING_SURFACE_UNCHANGED except event selection (documented exception, Pages deployer, contract-pinned): pages: write and id-token: write (deploy-pages); scripts/check_guardian_activation_orchestration_contract.py L8, check_st017_sandbox_adoption.py L8, check_public_url_verification_status.py L12 and check_deployment_receipt.py L49 (data/deployment-receipt.json expected_workflow) read this exact path.",
+      "verbatim_sha256": "a0d72a652680129c2d64c16b1ad543c7461357825971a8697d616ffc27e120b7",
       "exception": {
         "lifecycle": "kept surface (writer or contract-pinned)",
         "justification": "KEEP_EXISTING_SURFACE_UNCHANGED (documented exception, Pages deployer, contract-pinned): pages: write and id-token: write (deploy-pages); scripts/check_guardian_activation_orchestration_contract.py L8, check_st017_sandbox_adoption.py L8, check_public_url_verification_status.py L12 and check_deployment_receipt.py L49 (data/deployment-receipt.json expected_workflow) read this exact path.",
         "within_exception_ceiling": true
+      },
+      "event_selection_repair": {
+        "pattern": "StegVerse-org/StegVerse-SDK#561 (job-level event gate replaced by a NOT_SELECTED step plus per-step gates)",
+        "jobs": [
+          "deploy",
+          "verify-live-public-records"
+        ],
+        "selected_when": "github.event_name == 'push' && github.ref == 'refs/heads/main'",
+        "environment": "github-pages only when selected; empty (no environment) otherwise",
+        "effect": "on other events both jobs report SUCCESS with a NOT_SELECTED line instead of skipped; main-push behaviour unchanged",
+        "repairs": "SKIPPED_CHECKS_FROM_KEPT_SURFACE (stegguardian-wiki#48, StegVerse-org/.github#166)"
       }
     },
     {
