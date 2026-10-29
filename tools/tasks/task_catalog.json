@@ -5,9 +5,9 @@
  "authority": "Rigel 2026-10-24 retroactive G17 enforcement (StegVerse-org/.github#166); pattern StegVerse-Labs/StegDB#60 (eab2e773)",
  "dispatcher": ".github/workflows/validation-dispatcher.yml",
  "runner": "tools/tasks/run_catalog.py",
- "runner_source": "StegVerse-Labs/StegDB tools/tasks/run_catalog.py @ eab2e773271f3e63466a710f1b4555f677882848 (sha256 f741f30557888fd8e4852a52adfc65736a08898d49ade7519f6bcc2672921e9b), copied unmodified",
+ "runner_source": "StegVerse-Labs/StegDB tools/tasks/run_catalog.py @ eab2e773271f3e63466a710f1b4555f677882848 (sha256 f741f30557888fd8e4852a52adfc65736a08898d49ade7519f6bcc2672921e9b), copied unmodified; then patched with the original-path-filter selection (matrix marks cells selected; StegVerse-Labs/Site#1647 pattern), so it no longer equals that sha256",
  "rule": "Every check a folded workflow job ran is one group here; its step bodies are the original run blocks byte for byte, pinned by sha256, except the repairs listed. A new check is a new group (or a step in one), never a new workflow file.",
- "path_filters": "Dropped: every group runs on every pull_request and push to main (a superset of the original path-filtered runs). workflow_dispatch/schedule triggers are not carried (no manual dispatch, no cron).",
+ "path_filters": "Restored: each folded group carries its original workflow's push / pull_request paths or paths-ignore filter as path_filters (a folded workflow's own path names its tools/tasks/folded copy and its tools/tasks/steps directory). A group the event's changed files do not select records NOT_SELECTED and exits 0 (a run, never a skipped job; pattern StegVerse-org/StegVerse-SDK#561, StegVerse-Labs/Site#1647). Not carried: branches filters, workflow_dispatch/schedule triggers (no manual dispatch, no cron), job-level if, and GitHub's 300-changed-file rule (an undeterminable diff selects every group).",
  "repairs": [
   "The six validators used push/pull_request triggers (check-correctability-awareness push-only); as catalog groups they run on every pull request and push to main (a superset). Their workflow_dispatch triggers are not carried."
  ],
@@ -47,6 +47,18 @@
     "persist_credentials": "true",
     "timeout_minutes": 30,
     "python_version": "3.11"
+   },
+   "path_filters": {
+    "push": {
+     "paths": [
+      "data/correctability-awareness-status.json",
+      "scripts/check_correctability_awareness.py",
+      "tools/tasks/folded/check-correctability-awareness.yml",
+      "tools/tasks/steps/check-correctability-awareness.validate/**",
+      "docs/CORRECTABILITY_AWARENESS_MIRROR_HANDOFF.md",
+      "STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md"
+     ]
+    }
    }
   },
   {
@@ -84,6 +96,30 @@
     "persist_credentials": "true",
     "timeout_minutes": 30,
     "python_version": "3.11"
+   },
+   "path_filters": {
+    "pull_request": {
+     "paths": [
+      "data/governance-observatory-publication-awareness-status.json",
+      "scripts/check_governance_observatory_publication_awareness.py",
+      "tools/tasks/folded/check-governance-observatory-publication-awareness.yml",
+      "tools/tasks/steps/check-governance-observatory-publication-awareness.validate/**",
+      "docs/GOVERNANCE_OBSERVATORY_AWARENESS_MIRROR_HANDOFF.md",
+      "STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md",
+      "data/stegguardian-wiki-orchestration-state.json"
+     ]
+    },
+    "push": {
+     "paths": [
+      "data/governance-observatory-publication-awareness-status.json",
+      "scripts/check_governance_observatory_publication_awareness.py",
+      "tools/tasks/folded/check-governance-observatory-publication-awareness.yml",
+      "tools/tasks/steps/check-governance-observatory-publication-awareness.validate/**",
+      "docs/GOVERNANCE_OBSERVATORY_AWARENESS_MIRROR_HANDOFF.md",
+      "STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md",
+      "data/stegguardian-wiki-orchestration-state.json"
+     ]
+    }
    }
   },
   {
@@ -121,6 +157,30 @@
     "persist_credentials": "true",
     "timeout_minutes": 30,
     "python_version": "3.11"
+   },
+   "path_filters": {
+    "pull_request": {
+     "paths": [
+      "data/heartbeat-protocol-anchor-awareness.json",
+      "scripts/check_heartbeat_protocol_anchor_awareness.py",
+      "tools/tasks/folded/check-heartbeat-protocol-anchor-awareness.yml",
+      "tools/tasks/steps/check-heartbeat-protocol-anchor-awareness.validate/**",
+      "docs/HEARTBEAT_PROTOCOL_ANCHOR_GUARDIAN_MIRROR_HANDOFF.md",
+      "STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md",
+      "data/stegguardian-wiki-orchestration-state.json"
+     ]
+    },
+    "push": {
+     "paths": [
+      "data/heartbeat-protocol-anchor-awareness.json",
+      "scripts/check_heartbeat_protocol_anchor_awareness.py",
+      "tools/tasks/folded/check-heartbeat-protocol-anchor-awareness.yml",
+      "tools/tasks/steps/check-heartbeat-protocol-anchor-awareness.validate/**",
+      "docs/HEARTBEAT_PROTOCOL_ANCHOR_GUARDIAN_MIRROR_HANDOFF.md",
+      "STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md",
+      "data/stegguardian-wiki-orchestration-state.json"
+     ]
+    }
    }
   },
   {
@@ -158,6 +218,30 @@
     "persist_credentials": "false",
     "timeout_minutes": 30,
     "python_version": "3.11"
+   },
+   "path_filters": {
+    "pull_request": {
+     "paths": [
+      "data/stegclaw-release-awareness.json",
+      "scripts/check_stegclaw_release_awareness.py",
+      "tools/tasks/folded/check-stegclaw-release-awareness.yml",
+      "tools/tasks/steps/check-stegclaw-release-awareness.validate/**",
+      "docs/STEGCLAW_RELEASE_AWARENESS_MIRROR_HANDOFF.md",
+      "STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md",
+      "data/stegguardian-wiki-orchestration-state.json"
+     ]
+    },
+    "push": {
+     "paths": [
+      "data/stegclaw-release-awareness.json",
+      "scripts/check_stegclaw_release_awareness.py",
+      "tools/tasks/folded/check-stegclaw-release-awareness.yml",
+      "tools/tasks/steps/check-stegclaw-release-awareness.validate/**",
+      "docs/STEGCLAW_RELEASE_AWARENESS_MIRROR_HANDOFF.md",
+      "STEGGUARDIAN_WIKI_MIRROR_HANDOFF.md",
+      "data/stegguardian-wiki-orchestration-state.json"
+     ]
+    }
    }
   },
   {
@@ -194,6 +278,24 @@
     "persist_credentials": "true",
     "timeout_minutes": 30,
     "python_version": "3.12"
+   },
+   "path_filters": {
+    "pull_request": {
+     "paths": [
+      "data/rtg-tt/**",
+      "tools/check_rtg_tt_guardian_boundary.py",
+      "tools/tasks/folded/rtg-tt-guardian-boundary.yml",
+      "tools/tasks/steps/rtg-tt-guardian-boundary.verify/**"
+     ]
+    },
+    "push": {
+     "paths": [
+      "data/rtg-tt/**",
+      "tools/check_rtg_tt_guardian_boundary.py",
+      "tools/tasks/folded/rtg-tt-guardian-boundary.yml",
+      "tools/tasks/steps/rtg-tt-guardian-boundary.verify/**"
+     ]
+    }
    }
   },
   {
@@ -231,6 +333,28 @@
     "persist_credentials": "true",
     "timeout_minutes": 30,
     "python_version": "3.12"
+   },
+   "path_filters": {
+    "pull_request": {
+     "paths": [
+      "pages/temporal-governed-analysis-guardian-boundary.md",
+      "data/tga-guardian-projection-status.json",
+      "docs/TGA_GUARDIAN_PROJECTION_MIRROR_HANDOFF.md",
+      "scripts/check_tga_guardian_projection.py",
+      "tools/tasks/folded/validate-tga-guardian-projection.yml",
+      "tools/tasks/steps/validate-tga-guardian-projection.validate/**"
+     ]
+    },
+    "push": {
+     "paths": [
+      "pages/temporal-governed-analysis-guardian-boundary.md",
+      "data/tga-guardian-projection-status.json",
+      "docs/TGA_GUARDIAN_PROJECTION_MIRROR_HANDOFF.md",
+      "scripts/check_tga_guardian_projection.py",
+      "tools/tasks/folded/validate-tga-guardian-projection.yml",
+      "tools/tasks/steps/validate-tga-guardian-projection.validate/**"
+     ]
+    }
    }
   },
   {
@@ -246,6 +370,11 @@
      "name": "Workflow files equal the registered surfaces; catalog verifies ALLOW",
      "run_file": "tools/tasks/steps/workflow-surface-registry.validate/01-registry.sh",
      "run_sha256": "811824e88664923006be2eeb35632d710f5504145967f61632ad9e8fbdcb35ca"
+    },
+    {
+     "name": "Folded groups keep their original path filters (NOT_SELECTED, never skipped)",
+     "run_file": "tools/tasks/steps/workflow-surface-registry.validate/02-original-path-filters.sh",
+     "run_sha256": "9db82fbdf49b831995929ec2919b6ead95a650d1b9929cfb760742654aa3dbc7"
     }
    ],
    "artifacts": [],
